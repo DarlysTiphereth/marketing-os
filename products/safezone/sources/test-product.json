@@ -1,0 +1,9 @@
+{
+  "brand_id": "safezone",
+  "product_id": "test-product",
+  "data_label": "TEST_FIXTURE",
+  "data_notice": "NOT_REAL_PRODUCT_DATA",
+  "facts": [
+    "Produto sintético para validar o fluxo de conteúdo."
+  ]
+}

@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: 18 ContextBuilder minimal context excludes irrelevant brand brain, warnings, assets and timestamps
+ok 1 - 18 ContextBuilder minimal context excludes irrelevant brand brain, warnings, assets and timestamps
+  ---
+  duration_ms: 118.1761
+  type: 'test'
+  ...
+# Subtest: 19 output token budget is enforced against both task and prompt limits
+ok 2 - 19 output token budget is enforced against both task and prompt limits
+  ---
+  duration_ms: 2.7568
+  type: 'test'
+  ...
+# Subtest: 20 cache hit exposes key and creation time across filesystem adapter instances
+ok 3 - 20 cache hit exposes key and creation time across filesystem adapter instances
+  ---
+  duration_ms: 109.5411
+  type: 'test'
+  ...
+# Subtest: 21 cache invalidates each relevant version and tenant identity; normalized key order is stable
+ok 4 - 21 cache invalidates each relevant version and tenant identity; normalized key order is stable
+  ---
+  duration_ms: 1.2355
+  type: 'test'
+  ...
+# Subtest: 22 structured batching keeps 20 individual IDs and rejects duplicates/missing results and cross-brand groups
+ok 5 - 22 structured batching keeps 20 individual IDs and rejects duplicates/missing results and cross-brand groups
+  ---
+  duration_ms: 3.323
+  type: 'test'
+  ...
+# Subtest: 25 cheap-first routing even for high complexity; model must fit context and task cost
+ok 6 - 25 cheap-first routing even for high complexity; model must fit context and task cost
+  ---
+  duration_ms: 2.5887
+  type: 'test'
+  ...
+# Subtest: 26 premium escalation requires failed cheaper tiers, allowed budget and business justification
+ok 7 - 26 premium escalation requires failed cheaper tiers, allowed budget and business justification
+  ---
+  duration_ms: 0.6271
+  type: 'test'
+  ...
+# Subtest: 27 AIUsageRecord ledger validates values, labels simulations, isolates brands and prevents duplicate usage
+ok 8 - 27 AIUsageRecord ledger validates values, labels simulations, isolates brands and prevents duplicate usage
+  ---
+  duration_ms: 1.2388
+  type: 'test'
+  ...
+# Subtest: 28 token metrics aggregate task/creative/brand/product without doubling cached or reasoning tokens
+ok 9 - 28 token metrics aggregate task/creative/brand/product without doubling cached or reasoning tokens
+  ---
+  duration_ms: 0.7383
+  type: 'test'
+  ...
+# Subtest: 30 EfficiencyReport uses real operation counters and unavailable savings/empty denominator rates
+ok 10 - 30 EfficiencyReport uses real operation counters and unavailable savings/empty denominator rates
+  ---
+  duration_ms: 182.8088
+  type: 'test'
+  ...
+# Subtest: 14 CostEstimator uses versioned token/media pricing, including cached input
+ok 11 - 14 CostEstimator uses versioned token/media pricing, including cached input
+  ---
+  duration_ms: 3.1541
+  type: 'test'
+  ...
+# Subtest: 15 hard budget block uses spend + estimate before paid execution
+ok 12 - 15 hard budget block uses spend + estimate before paid execution
+  ---
+  duration_ms: 0.9227
+  type: 'test'
+  ...
+# Subtest: 16 soft budget warning restricts premium and prefers reuse/cache/cheap
+ok 13 - 16 soft budget warning restricts premium and prefers reuse/cache/cheap
+  ---
+  duration_ms: 0.6128
+  type: 'test'
+  ...
+# Subtest: 17 ProviderPricing versioning reads requested immutable version
+ok 14 - 17 ProviderPricing versioning reads requested immutable version
+  ---
+  duration_ms: 112.3279
+  type: 'test'
+  ...
+# Subtest: 29 CostReport distinguishes zero planning cost from unknown future media and actual cost
+ok 15 - 29 CostReport distinguishes zero planning cost from unknown future media and actual cost
+  ---
+  duration_ms: 213.8295
+  type: 'test'
+  ...
+# Subtest: cost controls reject negative/NaN amounts, incompatible currencies and invalid cache estimates
+ok 16 - cost controls reject negative/NaN amounts, incompatible currencies and invalid cache estimates
+  ---
+  duration_ms: 0.9541
+  type: 'test'
+  ...
+# Subtest: CostRouter follows reuse -> code -> cache -> cheap; premium requires explicit justification
+ok 17 - CostRouter follows reuse -> code -> cache -> cheap; premium requires explicit justification
+  ---
+  duration_ms: 0.3118
+  type: 'test'
+  ...
+# Subtest: 01 BrandContext loading
+ok 18 - 01 BrandContext loading
+  ---
+  duration_ms: 93.0772
+  type: 'test'
+  ...
+# Subtest: 02 ProductKnowledge loading and evidence verification
+ok 19 - 02 ProductKnowledge loading and evidence verification
+  ---
+  duration_ms: 100.0629
+  type: 'test'
+  ...
+# Subtest: 03 nonexistent product rejection
+ok 20 - 03 nonexistent product rejection
+  ---
+  duration_ms: 117.4091
+  type: 'test'
+  ...
+# Subtest: 04 unsupported claim rejection
+ok 21 - 04 unsupported claim rejection
+  ---
+  duration_ms: 82.9305
+  type: 'test'
+  ...
+# Subtest: 05 valid state transition
+ok 22 - 05 valid state transition
+  ---
+  duration_ms: 68.0482
+  type: 'test'
+  ...
+# Subtest: 06 invalid state transition
+ok 23 - 06 invalid state transition
+  ---
+  duration_ms: 65.8579
+  type: 'test'
+  ...
+# Subtest: 07 3x3x2 = 18 deterministic unique variants and decision references
+ok 24 - 07 3x3x2 = 18 deterministic unique variants and decision references
+  ---
+  duration_ms: 63.124
+  type: 'test'
+  ...
+# Subtest: 08 duplicate prevention compares semantics and records count
+ok 25 - 08 duplicate prevention compares semantics and records count
+  ---
+  duration_ms: 41.9495
+  type: 'test'
+  ...
+# Subtest: 09 human creative_code is unique and identity is UUID
+ok 26 - 09 human creative_code is unique and identity is UUID
+  ---
+  duration_ms: 66.8795
+  type: 'test'
+  ...
+# Subtest: 10 production manifest validity, faceless and 18-second timeline
+ok 27 - 10 production manifest validity, faceless and 18-second timeline
+  ---
+  duration_ms: 66.6486
+  type: 'test'
+  ...
+# Subtest: 11 GRAND/SafeZone isolation across product, asset, context and outputs
+ok 28 - 11 GRAND/SafeZone isolation across product, asset, context and outputs
+  ---
+  duration_ms: 181.6806
+  type: 'test'
+  ...
+# Subtest: 12 SafeZone REVIEW halts generation before strategy/matrix/media work
+ok 29 - 12 SafeZone REVIEW halts generation before strategy/matrix/media work
+  ---
+  duration_ms: 87.2388
+  type: 'test'
+  ...
+# Subtest: 13 SafeZone BLOCK for restricted category; brand-profile changes cannot bypass it
+ok 30 - 13 SafeZone BLOCK for restricted category; brand-profile changes cannot bypass it
+  ---
+  duration_ms: 62.4875
+  type: 'test'
+  ...
+# Subtest: 23 AssetRegistry lookup filters by brand, product and faceless evidence
+ok 31 - 23 AssetRegistry lookup filters by brand, product and faceless evidence
+  ---
+  duration_ms: 58.4543
+  type: 'test'
+  ...
+# Subtest: 24 asset reuse count appears in persisted batch registry
+ok 32 - 24 asset reuse count appears in persisted batch registry
+  ---
+  duration_ms: 202.1763
+  type: 'test'
+  ...
+# Subtest: source tampering and mislabeled real data fail before generation
+ok 33 - source tampering and mislabeled real data fail before generation
+  ---
+  duration_ms: 53.2256
+  type: 'test'
+  ...
+# Subtest: 31 duplicate batch request returns existing batch across repository instances
+ok 34 - 31 duplicate batch request returns existing batch across repository instances
+  ---
+  duration_ms: 470.8919
+  type: 'test'
+  ...
+# Subtest: concurrent identical requests return one complete batch
+ok 35 - concurrent identical requests return one complete batch
+  ---
+  duration_ms: 396.2021
+  type: 'test'
+  ...
+# Subtest: idempotency key conflict fails explicitly instead of silently returning unrelated result
+ok 36 - idempotency key conflict fails explicitly instead of silently returning unrelated result
+  ---
+  duration_ms: 240.0311
+  type: 'test'
+  ...
+# Subtest: end-to-end persistence has required reports and 18 valid manifests, all READY_FOR_PRODUCTION
+ok 37 - end-to-end persistence has required reports and 18 valid manifests, all READY_FOR_PRODUCTION
+  ---
+  duration_ms: 125.5683
+  type: 'test'
+  ...
+# Subtest: QA rejects unsupported text, missing assets, faces, stale versions and duplicates
+ok 38 - QA rejects unsupported text, missing assets, faces, stale versions and duplicates
+  ---
+  duration_ms: 120.0351
+  type: 'test'
+  ...
+# Subtest: CLI executes real offline command, validates arguments, reports REVIEW with exit code 2
+ok 39 - CLI executes real offline command, validates arguments, reports REVIEW with exit code 2
+  ---
+  duration_ms: 466.3241
+  type: 'test'
+  ...
+# Subtest: path boundaries and missing reusable assets fail before writing completed batch
+ok 40 - path boundaries and missing reusable assets fail before writing completed batch
+  ---
+  duration_ms: 51.0609
+  type: 'test'
+  ...
+# Subtest: structured logs discard unexpected fields and arbitrary decision strings
+ok 41 - structured logs discard unexpected fields and arbitrary decision strings
+  ---
+  duration_ms: 0.3492
+  type: 'test'
+  ...
+# Subtest: idempotent replay rejects altered persisted output instead of trusting stale QA
+ok 42 - idempotent replay rejects altered persisted output instead of trusting stale QA
+  ---
+  duration_ms: 92.5647
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2154.0922

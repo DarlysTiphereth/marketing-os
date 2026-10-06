@@ -1,0 +1,42 @@
+{
+  "product_id": "test-product",
+  "brand_id": "grand",
+  "product_version": "fixture-1",
+  "name": "TEST_FIXTURE — Produto de teste",
+  "category": "SYNTHETIC_TEST",
+  "variant": "UNKNOWN",
+  "volume": "UNKNOWN",
+  "official_description": {
+    "text": "Produto sintético para validar o fluxo de conteúdo.",
+    "source_ids": [
+      "test-evidence"
+    ]
+  },
+  "confirmed_features": [],
+  "confirmed_benefits": [],
+  "usage_instructions": [],
+  "warnings": [],
+  "prohibited_claims": [
+    "cura",
+    "100% eficaz",
+    "resultado garantido"
+  ],
+  "assets": [
+    "grand-test-template"
+  ],
+  "source_references": [
+    {
+      "source_id": "test-evidence",
+      "source_type": "TEST_FIXTURE",
+      "source_location": "products/grand/sources/test-product.json",
+      "source_hash": "1df83f6d1cb6d8022667461a302525499c28421bcc4e2cdb1843c49bc256c0ec",
+      "extracted_at": "2026-10-05T00:00:00.000Z"
+    }
+  ],
+  "knowledge_status": "TEST_FIXTURE",
+  "missing_information": [],
+  "data_label": "TEST_FIXTURE",
+  "data_notice": "TEST_FIXTURE · NOT_REAL_PRODUCT_DATA · Configuração sintética, sem dados empresariais reais.",
+  "created_at": "2026-10-05T00:00:00.000Z",
+  "updated_at": "2026-10-05T00:00:00.000Z"
+}

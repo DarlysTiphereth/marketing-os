@@ -1,0 +1,9 @@
+{
+  "brand_id": "grand",
+  "product_id": "test-product",
+  "data_label": "TEST_FIXTURE",
+  "data_notice": "NOT_REAL_PRODUCT_DATA",
+  "type": "PLANNING_TEMPLATE",
+  "faceless_required": true,
+  "note": "Synthetic planning metadata. Contains no image, video or real product media."
+}

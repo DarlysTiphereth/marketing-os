@@ -1,0 +1,411 @@
+Marketing-OS/
+├── .pnpm-store/
+│   └── v11/
+│       ├── files/
+│       │   ├── 00/
+│       │   ├── 01/
+│       │   ├── 02/
+│       │   ├── 03/
+│       │   ├── 04/
+│       │   ├── 05/
+│       │   ├── 06/
+│       │   ├── 07/
+│       │   ├── 08/
+│       │   ├── 09/
+│       │   ├── 0a/
+│       │   ├── 0b/
+│       │   ├── 0c/
+│       │   ├── 0d/
+│       │   ├── 0e/
+│       │   ├── 0f/
+│       │   ├── 10/
+│       │   ├── 11/
+│       │   ├── 12/
+│       │   ├── 13/
+│       │   ├── 14/
+│       │   ├── 15/
+│       │   ├── 16/
+│       │   ├── 17/
+│       │   ├── 18/
+│       │   ├── 19/
+│       │   ├── 1a/
+│       │   ├── 1b/
+│       │   ├── 1c/
+│       │   ├── 1d/
+│       │   ├── 1e/
+│       │   ├── 1f/
+│       │   ├── 20/
+│       │   ├── 21/
+│       │   ├── 22/
+│       │   ├── 23/
+│       │   ├── 24/
+│       │   ├── 25/
+│       │   ├── 26/
+│       │   ├── 27/
+│       │   ├── 28/
+│       │   ├── 29/
+│       │   ├── 2a/
+│       │   ├── 2b/
+│       │   ├── 2c/
+│       │   ├── 2d/
+│       │   ├── 2e/
+│       │   ├── 2f/
+│       │   ├── 30/
+│       │   ├── 31/
+│       │   ├── 32/
+│       │   ├── 33/
+│       │   ├── 34/
+│       │   ├── 35/
+│       │   ├── 36/
+│       │   ├── 37/
+│       │   ├── 38/
+│       │   ├── 39/
+│       │   ├── 3a/
+│       │   ├── 3b/
+│       │   ├── 3c/
+│       │   ├── 3d/
+│       │   ├── 3e/
+│       │   ├── 3f/
+│       │   ├── 40/
+│       │   ├── 41/
+│       │   ├── 42/
+│       │   ├── 43/
+│       │   ├── 44/
+│       │   ├── 45/
+│       │   ├── 46/
+│       │   ├── 47/
+│       │   ├── 48/
+│       │   ├── 49/
+│       │   ├── 4a/
+│       │   ├── 4b/
+│       │   ├── 4c/
+│       │   ├── 4d/
+│       │   ├── 4e/
+│       │   ├── 4f/
+│       │   ├── 50/
+│       │   ├── 51/
+│       │   ├── 52/
+│       │   ├── 53/
+│       │   ├── 54/
+│       │   ├── 55/
+│       │   ├── 56/
+│       │   ├── 57/
+│       │   ├── 58/
+│       │   ├── 59/
+│       │   ├── 5a/
+│       │   ├── 5b/
+│       │   ├── 5c/
+│       │   ├── 5d/
+│       │   ├── 5e/
+│       │   ├── 5f/
+│       │   ├── 60/
+│       │   ├── 61/
+│       │   ├── 62/
+│       │   ├── 63/
+│       │   ├── 64/
+│       │   ├── 65/
+│       │   ├── 66/
+│       │   ├── 67/
+│       │   ├── 68/
+│       │   ├── 69/
+│       │   ├── 6a/
+│       │   ├── 6b/
+│       │   ├── 6c/
+│       │   ├── 6d/
+│       │   ├── 6e/
+│       │   ├── 6f/
+│       │   ├── 70/
+│       │   ├── 71/
+│       │   ├── 72/
+│       │   ├── 73/
+│       │   ├── 74/
+│       │   ├── 75/
+│       │   ├── 76/
+│       │   ├── 77/
+│       │   ├── 78/
+│       │   ├── 79/
+│       │   ├── 7a/
+│       │   ├── 7b/
+│       │   ├── 7c/
+│       │   ├── 7d/
+│       │   ├── 7e/
+│       │   ├── 7f/
+│       │   ├── 80/
+│       │   ├── 81/
+│       │   ├── 82/
+│       │   ├── 83/
+│       │   ├── 84/
+│       │   ├── 85/
+│       │   ├── 86/
+│       │   ├── 87/
+│       │   ├── 88/
+│       │   ├── 89/
+│       │   ├── 8a/
+│       │   ├── 8b/
+│       │   ├── 8c/
+│       │   ├── 8d/
+│       │   ├── 8e/
+│       │   ├── 8f/
+│       │   ├── 90/
+│       │   ├── 91/
+│       │   ├── 92/
+│       │   ├── 93/
+│       │   ├── 94/
+│       │   ├── 95/
+│       │   ├── 96/
+│       │   ├── 97/
+│       │   ├── 98/
+│       │   ├── 99/
+│       │   ├── 9a/
+│       │   ├── 9b/
+│       │   ├── 9c/
+│       │   ├── 9d/
+│       │   ├── 9e/
+│       │   ├── 9f/
+│       │   ├── a0/
+│       │   ├── a1/
+│       │   ├── a2/
+│       │   ├── a3/
+│       │   ├── a4/
+│       │   ├── a5/
+│       │   ├── a6/
+│       │   ├── a7/
+│       │   ├── a8/
+│       │   ├── a9/
+│       │   ├── aa/
+│       │   ├── ab/
+│       │   ├── ac/
+│       │   ├── ad/
+│       │   ├── ae/
+│       │   ├── af/
+│       │   ├── b0/
+│       │   ├── b1/
+│       │   ├── b2/
+│       │   ├── b3/
+│       │   ├── b4/
+│       │   ├── b5/
+│       │   ├── b6/
+│       │   ├── b7/
+│       │   ├── b8/
+│       │   ├── b9/
+│       │   ├── ba/
+│       │   ├── bb/
+│       │   ├── bc/
+│       │   ├── bd/
+│       │   ├── be/
+│       │   ├── bf/
+│       │   ├── c0/
+│       │   ├── c1/
+│       │   ├── c2/
+│       │   ├── c3/
+│       │   ├── c4/
+│       │   ├── c5/
+│       │   ├── c6/
+│       │   ├── c7/
+│       │   ├── c8/
+│       │   ├── c9/
+│       │   ├── ca/
+│       │   ├── cb/
+│       │   ├── cc/
+│       │   ├── cd/
+│       │   ├── ce/
+│       │   ├── cf/
+│       │   ├── d0/
+│       │   ├── d1/
+│       │   ├── d2/
+│       │   ├── d3/
+│       │   ├── d4/
+│       │   ├── d5/
+│       │   ├── d6/
+│       │   ├── d7/
+│       │   ├── d8/
+│       │   ├── d9/
+│       │   ├── da/
+│       │   ├── db/
+│       │   ├── dc/
+│       │   ├── dd/
+│       │   ├── de/
+│       │   ├── df/
+│       │   ├── e0/
+│       │   ├── e1/
+│       │   ├── e2/
+│       │   ├── e3/
+│       │   ├── e4/
+│       │   ├── e5/
+│       │   ├── e6/
+│       │   ├── e7/
+│       │   ├── e8/
+│       │   ├── e9/
+│       │   ├── ea/
+│       │   ├── eb/
+│       │   ├── ec/
+│       │   ├── ed/
+│       │   ├── ee/
+│       │   ├── ef/
+│       │   ├── f0/
+│       │   ├── f1/
+│       │   ├── f2/
+│       │   ├── f3/
+│       │   ├── f4/
+│       │   ├── f5/
+│       │   ├── f6/
+│       │   ├── f7/
+│       │   ├── f8/
+│       │   ├── f9/
+│       │   ├── fa/
+│       │   ├── fb/
+│       │   ├── fc/
+│       │   ├── fd/
+│       │   ├── fe/
+│       │   └── ff/
+│       └── index.db
+├── brands/
+│   ├── grand/
+│   │   ├── assets.json
+│   │   ├── context.json
+│   │   └── test-template.json
+│   └── safezone/
+│       ├── assets.json
+│       ├── context.json
+│       └── test-template.json
+├── docs/
+│   ├── review/
+│   │   ├── ARCHITECTURE.md
+│   │   ├── CLAUDE_REVIEW_BRIEF.md
+│   │   ├── COST_MODEL.md
+│   │   ├── DECISIONS.md
+│   │   ├── KNOWN_LIMITATIONS.md
+│   │   ├── NEXT_STEPS.md
+│   │   ├── REQUIREMENTS_TRACEABILITY.md
+│   │   ├── SELF_REVIEW.md
+│   │   ├── TEST_REPORT.md
+│   │   ├── test-results.tap
+│   │   └── TOKEN_EFFICIENCY.md
+│   ├── FILE_TREE.txt
+│   ├── FINAL_REPORT.md
+│   ├── GRAND_DATA_NEEDED.md
+│   └── PLAN.md
+├── outputs/
+│   ├── 02b2d150-1143-58e1-a339-22c102feaf96/
+│   │   ├── manifests/
+│   │   ├── asset-registry.json
+│   │   ├── batch.json
+│   │   ├── brand-context.json
+│   │   ├── compliance-decision.json
+│   │   ├── cost-report.json
+│   │   ├── efficiency-report.json
+│   │   ├── execution-summary.json
+│   │   ├── generation-matrix.json
+│   │   ├── integrity.json
+│   │   ├── product-knowledge.json
+│   │   ├── qa-report.json
+│   │   ├── strategy.json
+│   │   ├── usage-ledger.json
+│   │   └── variants.json
+│   └── 688afbec-2ebf-5fb8-aaac-421fab0af457/
+│       ├── manifests/
+│       │   ├── 0dc8f4d7-8eba-58c6-8fe8-0caf3024e2f8.json
+│       │   ├── 271f244b-fde3-5da1-8b42-feb9caf95d70.json
+│       │   ├── 2b398f80-5a65-50e0-a816-3657ca1f6dd8.json
+│       │   ├── 3c18b2cb-39a4-5f63-b295-842bd3d94bb6.json
+│       │   ├── 52973042-160f-5b5c-8f0b-a385376c7f7e.json
+│       │   ├── 68ff197f-bcf4-5b2e-8d54-6f4d9a4e67db.json
+│       │   ├── 6f580feb-123f-557f-84d9-3175c8d5765b.json
+│       │   ├── 84fb0e0a-9870-5a13-b1c6-430188441393.json
+│       │   ├── 8af8d50d-5755-5e50-86e2-6e77e44852e5.json
+│       │   ├── 8d64c46a-23a2-5676-b136-85b3f2f04677.json
+│       │   ├── 99d963b8-feb6-5af0-aeb5-a083dc2062f7.json
+│       │   ├── af094b4e-05e5-5d07-950f-628062290c92.json
+│       │   ├── c21e95d6-149f-5769-be08-82901f88a076.json
+│       │   ├── dac1eea7-7252-5d12-9377-844d05cf3d37.json
+│       │   ├── e1ca9e09-f1c6-55ad-a9e9-f073cf3f5b5e.json
+│       │   ├── ee09e099-6e8c-523f-b938-910a4c7d1880.json
+│       │   ├── f81ed4b5-ca6e-5584-b5a3-7f9f8b8048cd.json
+│       │   └── fd093317-4280-52e6-8fa7-a5893f3f8bb3.json
+│       ├── asset-registry.json
+│       ├── batch.json
+│       ├── brand-context.json
+│       ├── compliance-decision.json
+│       ├── cost-report.json
+│       ├── efficiency-report.json
+│       ├── execution-summary.json
+│       ├── generation-matrix.json
+│       ├── integrity.json
+│       ├── product-knowledge.json
+│       ├── qa-report.json
+│       ├── strategy.json
+│       ├── usage-ledger.json
+│       └── variants.json
+├── products/
+│   ├── grand/
+│   │   ├── sources/
+│   │   │   └── test-product.json
+│   │   └── test-product.json
+│   └── safezone/
+│       ├── sources/
+│       │   └── test-product.json
+│       └── test-product.json
+├── scripts/
+│   └── validate-skills.mjs
+├── skills/
+│   ├── batch-variant-generation/
+│   │   └── SKILL.md
+│   ├── compliance/
+│   │   └── SKILL.md
+│   ├── cost-control/
+│   │   └── SKILL.md
+│   ├── creative-strategy/
+│   │   └── SKILL.md
+│   ├── product-intelligence/
+│   │   └── SKILL.md
+│   ├── production-manifest/
+│   │   └── SKILL.md
+│   └── quality-control/
+│       └── SKILL.md
+├── src/
+│   ├── ai/
+│   │   ├── batching.ts
+│   │   ├── cache.ts
+│   │   ├── context.ts
+│   │   ├── prompts.ts
+│   │   ├── routing.ts
+│   │   └── usage-ledger.ts
+│   ├── application/
+│   │   ├── generate.ts
+│   │   └── qa.ts
+│   ├── cli/
+│   │   └── generate.ts
+│   ├── compliance/
+│   │   └── policy.ts
+│   ├── contracts/
+│   │   ├── ports.ts
+│   │   └── schemas.ts
+│   ├── cost/
+│   │   └── controls.ts
+│   ├── creative-factory/
+│   │   └── factory.ts
+│   ├── domain/
+│   │   ├── assets.ts
+│   │   ├── identity.ts
+│   │   ├── product.ts
+│   │   └── status.ts
+│   ├── infrastructure/
+│   │   └── filesystem.ts
+│   └── observability/
+│       ├── logger.ts
+│       └── metrics.ts
+├── tests/
+│   ├── ai-efficiency.test.ts
+│   ├── cost.test.ts
+│   ├── domain-factory.test.ts
+│   ├── helpers.ts
+│   └── integration.test.ts
+├── .env.example
+├── .gitignore
+├── AGENTS.md
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+└── tsconfig.json
+
+Excluded: .git, node_modules, dist and runtime lock/cache/staging directories.

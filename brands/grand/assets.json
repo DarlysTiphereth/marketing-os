@@ -1,0 +1,15 @@
+[
+  {
+    "asset_id": "grand-test-template",
+    "brand_id": "grand",
+    "product_id": "test-product",
+    "asset_type": "TEMPLATE",
+    "source": "brands/grand/test-template.json",
+    "content_hash": "4b326cec1bde77ae534fd6d486b7ad205035799c7e281a42520c384f3fc3f53f",
+    "version": "fixture-1",
+    "usage_count": 0,
+    "created_at": "2026-10-05T00:00:00.000Z",
+    "faceless_verified": true,
+    "data_label": "TEST_FIXTURE"
+  }
+]
