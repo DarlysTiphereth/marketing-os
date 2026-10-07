@@ -47,10 +47,12 @@ export async function main(args: string[]): Promise<number> {
   } catch (error) {
     // CLI flags can contain secrets: do not echo argv or arbitrary parser/schema error payloads.
     const message = error instanceof Error ? error.message : '';
-    const known = ['IDEMPOTENCY_CONFLICT', 'IDEMPOTENCY_IN_PROGRESS', 'BUDGET_BLOCKED', 'V0_1_TEMPLATE_ONLY', 'MISSING_TEMPLATE_ASSET'];
+    const known = ['STALE_INPUTS', 'IDEMPOTENCY_CONFLICT', 'IDEMPOTENCY_IN_PROGRESS', 'BUDGET_BLOCKED', 'V0_1_TEMPLATE_ONLY', 'MISSING_TEMPLATE_ASSET'];
     const code = known.find(c => message.startsWith(c)) ?? 'INPUT_OR_EXECUTION_ERROR';
-    console.error(JSON.stringify({ error: code, hint: 'Check flags, fixture files, provenance and repository permissions. No batch was published.' }));
-    return 1;
+    const hint = code === 'STALE_INPUTS' ? 'Current inputs or compliance changed. Review them before using a new idempotency key.'
+      : 'Check flags, fixture files, provenance and repository permissions. No batch was published.';
+    console.error(JSON.stringify({ error: code, hint }));
+    return code === 'STALE_INPUTS' ? 3 : 1;
   }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

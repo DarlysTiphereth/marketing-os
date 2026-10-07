@@ -28,6 +28,32 @@ export class GenerateBatch {
       const existing = await this.repositories.batches.findByIdempotencyKey(request.brand_id, request.idempotency_key);
       if (existing) {
         if (existing.batch.request_hash !== requestHash) throw new Error('IDEMPOTENCY_CONFLICT: same key with different request');
+        const brand = await this.repositories.brands.get(request.brand_id).catch((cause: unknown) => {
+          throw new Error('STALE_INPUTS: brand no longer available', { cause });
+        });
+        const product = await this.repositories.products.get(request.brand_id, request.product_id).catch((cause: unknown) => {
+          throw new Error('STALE_INPUTS: product no longer available', { cause });
+        });
+        const context = new ContextBuilder().build('MINIMAL', brand, product);
+        const compliance = compliancePrecheck(brand, product, request, this.now());
+        // The check time changes on replay; the deterministic decision/policy must remain identical.
+        const comparableCompliance = { ...compliance, checked_at: existing.compliance.checked_at };
+        if (hash({ brand, product, context, versions: VERSIONS }) !== existing.batch.input_fingerprint ||
+          hash(comparableCompliance) !== hash(existing.compliance)) {
+          throw new Error('STALE_INPUTS: current inputs or compliance differ from saved batch');
+        }
+        // Source bytes can change without updating the declared source hash in ProductKnowledge.
+        try { await validateProvenance(product, this.repositories.sources); }
+        catch (cause) { throw new Error('STALE_INPUTS: source verification failed', { cause }); }
+        if (existing.compliance.decision === 'ALLOW') {
+          const assets = await this.repositories.assets.list(request.brand_id, request.product_id).catch((cause: unknown) => {
+            throw new Error('STALE_INPUTS: asset verification failed', { cause });
+          });
+          // AssetRegistry.reuse derives usage_count while expanding this batch; compare every other field.
+          const currentAssets = assets.map(({ usage_count, ...asset }) => asset);
+          const savedAssets = existing.assets.map(({ usage_count, ...asset }) => asset);
+          if (hash(currentAssets) !== hash(savedAssets)) throw new Error('STALE_INPUTS: asset snapshot changed');
+        }
         this.logger.log({ event: 'BATCH_REUSED', correlation_id: existing.batch.correlation_id, batch_id: existing.batch.batch_id,
           brand_id: request.brand_id, product_id: request.product_id });
         return { artifacts: existing, reused: true };

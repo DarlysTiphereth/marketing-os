@@ -1,4 +1,7 @@
 Marketing-OS/
+├── .github/
+│   └── workflows/
+│       └── foundation-v01.yml
 ├── .pnpm-store/
 │   └── v11/
 │       ├── files/
@@ -276,6 +279,7 @@ Marketing-OS/
 │   │   ├── DECISIONS.md
 │   │   ├── KNOWN_LIMITATIONS.md
 │   │   ├── NEXT_STEPS.md
+│   │   ├── p1-before-fix.tap
 │   │   ├── REQUIREMENTS_TRACEABILITY.md
 │   │   ├── SELF_REVIEW.md
 │   │   ├── TEST_REPORT.md
@@ -399,8 +403,10 @@ Marketing-OS/
 │   ├── cost.test.ts
 │   ├── domain-factory.test.ts
 │   ├── helpers.ts
-│   └── integration.test.ts
+│   ├── integration.test.ts
+│   └── p1-regressions.test.ts
 ├── .env.example
+├── .gitattributes
 ├── .gitignore
 ├── AGENTS.md
 ├── package.json

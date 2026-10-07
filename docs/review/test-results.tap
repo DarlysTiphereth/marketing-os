@@ -2,261 +2,387 @@ TAP version 13
 # Subtest: 18 ContextBuilder minimal context excludes irrelevant brand brain, warnings, assets and timestamps
 ok 1 - 18 ContextBuilder minimal context excludes irrelevant brand brain, warnings, assets and timestamps
   ---
-  duration_ms: 118.1761
+  duration_ms: 264.2366
   type: 'test'
   ...
 # Subtest: 19 output token budget is enforced against both task and prompt limits
 ok 2 - 19 output token budget is enforced against both task and prompt limits
   ---
-  duration_ms: 2.7568
+  duration_ms: 2.4984
   type: 'test'
   ...
 # Subtest: 20 cache hit exposes key and creation time across filesystem adapter instances
 ok 3 - 20 cache hit exposes key and creation time across filesystem adapter instances
   ---
-  duration_ms: 109.5411
+  duration_ms: 278.8245
   type: 'test'
   ...
 # Subtest: 21 cache invalidates each relevant version and tenant identity; normalized key order is stable
 ok 4 - 21 cache invalidates each relevant version and tenant identity; normalized key order is stable
   ---
-  duration_ms: 1.2355
+  duration_ms: 2.4058
   type: 'test'
   ...
 # Subtest: 22 structured batching keeps 20 individual IDs and rejects duplicates/missing results and cross-brand groups
 ok 5 - 22 structured batching keeps 20 individual IDs and rejects duplicates/missing results and cross-brand groups
   ---
-  duration_ms: 3.323
+  duration_ms: 8.2285
   type: 'test'
   ...
 # Subtest: 25 cheap-first routing even for high complexity; model must fit context and task cost
 ok 6 - 25 cheap-first routing even for high complexity; model must fit context and task cost
   ---
-  duration_ms: 2.5887
+  duration_ms: 3.8781
   type: 'test'
   ...
 # Subtest: 26 premium escalation requires failed cheaper tiers, allowed budget and business justification
 ok 7 - 26 premium escalation requires failed cheaper tiers, allowed budget and business justification
   ---
-  duration_ms: 0.6271
+  duration_ms: 2.133
   type: 'test'
   ...
 # Subtest: 27 AIUsageRecord ledger validates values, labels simulations, isolates brands and prevents duplicate usage
 ok 8 - 27 AIUsageRecord ledger validates values, labels simulations, isolates brands and prevents duplicate usage
   ---
-  duration_ms: 1.2388
+  duration_ms: 1.8838
   type: 'test'
   ...
 # Subtest: 28 token metrics aggregate task/creative/brand/product without doubling cached or reasoning tokens
 ok 9 - 28 token metrics aggregate task/creative/brand/product without doubling cached or reasoning tokens
   ---
-  duration_ms: 0.7383
+  duration_ms: 1.2086
   type: 'test'
   ...
 # Subtest: 30 EfficiencyReport uses real operation counters and unavailable savings/empty denominator rates
 ok 10 - 30 EfficiencyReport uses real operation counters and unavailable savings/empty denominator rates
   ---
-  duration_ms: 182.8088
+  duration_ms: 372.6292
   type: 'test'
   ...
 # Subtest: 14 CostEstimator uses versioned token/media pricing, including cached input
 ok 11 - 14 CostEstimator uses versioned token/media pricing, including cached input
   ---
-  duration_ms: 3.1541
+  duration_ms: 7.6006
   type: 'test'
   ...
 # Subtest: 15 hard budget block uses spend + estimate before paid execution
 ok 12 - 15 hard budget block uses spend + estimate before paid execution
   ---
-  duration_ms: 0.9227
+  duration_ms: 2.0348
   type: 'test'
   ...
 # Subtest: 16 soft budget warning restricts premium and prefers reuse/cache/cheap
 ok 13 - 16 soft budget warning restricts premium and prefers reuse/cache/cheap
   ---
-  duration_ms: 0.6128
+  duration_ms: 1.1451
   type: 'test'
   ...
 # Subtest: 17 ProviderPricing versioning reads requested immutable version
 ok 14 - 17 ProviderPricing versioning reads requested immutable version
   ---
-  duration_ms: 112.3279
+  duration_ms: 234.6621
   type: 'test'
   ...
 # Subtest: 29 CostReport distinguishes zero planning cost from unknown future media and actual cost
 ok 15 - 29 CostReport distinguishes zero planning cost from unknown future media and actual cost
   ---
-  duration_ms: 213.8295
+  duration_ms: 455.6529
   type: 'test'
   ...
 # Subtest: cost controls reject negative/NaN amounts, incompatible currencies and invalid cache estimates
 ok 16 - cost controls reject negative/NaN amounts, incompatible currencies and invalid cache estimates
   ---
-  duration_ms: 0.9541
+  duration_ms: 2.7647
   type: 'test'
   ...
 # Subtest: CostRouter follows reuse -> code -> cache -> cheap; premium requires explicit justification
 ok 17 - CostRouter follows reuse -> code -> cache -> cheap; premium requires explicit justification
   ---
-  duration_ms: 0.3118
+  duration_ms: 1.1521
   type: 'test'
   ...
 # Subtest: 01 BrandContext loading
 ok 18 - 01 BrandContext loading
   ---
-  duration_ms: 93.0772
+  duration_ms: 244.0996
   type: 'test'
   ...
 # Subtest: 02 ProductKnowledge loading and evidence verification
 ok 19 - 02 ProductKnowledge loading and evidence verification
   ---
-  duration_ms: 100.0629
+  duration_ms: 235.6892
   type: 'test'
   ...
 # Subtest: 03 nonexistent product rejection
 ok 20 - 03 nonexistent product rejection
   ---
-  duration_ms: 117.4091
+  duration_ms: 241.6256
   type: 'test'
   ...
 # Subtest: 04 unsupported claim rejection
 ok 21 - 04 unsupported claim rejection
   ---
-  duration_ms: 82.9305
+  duration_ms: 181.2145
   type: 'test'
   ...
 # Subtest: 05 valid state transition
 ok 22 - 05 valid state transition
   ---
-  duration_ms: 68.0482
+  duration_ms: 181.3281
   type: 'test'
   ...
 # Subtest: 06 invalid state transition
 ok 23 - 06 invalid state transition
   ---
-  duration_ms: 65.8579
+  duration_ms: 145.7171
   type: 'test'
   ...
 # Subtest: 07 3x3x2 = 18 deterministic unique variants and decision references
 ok 24 - 07 3x3x2 = 18 deterministic unique variants and decision references
   ---
-  duration_ms: 63.124
+  duration_ms: 137.6775
   type: 'test'
   ...
 # Subtest: 08 duplicate prevention compares semantics and records count
 ok 25 - 08 duplicate prevention compares semantics and records count
   ---
-  duration_ms: 41.9495
+  duration_ms: 133.0624
   type: 'test'
   ...
 # Subtest: 09 human creative_code is unique and identity is UUID
 ok 26 - 09 human creative_code is unique and identity is UUID
   ---
-  duration_ms: 66.8795
+  duration_ms: 136.7664
   type: 'test'
   ...
 # Subtest: 10 production manifest validity, faceless and 18-second timeline
 ok 27 - 10 production manifest validity, faceless and 18-second timeline
   ---
-  duration_ms: 66.6486
+  duration_ms: 166.149
   type: 'test'
   ...
 # Subtest: 11 GRAND/SafeZone isolation across product, asset, context and outputs
 ok 28 - 11 GRAND/SafeZone isolation across product, asset, context and outputs
   ---
-  duration_ms: 181.6806
+  duration_ms: 421.151
   type: 'test'
   ...
 # Subtest: 12 SafeZone REVIEW halts generation before strategy/matrix/media work
 ok 29 - 12 SafeZone REVIEW halts generation before strategy/matrix/media work
   ---
-  duration_ms: 87.2388
+  duration_ms: 239.7887
   type: 'test'
   ...
 # Subtest: 13 SafeZone BLOCK for restricted category; brand-profile changes cannot bypass it
 ok 30 - 13 SafeZone BLOCK for restricted category; brand-profile changes cannot bypass it
   ---
-  duration_ms: 62.4875
+  duration_ms: 131.1462
   type: 'test'
   ...
 # Subtest: 23 AssetRegistry lookup filters by brand, product and faceless evidence
 ok 31 - 23 AssetRegistry lookup filters by brand, product and faceless evidence
   ---
-  duration_ms: 58.4543
+  duration_ms: 181.8078
   type: 'test'
   ...
 # Subtest: 24 asset reuse count appears in persisted batch registry
 ok 32 - 24 asset reuse count appears in persisted batch registry
   ---
-  duration_ms: 202.1763
+  duration_ms: 504.5717
   type: 'test'
   ...
 # Subtest: source tampering and mislabeled real data fail before generation
 ok 33 - source tampering and mislabeled real data fail before generation
   ---
-  duration_ms: 53.2256
+  duration_ms: 143.6922
   type: 'test'
   ...
 # Subtest: 31 duplicate batch request returns existing batch across repository instances
 ok 34 - 31 duplicate batch request returns existing batch across repository instances
   ---
-  duration_ms: 470.8919
+  duration_ms: 1096.8079
   type: 'test'
   ...
 # Subtest: concurrent identical requests return one complete batch
 ok 35 - concurrent identical requests return one complete batch
   ---
-  duration_ms: 396.2021
+  duration_ms: 766.7816
   type: 'test'
   ...
 # Subtest: idempotency key conflict fails explicitly instead of silently returning unrelated result
 ok 36 - idempotency key conflict fails explicitly instead of silently returning unrelated result
   ---
-  duration_ms: 240.0311
+  duration_ms: 566.9671
   type: 'test'
   ...
 # Subtest: end-to-end persistence has required reports and 18 valid manifests, all READY_FOR_PRODUCTION
 ok 37 - end-to-end persistence has required reports and 18 valid manifests, all READY_FOR_PRODUCTION
   ---
-  duration_ms: 125.5683
+  duration_ms: 309.0148
   type: 'test'
   ...
 # Subtest: QA rejects unsupported text, missing assets, faces, stale versions and duplicates
 ok 38 - QA rejects unsupported text, missing assets, faces, stale versions and duplicates
   ---
-  duration_ms: 120.0351
+  duration_ms: 329.0377
   type: 'test'
   ...
 # Subtest: CLI executes real offline command, validates arguments, reports REVIEW with exit code 2
 ok 39 - CLI executes real offline command, validates arguments, reports REVIEW with exit code 2
   ---
-  duration_ms: 466.3241
+  duration_ms: 1242.0236
   type: 'test'
   ...
 # Subtest: path boundaries and missing reusable assets fail before writing completed batch
 ok 40 - path boundaries and missing reusable assets fail before writing completed batch
   ---
-  duration_ms: 51.0609
+  duration_ms: 125.7564
   type: 'test'
   ...
 # Subtest: structured logs discard unexpected fields and arbitrary decision strings
 ok 41 - structured logs discard unexpected fields and arbitrary decision strings
   ---
-  duration_ms: 0.3492
+  duration_ms: 0.7695
   type: 'test'
   ...
 # Subtest: idempotent replay rejects altered persisted output instead of trusting stale QA
 ok 42 - idempotent replay rejects altered persisted output instead of trusting stale QA
   ---
-  duration_ms: 92.5647
+  duration_ms: 283.1835
   type: 'test'
   ...
-1..42
-# tests 42
+# Subtest: P1-01 fixture source and template hashes match checkout bytes; changed evidence fails
+ok 43 - P1-01 fixture source and template hashes match checkout bytes; changed evidence fails
+  ---
+  duration_ms: 292.439
+  type: 'test'
+  ...
+# Subtest: F-04 real Git commits/clones preserve LF hashes and raw bytes under true/input/false; negative control drifts
+ok 44 - F-04 real Git commits/clones preserve LF hashes and raw bytes under true/input/false; negative control drifts
+  ---
+  duration_ms: 6384.4076
+  type: 'test'
+  ...
+# Subtest: P1-02 identical replay at a later check time returns the same traceable batch
+ok 45 - P1-02 identical replay at a later check time returns the same traceable batch
+  ---
+  duration_ms: 276.2719
+  type: 'test'
+  ...
+# Subtest: P1-02 product version change rejects replay without overwriting or duplicating the batch
+ok 46 - P1-02 product version change rejects replay without overwriting or duplicating the batch
+  ---
+  duration_ms: 409.3266
+  type: 'test'
+  ...
+# Subtest: P1-02 product content change without a version bump rejects replay
+ok 47 - P1-02 product content change without a version bump rejects replay
+  ---
+  duration_ms: 401.0441
+  type: 'test'
+  ...
+# Subtest: P1-02 category change to BLOCK never returns READY and CLI reports stable STALE_INPUTS exit 3
+ok 48 - P1-02 category change to BLOCK never returns READY and CLI reports stable STALE_INPUTS exit 3
+  ---
+  duration_ms: 1053.044
+  type: 'test'
+  ...
+# Subtest: P1-02 changed brand compliance profile rejects replay after reevaluating policy
+ok 49 - P1-02 changed brand compliance profile rejects replay after reevaluating policy
+  ---
+  duration_ms: 281.2814
+  type: 'test'
+  ...
+# Subtest: P1-02 changed compliance policy is independently rejected even when input fingerprint still matches
+ok 50 - P1-02 changed compliance policy is independently rejected even when input fingerprint still matches
+  ---
+  duration_ms: 179.7303
+  type: 'test'
+  ...
+# Subtest: P1-02 changed source bytes without changing declared metadata invalidate replay
+ok 51 - P1-02 changed source bytes without changing declared metadata invalidate replay
+  ---
+  duration_ms: 267.785
+  type: 'test'
+  ...
+# Subtest: P1-03 pre-fix template snapshot cannot replay after the label representation changes
+ok 52 - P1-03 pre-fix template snapshot cannot replay after the label representation changes
+  ---
+  duration_ms: 255.2186
+  type: 'test'
+  ...
+# Subtest: P1-03 REAL_DATA remains metadata only; sourced real-data contract content passes QA without internal labels
+ok 53 - P1-03 REAL_DATA remains metadata only; sourced real-data contract content passes QA without internal labels
+  ---
+  duration_ms: 169.6178
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M1 faceless_verified=false: exit 3, immutable snapshot, restored replay exit 0
+ok 54 - F-01/F-03 M1 faceless_verified=false: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1171.4372
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M2a catalog content_hash tampered: exit 3, immutable snapshot, restored replay exit 0
+ok 55 - F-01/F-03 M2a catalog content_hash tampered: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1194.1634
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M2b template bytes tampered: exit 3, immutable snapshot, restored replay exit 0
+ok 56 - F-01/F-03 M2b template bytes tampered: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1136.1708
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M3a asset removed from catalog: exit 3, immutable snapshot, restored replay exit 0
+ok 57 - F-01/F-03 M3a asset removed from catalog: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1114.6233
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M3b physical template deleted: exit 3, immutable snapshot, restored replay exit 0
+ok 58 - F-01/F-03 M3b physical template deleted: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1208.3569
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M4a product deleted: exit 3, immutable snapshot, restored replay exit 0
+ok 59 - F-01/F-03 M4a product deleted: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1211.5436
+  type: 'test'
+  ...
+# Subtest: F-01/F-03 M4b brand deleted: exit 3, immutable snapshot, restored replay exit 0
+ok 60 - F-01/F-03 M4b brand deleted: exit 3, immutable snapshot, restored replay exit 0
+  ---
+  duration_ms: 1164.7628
+  type: 'test'
+  ...
+# Subtest: F-01 usage_count alone is derived and does not invalidate replay
+ok 61 - F-01 usage_count alone is derived and does not invalidate replay
+  ---
+  duration_ms: 748.6225
+  type: 'test'
+  ...
+# Subtest: F-05/M7 REAL_DATA with tEsT_fIxTuRe in deterministic media fails QA, preserves provenance, restores clean PASS
+ok 62 - F-05/M7 REAL_DATA with tEsT_fIxTuRe in deterministic media fails QA, preserves provenance, restores clean PASS
+  ---
+  duration_ms: 270.5037
+  type: 'test'
+  ...
+# Subtest: F-05/M7 REAL_DATA with nOt_ReAl_PrOdUcT_dAtA in deterministic media fails QA, preserves provenance, restores clean PASS
+ok 63 - F-05/M7 REAL_DATA with nOt_ReAl_PrOdUcT_dAtA in deterministic media fails QA, preserves provenance, restores clean PASS
+  ---
+  duration_ms: 261.6266
+  type: 'test'
+  ...
+1..63
+# tests 63
 # suites 0
-# pass 42
+# pass 63
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 2154.0922
+# duration_ms 19883.6941

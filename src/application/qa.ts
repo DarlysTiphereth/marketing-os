@@ -56,6 +56,10 @@ export function executeQA(input: QAInput): QAReport {
       if (Math.abs(manifest.shot_list.reduce((s, shot) => s + shot.duration_seconds, 0) - manifest.output_specs.duration_target) > 1e-9) issues.push('Shot duration mismatch');
       const text = [manifest.script, manifest.caption, manifest.cta, manifest.voiceover_text, ...manifest.on_screen_text,
         ...manifest.image_prompts, ...manifest.video_prompts, ...manifest.shot_list.map(s => s.description)].join(' ').toLocaleLowerCase();
+      if (text.includes('real_data')) issues.push('Internal data label leaked into media text');
+      if (product.data_label !== 'TEST_FIXTURE' && (text.includes('test_fixture') || text.includes('not_real_product_data'))) {
+        issues.push('Fixture placeholder leaked into non-fixture media text');
+      }
       if ([...brand.prohibited_patterns, ...product.prohibited_claims].some(p => text.includes(p.toLocaleLowerCase()))) issues.push('Prohibited brand/product pattern');
       try {
         const expected = createManifest(variant, input.matrix, product, manifest.required_assets);

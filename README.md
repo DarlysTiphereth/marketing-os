@@ -23,7 +23,7 @@ pnpm run generate -- --brand grand --product test-product --angles 3 --hooks 3 -
 pnpm run generate -- --brand safezone --product test-product --budget 5
 ```
 
-Neste ambiente o npm não está no PATH. O pnpm usado na validação fica em `C:\Users\work study\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback\pnpm.cmd`.
+No ambiente de validação, npm não estava no PATH; foi usado o pnpm fornecido pelo runtime local. Em outros ambientes, execute os comandos com pnpm disponível no PATH.
 
 Execução direta, depois de instalar:
 
@@ -33,17 +33,25 @@ node --experimental-strip-types src/cli/generate.ts --brand grand --product test
 
 Flags: `--angles 1..3`, `--hooks 1..3`, `--visuals 1..2`, `--budget >=0`, `--currency BRL|USD|EUR`, `--platform tiktok|instagram|youtube`, `--tier TEMPLATE`, `--idempotency-key`, `--root`, `--output` relativo ao root. Formato VIDEO; specs 9:16, 1080×1920, 18s, 30fps, texto/legenda, sem áudio obrigatório. Escopo máximo atual: 18 variantes/batch.
 
-Saídas: código 0 = planning ready; 1 = entrada/execução inválida; 2 = batch retido por compliance/QA. Logs JSON vão para stderr; resumo vai para stdout. `--help` exibe opções.
+Saídas da CLI Node: código 0 = planning ready; 1 = entrada/execução inválida; 2 = batch retido por compliance/QA; 3 = STALE_INPUTS. Package runners podem encapsular códigos não zero. Logs JSON vão para stderr; resumo vai para stdout. `--help` exibe opções.
 
 ## Idempotência e evidência
 
-O default da CLI deriva a chave do pedido validado. Mesma chave por marca retorna o batch completo existente, inclusive após reiniciar. Pedido diferente com a mesma chave falha com IDEMPOTENCY_CONFLICT. Para uma nova versão de dados/estratégia, use uma nova chave explícita. Repetir um pedido retorna o snapshot original: não atualiza o batch.
+O default da CLI deriva a chave do pedido validado. Mesma chave por marca retorna o batch completo existente, inclusive após reiniciar, somente se o fingerprint dos inputs atuais e o resultado determinístico de compliance corresponderem ao snapshot. A comparação de compliance ignora apenas checked_at; a provenance atual também precisa validar. Divergência retorna STALE_INPUTS (exit 3), sem retornar READY ou modificar o batch. Pedido diferente com a mesma chave falha com IDEMPOTENCY_CONFLICT.
+
+Após revisar mudanças de marca/produto/contexto/versões/compliance, use uma nova chave explícita. A representação corrigida é `faceless-2`; snapshots `faceless-1` ficam obsoletos e permanecem preservados. Uma nova chave não evita o precheck de compliance.
 
 UUIDs v5 derivam do batch e das decisões; contagem, ordem e conteúdo são determinísticos. Timestamps e correlation_id identificam a primeira execução. Aliases de decisões equivalentes são deduplicados por conteúdo + versão de template.
 
 Cada batch em `outputs/<uuid>/` contém os nove relatórios/dados solicitados, 18 manifestos para GRAND, snapshots de marca/assets/compliance/ledger e checksums em `integrity.json`. Gravação por staging + rename evita retornar batches parciais. Saídas e build são ignorados pelo Git e regeneráveis.
 
 As fontes locais são envelopes JSON de evidência, com `brand_id`, `product_id` e `facts[]`; hashes são conferidos. Claims carregam `source_ids[]`. O registry contém um template de planejamento sintético por marca, sem imagem/vídeo.
+
+`.gitattributes` fixa LF para textos versionados mesmo com core.autocrlf=true. Originais futuros cujo hash representa bytes exatos devem ficar em `sources/raw/` (-text) ou receber uma regra -text explícita antes de serem versionados. Os hashes continuam estritos; conteúdo não é normalizado silenciosamente pelo runtime.
+
+REAL_DATA permanece apenas em metadata interna. Script, caption, texto na tela, prompts e demais textos de mídia não recebem esse label; QA rejeita vazamentos. TEST_FIXTURE continua rotulado no conteúdo de demonstração.
+
+CI mínimo: `.github/workflows/foundation-v01.yml` executa build e suíte completa em windows-latest e ubuntu-latest. A matriz está preparada; a execução remota ainda está pendente, pois este repositório não tem remoto configurado.
 
 ## Revisão
 

@@ -4,7 +4,7 @@ import type { BatchArtifacts, BatchProductionRequest, BrandContext, CreativeVari
 import { uuid, hash } from '../domain/identity.ts';
 import { facts } from '../domain/product.ts';
 
-export const VERSIONS = { strategy: 'deterministic-1', dna: '1', template: 'faceless-1', prompt: '1', skill: '1' } as const;
+export const VERSIONS = { strategy: 'deterministic-1', dna: '1', template: 'faceless-2', prompt: '1', skill: '1' } as const;
 export const ZERO_COST = { strategy_cost: 0, copy_cost: 0, image_cost: 0, video_cost: 0,
   tts_cost: 0, render_cost: 0, distribution_cost: 0, total_cost: 0 } as const;
 const ANGLES = ['Apresentação documental', 'Informação confirmada', 'Leitura responsável'];
@@ -84,8 +84,8 @@ export function createManifest(variant: CreativeVariant, matrix: GenerationMatri
   const claim = facts(product)[0];
   if (!claim) throw new Error('No sourced product fact available');
   const cta = 'Consulte as informações documentadas do produto.';
-  const label = product.data_label === 'TEST_FIXTURE' ? 'TEST_FIXTURE · NOT_REAL_PRODUCT_DATA' : 'REAL_DATA';
-  const text = [label, hook.text, product.name, angle.label, claim.text, cta];
+  const text = [...(product.data_label === 'TEST_FIXTURE' ? ['TEST_FIXTURE · NOT_REAL_PRODUCT_DATA'] : []),
+    hook.text, product.name, angle.label, claim.text, cta];
   return ProductionManifestSchema.parse({
     creative_id: variant.creative_id, script: text.join('\n'),
     shot_list: [

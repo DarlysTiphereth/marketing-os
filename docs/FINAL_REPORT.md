@@ -2,7 +2,9 @@
 
 ## A. STATUS
 
-**COMPLETE no escopo v0.1.** Build aprovado; 42/42 testes passaram, incluindo os 31 casos obrigatórios. Pacote de revisão completo. A revisão independente ainda é o próximo passo, sem implementação da v0.2.
+**READY FOR CLAUDE RE-REVIEW.** Correção final F-01–F-05 aplicada em `C:\Marketing-OS`, branch `master`, no working tree, sem commit. Build, sete Skills e 63/63 testes passam localmente, incluindo 21 regressões P1. O workflow prevê quatro jobs: Node 24 em Windows/Linux/macOS e Node 22.18.0 em Linux. Execuções remotas continuam pendentes: nenhum remoto Git está configurado. A decisão de permitir CI pertence à revisão independente. O escopo continua v0.1, sem P2/OPTIONAL ou v0.2.
+
+Correções: LF/-text via `.gitattributes`, provado com commit/clone real e controle negativo; replay compara fingerprint/compliance, revalida provenance e assets (ignorando apenas usage_count derivado); inputs ausentes/alterados retornam STALE_INPUTS/exit 3, preservando a causa internamente e o snapshot. REAL_DATA fica em metadata; QA rejeita também placeholders de fixture em mídia de dados reais. Template faceless-2 invalida snapshots anteriores sem sobrescrevê-los. Evidência e notas para Claude: review/TEST_REPORT.md e review/CLAUDE_REVIEW_BRIEF.md.
 
 ## B. WHAT WORKS
 
@@ -23,14 +25,15 @@ TypeScript + Zod + node:test; monólito modular com repositories/providers subst
 
 ```text
 Marketing-OS/
-├── AGENTS.md, README.md, .env.example, .gitignore
+├── AGENTS.md, README.md, .env.example, .gitignore, .gitattributes
+├── .github/workflows/foundation-v01.yml
 ├── package.json, pnpm-lock.yaml, tsconfig.json
 ├── brands/{grand,safezone}/
 ├── products/{grand,safezone}/
 ├── src/{contracts,domain,application,creative-factory,compliance,cost,ai,observability,infrastructure,cli}/
-├── tests/{helpers.ts,domain-factory.test.ts,cost.test.ts,ai-efficiency.test.ts,integration.test.ts}
+├── tests/{helpers.ts,domain-factory.test.ts,cost.test.ts,ai-efficiency.test.ts,integration.test.ts,p1-regressions.test.ts}
 ├── skills/{product-intelligence,creative-strategy,batch-variant-generation,production-manifest,quality-control,compliance,cost-control}/SKILL.md
-├── scripts/validate-skills.mjs
+├── scripts/{validate-skills,ci-smoke,assert-fixture-eol}.mjs
 ├── docs/{PLAN.md,GRAND_DATA_NEEDED.md,FILE_TREE.txt,FINAL_REPORT.md,review/}
 └── outputs/<batch_uuid>/{reports,snapshots,integrity.json,manifests/}
 ```
@@ -39,7 +42,7 @@ Marketing-OS/
 
 Produto sintético da GRAND → fonte confirmada → compliance ALLOW → contexto mínimo → três hipóteses → três hooks por hipótese → duas execuções visuais → **18 variantes únicas** → reutilização do template → **18 manifestos** → **QA PASS 18** → custo/eficiência → READY_FOR_PRODUCTION de planejamento.
 
-Batch demonstrado: `688afbec-2ebf-5fb8-aaac-421fab0af457`. Saídas em `outputs/688afbec-2ebf-5fb8-aaac-421fab0af457/`. SafeZone retorna REVIEW e retém a geração; categoria restrita retorna BLOCK. Nenhuma mídia foi gerada/publicada.
+Batch histórico demonstrado antes da estabilização: `688afbec-2ebf-5fb8-aaac-421fab0af457`. Saídas em `outputs/688afbec-2ebf-5fb8-aaac-421fab0af457/`, preservadas. Esse snapshot faceless-1 retorna STALE_INPUTS ao tentar replay com a versão atual; uma nova chave exige novo precheck. Os testes atuais confirmam 18 variantes/manifestos com QA PASS e faceless-2. SafeZone retorna REVIEW e retém a geração; categoria restrita retorna BLOCK. Nenhuma mídia foi gerada/publicada.
 
 ## F. COST ARCHITECTURE
 
@@ -53,11 +56,11 @@ ContextBuilder seleciona campos por perfil. PromptRegistry centraliza instruçõ
 
 ## H. TEST REPORT
 
-**Total 42 / passed 42 / failed 0.** Sem testes ignorados. Quatro suítes, 31 casos obrigatórios e 11 verificações adicionais. Sete Skills estruturalmente válidas pelo validador local; ferramenta Python bundled indisponível por falta de PyYAML. Detalhes e oito gates: review/TEST_REPORT.md.
+**Total 63 / passed 63 / failed 0 / skipped 0 / cancelled 0 / todo 0.** Cinco arquivos de testes, 31 casos obrigatórios e 32 verificações adicionais; 21 estão na suíte P1. Antes da correção F-01/F-03/F-05, essa suíte reproduziu nove falhas esperadas (21 total, 12 PASS, 9 FAIL). M1–M4b confirmam exit 3, ausência de READY, snapshots idênticos byte a byte, nenhum batch parcial/duplicado e replay exit 0 após restauração. M7 confirma QA FAIL e provenance/classificação preservadas. Smoke CLI e asserção LF/hashes também passam localmente. A evidência dos quatro jobs remotos permanece pendente. Detalhes: review/TEST_REPORT.md.
 
 ## I. EFFICIENCY REPORT
 
-| Métrica da execução demonstrada | Valor |
+| Métrica da execução histórica demonstrada (antes de P1) | Valor |
 |---|---:|
 | variants_created / manifests | 18 / 18 |
 | duplicates_prevented | 0 |
@@ -99,6 +102,6 @@ Identidade/SKU/nome/categoria/variante/volume; descrição oficial; features/ben
 
 ## O. NEXT STEP
 
-**v0.1 → independent review → corrections → real GRAND product → v0.2.**
+**Próxima ação: revisão independente do Claude sobre este working tree v0.1.** CI remoto e etapas seguintes dependem dessa revisão; nenhum deles foi iniciado neste ciclo.
 
 STOP. As próximas fases não foram implementadas.

@@ -1,0 +1,170 @@
+TAP version 13
+# Subtest: P1-01 fixture source and template hashes match checkout bytes; changed evidence fails
+ok 1 - P1-01 fixture source and template hashes match checkout bytes; changed evidence fails
+  ---
+  duration_ms: 200.3197
+  type: 'test'
+  ...
+# Subtest: P1-01 Git CRLF-configured checkout preserves LF fixture hashes and exact-byte raw originals
+not ok 2 - P1-01 Git CRLF-configured checkout preserves LF fixture hashes and exact-byte raw originals
+  ---
+  duration_ms: 1605.2064
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:40:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+
+    + 'products/grand/sources/raw/original.txt: text: unspecified'
+    - 'products/grand/sources/raw/original.txt: text: unset'
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'products/grand/sources/raw/original.txt: text: unset'
+  actual: 'products/grand/sources/raw/original.txt: text: unspecified'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:74:12)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 identical replay at a later check time returns the same traceable batch
+ok 3 - P1-02 identical replay at a later check time returns the same traceable batch
+  ---
+  duration_ms: 576.2749
+  type: 'test'
+  ...
+# Subtest: P1-02 product version change rejects replay without overwriting or duplicating the batch
+not ok 4 - P1-02 product version change rejects replay without overwriting or duplicating the batch
+  ---
+  duration_ms: 600.1969
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:87:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:94:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 product content change without a version bump rejects replay
+not ok 5 - P1-02 product content change without a version bump rejects replay
+  ---
+  duration_ms: 529.1075
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:98:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:105:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 category change to BLOCK never returns READY and CLI reports stable STALE_INPUTS exit 3
+not ok 6 - P1-02 category change to BLOCK never returns READY and CLI reports stable STALE_INPUTS exit 3
+  ---
+  duration_ms: 447.2451
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:107:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:116:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 changed brand compliance profile rejects replay after reevaluating policy
+not ok 7 - P1-02 changed brand compliance profile rejects replay after reevaluating policy
+  ---
+  duration_ms: 379.0121
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:125:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:134:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 changed compliance policy is independently rejected even when input fingerprint still matches
+not ok 8 - P1-02 changed compliance policy is independently rejected even when input fingerprint still matches
+  ---
+  duration_ms: 255.9262
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:136:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:145:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-02 changed source bytes without changing declared metadata invalidate replay
+not ok 9 - P1-02 changed source bytes without changing declared metadata invalidate replay
+  ---
+  duration_ms: 535.2728
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:147:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:152:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P1-03 REAL_DATA remains metadata only; sourced real-data contract content passes QA without internal labels
+not ok 10 - P1-03 REAL_DATA remains metadata only; sourced real-data contract content passes QA without internal labels
+  ---
+  duration_ms: 296.0613
+  type: 'test'
+  location: '<TEMP_WORKSPACE>\\dist\\tests\\p1-regressions.test.js:154:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+
+      assert.ok(!/REAL_DATA|TEST_FIXTURE|NOT_REAL_PRODUCT_DATA/i.test(publicText))
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///TEMP_WORKSPACE/dist/tests/p1-regressions.test.js:197:16)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 2
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5747.2377

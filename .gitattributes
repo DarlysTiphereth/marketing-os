@@ -1,0 +1,25 @@
+# Versioned text checks out as LF even when core.autocrlf=true/core.eol=crlf.
+* text=auto eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.tap text eol=lf
+
+# Binary assets and exact-byte originals must never undergo text conversion.
+*.bin -text
+*.raw -text
+*.pdf -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+*.gif -text
+*.mp4 -text
+*.mov -text
+*.mp3 -text
+*.wav -text
+**/sources/raw/** -text
