@@ -1,0 +1,1022 @@
+{
+  "schema_version": "universal-assets-benchmark.v1",
+  "renderer_sha256": "bce884b1d09f474a22cd277d72753475073f4f6a8eba1ff4b0f6339c9ac8dd7d",
+  "elapsed_s": 60.619,
+  "tools": {
+    "node": "v24.19.0",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r"
+  },
+  "samples": [
+    {
+      "id": "a-stock",
+      "title": "A · Stock-first",
+      "output": ".mos/universal-assets/a-stock.mp4",
+      "asset_hash": "380e5ce86eeb701c241dd1e74e2ff77125e2aa55328385a688cbaa78f0c6e6e5",
+      "elapsed_s": 19.727,
+      "technical": {
+        "checks": {
+          "duration": true,
+          "frames": true,
+          "size": true,
+          "codec": true,
+          "audio": true,
+          "no_black": true,
+          "loudness": true,
+          "peak": true
+        },
+        "lufs": -18,
+        "peak": -1.3
+      },
+      "gates": {
+        "TECHNICAL_QC": {
+          "status": "PASS",
+          "notes": [
+            "Measured media checks only"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "CREATIVE_QC": {
+          "status": "PENDING",
+          "notes": [
+            "User rejected previous benchmark; explicit visual review required"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "BRAND_QC": {
+          "status": "PENDING",
+          "notes": [
+            "Official brand book and publication rights not verified"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "COMMERCE_QC": {
+          "status": "BLOCKED",
+          "notes": [
+            "No verified live offer, permission or product-use proof"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "HUMAN_APPROVAL": {
+          "status": "PENDING",
+          "notes": [
+            "No human approval has been supplied"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        }
+      },
+      "production": {
+        "status": "SCALE_SUSPENDED",
+        "reasons": [
+          "CREATIVE_QC",
+          "BRAND_QC",
+          "COMMERCE_QC",
+          "HUMAN_APPROVAL"
+        ]
+      },
+      "review_fingerprint": "9649a5ae7eb2b6967d3c0828b2d832e162ac88bafe358cace8124b94c01e448b",
+      "inputs": [
+        {
+          "id": "water",
+          "hash": "65f7a8ffa83f25bdfa97b280ddc32349fc49718f87df304da5bb5fa43218e417",
+          "source": "https://www.pexels.com/video/peaceful-water-ripple-reflections-in-sunlight-30796007/"
+        },
+        {
+          "id": "denim",
+          "hash": "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+          "source": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/"
+        },
+        {
+          "id": "packshot",
+          "hash": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "source": "urn:marketing-os:user-supplied:grand:packshot"
+        }
+      ],
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic_setting": false,
+      "generative_video": false,
+      "additional_contracted_cost_brl": 0,
+      "paid_api_calls": 0
+    },
+    {
+      "id": "b-ai",
+      "title": "B · AI-first",
+      "output": ".mos/universal-assets/b-ai.mp4",
+      "asset_hash": "aec585db00940ee8dca0216d4c76159a1ff395891e165701e9b4f65cb88cbb5e",
+      "elapsed_s": 17.627,
+      "technical": {
+        "checks": {
+          "duration": true,
+          "frames": true,
+          "size": true,
+          "codec": true,
+          "audio": true,
+          "no_black": true,
+          "loudness": true,
+          "peak": true
+        },
+        "lufs": -18,
+        "peak": -1.3
+      },
+      "gates": {
+        "TECHNICAL_QC": {
+          "status": "PASS",
+          "notes": [
+            "Measured media checks only"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "CREATIVE_QC": {
+          "status": "PENDING",
+          "notes": [
+            "User rejected previous benchmark; explicit visual review required"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "BRAND_QC": {
+          "status": "PENDING",
+          "notes": [
+            "Official brand book and publication rights not verified"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "COMMERCE_QC": {
+          "status": "BLOCKED",
+          "notes": [
+            "No verified live offer, permission or product-use proof"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "HUMAN_APPROVAL": {
+          "status": "PENDING",
+          "notes": [
+            "No human approval has been supplied"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        }
+      },
+      "production": {
+        "status": "SCALE_SUSPENDED",
+        "reasons": [
+          "CREATIVE_QC",
+          "BRAND_QC",
+          "COMMERCE_QC",
+          "HUMAN_APPROVAL"
+        ]
+      },
+      "review_fingerprint": "a4b62d8419964ee0d6856df893a83a4d4bbff4ce2194d8f83fc990bfd1066c80",
+      "inputs": [
+        {
+          "id": "packshot",
+          "hash": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "source": "urn:marketing-os:user-supplied:grand:packshot"
+        },
+        {
+          "id": "atelier",
+          "hash": "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10",
+          "source": "urn:marketing-os:generated:atelier-ai-001"
+        }
+      ],
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic_setting": true,
+      "generative_video": false,
+      "additional_contracted_cost_brl": 0,
+      "paid_api_calls": 0
+    },
+    {
+      "id": "c-hybrid",
+      "title": "C · Hybrid",
+      "output": ".mos/universal-assets/c-hybrid.mp4",
+      "asset_hash": "fb251df47ec121244439967045cb96e4560ccdba8379525e0762188261c49c6a",
+      "elapsed_s": 21.738,
+      "technical": {
+        "checks": {
+          "duration": true,
+          "frames": true,
+          "size": true,
+          "codec": true,
+          "audio": true,
+          "no_black": true,
+          "loudness": true,
+          "peak": true
+        },
+        "lufs": -18,
+        "peak": -1.3
+      },
+      "gates": {
+        "TECHNICAL_QC": {
+          "status": "PASS",
+          "notes": [
+            "Measured media checks only"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "CREATIVE_QC": {
+          "status": "PENDING",
+          "notes": [
+            "User rejected previous benchmark; explicit visual review required"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "BRAND_QC": {
+          "status": "PENDING",
+          "notes": [
+            "Official brand book and publication rights not verified"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "COMMERCE_QC": {
+          "status": "BLOCKED",
+          "notes": [
+            "No verified live offer, permission or product-use proof"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "HUMAN_APPROVAL": {
+          "status": "PENDING",
+          "notes": [
+            "No human approval has been supplied"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        }
+      },
+      "production": {
+        "status": "SCALE_SUSPENDED",
+        "reasons": [
+          "CREATIVE_QC",
+          "BRAND_QC",
+          "COMMERCE_QC",
+          "HUMAN_APPROVAL"
+        ]
+      },
+      "review_fingerprint": "9b3b0481ac208e7eb55037e21d3e7143c4c262d87f25ee7ef1f905b0bb35ad92",
+      "inputs": [
+        {
+          "id": "denim",
+          "hash": "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+          "source": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/"
+        },
+        {
+          "id": "packshot",
+          "hash": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "source": "urn:marketing-os:user-supplied:grand:packshot"
+        },
+        {
+          "id": "atelier",
+          "hash": "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10",
+          "source": "urn:marketing-os:generated:atelier-ai-001"
+        }
+      ],
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic_setting": true,
+      "generative_video": false,
+      "additional_contracted_cost_brl": 0,
+      "paid_api_calls": 0
+    }
+  ],
+  "assets": [
+    {
+      "id": "water",
+      "source_url": "https://www.pexels.com/video/peaceful-water-ripple-reflections-in-sunlight-30796007/",
+      "creator": "dumitru bumbu",
+      "license": "Pexels License",
+      "license_version": "UNVERSIONED_SOURCE_REVIEWED_2026-10-08",
+      "retrieval_date": "2026-10-08T19:25:19.716Z",
+      "allowed_use": [
+        "INTERNAL_STUDY",
+        "ADVERTISEMENT"
+      ],
+      "asset_hash": "65f7a8ffa83f25bdfa97b280ddc32349fc49718f87df304da5bb5fa43218e417",
+      "local_ref": ".mos/stock/pexels/pexels-30796007.mp4",
+      "bytes": 17114327,
+      "kind": "VIDEO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 0.75,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "GENERIC_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": null,
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "background"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "fluid",
+        "framing": "wide",
+        "lighting": "sun-reflections",
+        "camera_direction": "stable",
+        "color": "blue-neutral",
+        "perspective": "overhead",
+        "texture": "liquid",
+        "continuity": "laundry",
+        "narrative": "movement",
+        "composition": "full-frame",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": null
+    },
+    {
+      "id": "denim",
+      "source_url": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/",
+      "creator": "ArtHouse Studio",
+      "license": "Pexels License",
+      "license_version": "UNVERSIONED_SOURCE_REVIEWED_2026-10-08",
+      "retrieval_date": "2026-10-08T19:25:19.775Z",
+      "allowed_use": [
+        "INTERNAL_STUDY",
+        "ADVERTISEMENT"
+      ],
+      "asset_hash": "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+      "local_ref": ".mos/stock/pexels/pexels-6961608.mp4",
+      "bytes": 4299401,
+      "kind": "VIDEO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 0.75,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "GENERIC_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": null,
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "background"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "drift",
+        "framing": "macro",
+        "lighting": "soft-daylight",
+        "camera_direction": "stable",
+        "color": "blue-neutral",
+        "perspective": "above-textiles",
+        "texture": "cotton",
+        "continuity": "laundry",
+        "narrative": "material",
+        "composition": "full-frame",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": null
+    },
+    {
+      "id": "packshot",
+      "source_url": "urn:marketing-os:user-supplied:grand:packshot",
+      "creator": "User-supplied authentic product photograph; photographer identity not supplied",
+      "license": "USER_SUPPLIED_INTERNAL_STUDY",
+      "license_version": "USER_REQUEST_2026-10-08",
+      "retrieval_date": "2026-10-08T19:25:19.786Z",
+      "allowed_use": [
+        "INTERNAL_STUDY"
+      ],
+      "asset_hash": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+      "local_ref": "experiments/remotion/public/product-5l.png",
+      "bytes": 330913,
+      "kind": "IMAGE",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 1,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": {
+        "brand_id": "grand",
+        "product_id": "sabao-liquido-premium-5l",
+        "product_version": "f0a97d0a6224e5d1e3b07f3297cbb8e8e608c2558b0283ce21513a28b1552806"
+      },
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "identity"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "still",
+        "framing": "front",
+        "lighting": "soft-daylight",
+        "camera_direction": "stable",
+        "color": "blue-neutral",
+        "perspective": "frontal",
+        "texture": "plastic",
+        "continuity": "laundry",
+        "narrative": "identity",
+        "composition": "alpha-packshot",
+        "text_space": "none",
+        "product_compatibility": "laundry"
+      },
+      "derivation": null
+    },
+    {
+      "id": "atelier",
+      "source_url": "urn:marketing-os:generated:atelier-ai-001",
+      "creator": "OpenAI integrated image generation tool; model version not returned",
+      "license": "CODEX_INTEGRATED_IMAGE_TOOL_INTERNAL_STUDY",
+      "license_version": "SESSION_2026-10-08",
+      "retrieval_date": "2026-10-08T19:25:19.792Z",
+      "allowed_use": [
+        "INTERNAL_STUDY"
+      ],
+      "asset_hash": "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10",
+      "local_ref": ".mos/universal-assets/atelier-ai.png",
+      "bytes": 1981694,
+      "kind": "IMAGE",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 0.75,
+      "quality_score": 0.72,
+      "realism_score": 0.72,
+      "fidelity": "GENERIC_VISUAL",
+      "synthetic": true,
+      "faceless_verified": true,
+      "scope": null,
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "background"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "warm-editorial"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "still",
+        "framing": "wide",
+        "lighting": "warm-window",
+        "camera_direction": "stable",
+        "color": "ivory-blue",
+        "perspective": "eye-level",
+        "texture": "stone-cotton",
+        "continuity": "atelier",
+        "narrative": "material",
+        "composition": "off-center",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": null
+    },
+    {
+      "id": "font",
+      "source_url": "https://fontsource.org/fonts/archivo",
+      "creator": "Omnibus-Type / Archivo, installed Fontsource package",
+      "license": "SIL Open Font License",
+      "license_version": "1.1",
+      "retrieval_date": "2026-10-08T19:25:19.799Z",
+      "allowed_use": [
+        "INTERNAL_STUDY",
+        "ADVERTISEMENT"
+      ],
+      "asset_hash": "8f704806dbedeaaeca334b11ec348bc3ac3a439d6431544b3afb54f534ee4967",
+      "local_ref": "factories/static/node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2",
+      "bytes": 34928,
+      "kind": "FONT",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 0.75,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "GENERIC_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": null,
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "background"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": null,
+        "framing": null,
+        "lighting": null,
+        "camera_direction": null,
+        "color": null,
+        "perspective": null,
+        "texture": null,
+        "continuity": null,
+        "narrative": null,
+        "composition": null,
+        "text_space": null,
+        "product_compatibility": null
+      },
+      "derivation": null
+    },
+    {
+      "id": "foley",
+      "source_url": "https://opengameart.org/content/skippy-fish-water-sound-collection",
+      "creator": "jcpmcdonald",
+      "license": "CC0",
+      "license_version": "1.0",
+      "retrieval_date": "2026-10-08T19:25:19.804Z",
+      "allowed_use": [
+        "INTERNAL_STUDY",
+        "ADVERTISEMENT"
+      ],
+      "asset_hash": "9a968e9083ca7979b225838c218e59d9f4da7fa5ddbd20567cd4b45a3c8814f8",
+      "local_ref": ".mos/creative-recovery/assets/swim.wav",
+      "bytes": 333868,
+      "kind": "AUDIO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 0.75,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "GENERIC_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": null,
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 0,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "background"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": null,
+        "framing": null,
+        "lighting": null,
+        "camera_direction": null,
+        "color": null,
+        "perspective": null,
+        "texture": null,
+        "continuity": null,
+        "narrative": null,
+        "composition": null,
+        "text_space": null,
+        "product_compatibility": null
+      },
+      "derivation": null
+    },
+    {
+      "id": "a-stock-composition",
+      "source_url": "urn:marketing-os:composition:a-stock",
+      "creator": "Marketing OS deterministic renderer",
+      "license": "INTERNAL_STUDY_COMPOSITION_OF_RECORDED_SOURCES",
+      "license_version": "benchmark.v1",
+      "retrieval_date": "2026-10-08T19:25:19.786Z",
+      "allowed_use": [
+        "INTERNAL_STUDY"
+      ],
+      "asset_hash": "380e5ce86eeb701c241dd1e74e2ff77125e2aa55328385a688cbaa78f0c6e6e5",
+      "local_ref": ".mos/universal-assets/a-stock.mp4",
+      "bytes": 7511881,
+      "kind": "VIDEO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 1,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic": false,
+      "faceless_verified": true,
+      "scope": {
+        "brand_id": "grand",
+        "product_id": "sabao-liquido-premium-5l",
+        "product_version": "f0a97d0a6224e5d1e3b07f3297cbb8e8e608c2558b0283ce21513a28b1552806"
+      },
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 19.727,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "identity"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "restrained",
+        "framing": "close",
+        "lighting": "soft-daylight",
+        "camera_direction": "stable",
+        "color": "blue-neutral",
+        "perspective": "eye-level",
+        "texture": "tactile",
+        "continuity": "laundry",
+        "narrative": "material",
+        "composition": "off-center",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": {
+        "strategy": "PRODUCT_COMPOSITE",
+        "input_hashes": [
+          "65f7a8ffa83f25bdfa97b280ddc32349fc49718f87df304da5bb5fa43218e417",
+          "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+          "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "8f704806dbedeaaeca334b11ec348bc3ac3a439d6431544b3afb54f534ee4967",
+          "9a968e9083ca7979b225838c218e59d9f4da7fa5ddbd20567cd4b45a3c8814f8"
+        ]
+      }
+    },
+    {
+      "id": "b-ai-composition",
+      "source_url": "urn:marketing-os:composition:b-ai",
+      "creator": "Marketing OS deterministic renderer",
+      "license": "INTERNAL_STUDY_COMPOSITION_OF_RECORDED_SOURCES",
+      "license_version": "benchmark.v1",
+      "retrieval_date": "2026-10-08T19:25:19.786Z",
+      "allowed_use": [
+        "INTERNAL_STUDY"
+      ],
+      "asset_hash": "aec585db00940ee8dca0216d4c76159a1ff395891e165701e9b4f65cb88cbb5e",
+      "local_ref": ".mos/universal-assets/b-ai.mp4",
+      "bytes": 1977921,
+      "kind": "VIDEO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 1,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic": true,
+      "faceless_verified": true,
+      "scope": {
+        "brand_id": "grand",
+        "product_id": "sabao-liquido-premium-5l",
+        "product_version": "f0a97d0a6224e5d1e3b07f3297cbb8e8e608c2558b0283ce21513a28b1552806"
+      },
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 17.627,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "identity"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "restrained",
+        "framing": "close",
+        "lighting": "warm-window",
+        "camera_direction": "stable",
+        "color": "ivory-blue",
+        "perspective": "eye-level",
+        "texture": "tactile",
+        "continuity": "atelier",
+        "narrative": "material",
+        "composition": "off-center",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": {
+        "strategy": "PRODUCT_COMPOSITE",
+        "input_hashes": [
+          "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10",
+          "8f704806dbedeaaeca334b11ec348bc3ac3a439d6431544b3afb54f534ee4967",
+          "9a968e9083ca7979b225838c218e59d9f4da7fa5ddbd20567cd4b45a3c8814f8"
+        ]
+      }
+    },
+    {
+      "id": "c-hybrid-composition",
+      "source_url": "urn:marketing-os:composition:c-hybrid",
+      "creator": "Marketing OS deterministic renderer",
+      "license": "INTERNAL_STUDY_COMPOSITION_OF_RECORDED_SOURCES",
+      "license_version": "benchmark.v1",
+      "retrieval_date": "2026-10-08T19:25:19.786Z",
+      "allowed_use": [
+        "INTERNAL_STUDY"
+      ],
+      "asset_hash": "fb251df47ec121244439967045cb96e4560ccdba8379525e0762188261c49c6a",
+      "local_ref": ".mos/universal-assets/c-hybrid.mp4",
+      "bytes": 4511794,
+      "kind": "VIDEO",
+      "proof_ref": "universal-assets/licenses.json",
+      "proof_hash": "303171568763f2a41927e5bcd920466f1af04879206afeae38a671ebe4e0226e",
+      "rights_verified": true,
+      "redistribute_original": false,
+      "retention_until": null,
+      "product_relevance": 1,
+      "quality_score": 0.7,
+      "realism_score": 0.85,
+      "fidelity": "PRODUCT_VISUAL",
+      "synthetic": true,
+      "faceless_verified": true,
+      "scope": {
+        "brand_id": "grand",
+        "product_id": "sabao-liquido-premium-5l",
+        "product_version": "f0a97d0a6224e5d1e3b07f3297cbb8e8e608c2558b0283ce21513a28b1552806"
+      },
+      "evidence": null,
+      "approval": null,
+      "cost_brl": 0,
+      "elapsed_s": 21.738,
+      "tags": {
+        "category": [
+          "laundry"
+        ],
+        "use": [
+          "identity"
+        ],
+        "scenario": [
+          "home"
+        ],
+        "aesthetic": [
+          "tactile-stock"
+        ],
+        "audience": [
+          "household"
+        ],
+        "language": [
+          "neutral"
+        ],
+        "format": [
+          "9:16"
+        ],
+        "compatibility": [
+          "laundry"
+        ]
+      },
+      "cinema": {
+        "motion": "restrained",
+        "framing": "close",
+        "lighting": "warm-window",
+        "camera_direction": "stable",
+        "color": "ivory-blue",
+        "perspective": "eye-level",
+        "texture": "tactile",
+        "continuity": "atelier",
+        "narrative": "material",
+        "composition": "off-center",
+        "text_space": "upper-left",
+        "product_compatibility": "laundry"
+      },
+      "derivation": {
+        "strategy": "PRODUCT_COMPOSITE",
+        "input_hashes": [
+          "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+          "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+          "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10",
+          "8f704806dbedeaaeca334b11ec348bc3ac3a439d6431544b3afb54f534ee4967",
+          "9a968e9083ca7979b225838c218e59d9f4da7fa5ddbd20567cd4b45a3c8814f8"
+        ]
+      }
+    }
+  ],
+  "scope": "PRIVATE_INTERNAL_STUDIES",
+  "additional_contracted_cost_brl": 0,
+  "paid_api_calls": 0,
+  "local_gpu_used": false,
+  "generation": {
+    "tool": "Codex integrated image_gen",
+    "model_version": "NOT_RETURNED",
+    "prompt_ref": "universal-assets/generation-prompt.txt",
+    "elapsed_s": null,
+    "quota_remaining": null
+  },
+  "space_probe": {
+    "source": "https://huggingface.co/api/spaces/black-forest-labs/FLUX.1-schnell",
+    "date": "2026-10-08",
+    "runtime": "RUNNING",
+    "hardware": "zero-a10g",
+    "inference_tested": false
+  },
+  "scale": "SUSPENDED",
+  "publication": false
+}

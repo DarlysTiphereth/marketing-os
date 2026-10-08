@@ -1,0 +1,67 @@
+{
+  "schema_version": "license-research.v1",
+  "retrieved_date": "2026-10-08",
+  "record_type": "OFFICIAL_SOURCE_RESEARCH_RECORD",
+  "notice": "Research observations and provenance, not a provider-issued certificate. Historical EDL evidence remains untouched. Exact source URLs permit rechecking; these summaries are hashed separately from media.",
+  "pexels": {
+    "license": "Pexels License",
+    "license_version": "UNVERSIONED_SOURCE_REVIEWED_2026-10-08",
+    "source_url": "https://www.pexels.com/license/",
+    "api_url": "https://www.pexels.com/api/documentation/",
+    "allowed_use": ["INTERNAL_STUDY", "ADVERTISEMENT"],
+    "restrictions": ["No implied endorsement", "No stock-library redistribution", "Do not sell unaltered copies", "Respect depicted brands, people and third-party rights", "Credit creators and link Pexels in API results"],
+    "api": "Free key required; default 200/hour and 20000/month. No circumvention. Keys absent in this execution.",
+    "assets": {
+      "water": {"creator": "dumitru bumbu", "source_url": "https://www.pexels.com/video/peaceful-water-ripple-reflections-in-sunlight-30796007/"},
+      "denim": {"creator": "ArtHouse Studio", "source_url": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/"}
+    },
+    "retention": "Provider-specific contract reviewed before persistence; only selected existing clips reused internally, not a mirrored stock catalog. Local registry requires explicit retention expiry when applicable."
+  },
+  "pixabay": {
+    "license": "Pixabay Content License",
+    "license_version": "UNVERSIONED_SOURCE_REVIEWED_2026-10-08",
+    "source_url": "https://pixabay.com/service/license-summary/",
+    "api_url": "https://pixabay.com/api/docs/",
+    "restrictions": ["No standalone redistribution", "Additional rights may apply to recognizable people, logos and brands", "24-hour API search cache required", "API is for human requests; no mass automated queries or systematic downloads", "No permanent image hotlinking"],
+    "api": "Free key required; default 100 requests/60 seconds. Adapter limited to single human queries and 10/hour/process; no live request performed because key absent."
+  },
+  "mixkit": {
+    "source_url": "https://mixkit.co/terms/",
+    "license_url": "https://mixkit.co/license/",
+    "status": "NOT_SUPPORTED",
+    "reason": "No official public API verified; terms prohibit mass-download scripts/bots. Free and Restricted video licenses differ. Only authorized user-supplied downloads with item-specific proof may be imported."
+  },
+  "internal_packshot": {
+    "license": "USER_SUPPLIED_INTERNAL_STUDY",
+    "license_version": "USER_REQUEST_2026-10-08",
+    "source_url": "urn:marketing-os:user-supplied:grand:packshot",
+    "creator": "User-supplied authentic product photograph; photographer identity not supplied",
+    "allowed_use": ["INTERNAL_STUDY"],
+    "restrictions": ["No public original redistribution", "Publication rights not yet verified", "Preserve original product pixels, label and aspect ratio"]
+  },
+  "font": {
+    "license": "SIL Open Font License",
+    "license_version": "1.1",
+    "source_url": "https://fontsource.org/fonts/archivo",
+    "creator": "Omnibus-Type / Archivo, installed Fontsource package",
+    "allowed_use": ["INTERNAL_STUDY", "ADVERTISEMENT"],
+    "restrictions": ["Keep font license and notices; standalone sale forbidden; reserved names apply"]
+  },
+  "foley": {
+    "license": "CC0",
+    "license_version": "1.0",
+    "source_url": "https://opengameart.org/content/skippy-fish-water-sound-collection",
+    "creator": "jcpmcdonald",
+    "allowed_use": ["INTERNAL_STUDY", "ADVERTISEMENT"],
+    "restrictions": ["Water Foley is edited sound, not synchronous recording of GRAND use"]
+  },
+  "generated_background": {
+    "license": "CODEX_INTEGRATED_IMAGE_TOOL_INTERNAL_STUDY",
+    "license_version": "SESSION_2026-10-08",
+    "source_url": "urn:marketing-os:generated:atelier-ai-001",
+    "creator": "OpenAI integrated image generation tool; model version not returned",
+    "allowed_use": ["INTERNAL_STUDY"],
+    "restrictions": ["Synthetic generic setting, never efficacy evidence", "Commercial release requires rights and brand review", "No additional service purchased; subscription and quota accounting not exposed by tool"],
+    "asset_hash": "f30a1d29189c01b5afe5722d7a328ac7d6792e3948d0e23271d94f1762273f10"
+  }
+}
