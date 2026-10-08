@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
-import {AffiliateOffer, CommerceAccount, CommerceListing, CreativeCampaign, CreativeVariant, Product,
+import {z} from 'zod';
+import {Id, AffiliateOffer, CommerceAccount, CommerceListing, CreativeCampaign, CreativeVariant, Product,
   type AccountT, type CampaignT, type ListingT, type OfferT, type ProductT, type VariantT} from './contracts.ts';
 
 export function fingerprint(value: unknown): string {
@@ -52,8 +53,13 @@ export function planCampaign(raw: Inputs): VariantT[] {
   };
   const hooks = translations[c.language];
   if (!hooks) throw new Error('LANGUAGE_NOT_SUPPORTED');
-  const disclosure = c.evidence === 'MOCK' ? 'MOCK · Produto fictício · Sem oferta real'
-    : c.commerce_type === 'AFFILIATE' ? 'Publicidade · Link de afiliado' : 'Publicidade';
+  const disclosures: Record<string, {mock: string; affiliate: string; seller: string}> = {
+    'pt-BR': {mock: 'MOCK · Produto fictício · Sem oferta real', affiliate: 'Publicidade · Link de afiliado', seller: 'Publicidade'},
+    'en-US': {mock: 'MOCK · Fictional product · No real offer', affiliate: 'Advertisement · Affiliate link', seller: 'Advertisement'},
+    es: {mock: 'MOCK · Producto ficticio · Sin oferta real', affiliate: 'Publicidad · Enlace de afiliado', seller: 'Publicidad'},
+  };
+  const labels = disclosures[c.language]!;
+  const disclosure = c.evidence === 'MOCK' ? labels.mock : c.commerce_type === 'AFFILIATE' ? labels.affiliate : labels.seller;
   const factual = claims.map(x => x.text).join(' · ');
   return (['discovery', 'features', 'catalog'] as const).map((format, k) => CreativeVariant.parse({
     campaign_id: c.campaign_id, creative_id: `${c.campaign_id}-${format}`, format,
@@ -62,11 +68,15 @@ export function planCampaign(raw: Inputs): VariantT[] {
     duration_s: 18, faceless: true, commercial_disclosure: disclosure,
   }));
 }
-export type Governance = {human_approved_fingerprint: string | null; qc_pass: boolean;
-  category_status: 'ALLOWED' | 'UNKNOWN' | 'BLOCKED'; commercial_policy_verified: boolean;
-  ai_disclosure_required: boolean | null; ai_disclosure_present: boolean;
-  publication_limit_remaining: number | null; api_authorized: boolean};
+export const GovernanceSchema = z.object({human_approved_fingerprint: z.string().regex(/^[a-f0-9]{64}$/).nullable(),
+  qc_pass: z.boolean(), category_status: z.enum(['ALLOWED', 'UNKNOWN', 'BLOCKED']), commercial_policy_verified: z.boolean(),
+  ai_disclosure_required: z.boolean().nullable(), ai_disclosure_present: z.boolean(),
+  publication_limit_remaining: z.number().int().nonnegative().safe().nullable(), api_authorized: z.boolean(),
+  publication_assets: z.array(z.object({creative_id: Id, kind: z.enum(['VIDEO', 'STATIC_AD']),
+    sha256: z.string().regex(/^[a-f0-9]{64}$/)}).strict()).max(100)}).strict();
+export type Governance = z.infer<typeof GovernanceSchema>;
 export function publishingDecision(raw: Inputs, variants: VariantT[], g: Governance, now: string) {
+  g = GovernanceSchema.parse(g);
   const i = validateInputs(raw);
   const {account: a, product: p, listing: l, offer: o} = i;
   const parsed = variants.map(v => CreativeVariant.parse(v));
@@ -77,8 +87,14 @@ export function publishingDecision(raw: Inputs, variants: VariantT[], g: Governa
     // This bounded first increment permits only deterministic sourced copy, not arbitrary generated claims.
     if (!expected || fingerprint(v) !== fingerprint(expected)) throw new Error('UNSOURCED_CREATIVE');
   }
+  const variantIds = new Set(parsed.map(v => v.creative_id));
+  if (g.publication_assets.some(a => !variantIds.has(a.creative_id))) throw new Error('PUBLICATION_ASSET_ISOLATION');
+  if (new Set(g.publication_assets.map(a => `${a.creative_id}:${a.kind}`)).size !== g.publication_assets.length)
+    throw new Error('DUPLICATE_PUBLICATION_ASSET');
   const input_fingerprint = fingerprint({inputs: i, variants: parsed, governance: {...g, human_approved_fingerprint: null}});
   const reasons: string[] = [];
+  if (parsed.some(v => ['VIDEO', 'STATIC_AD'].some(kind => !g.publication_assets.some(a => a.creative_id === v.creative_id && a.kind === kind))))
+    reasons.push('PUBLICATION_ASSETS_MISSING');
   if (a.promotion_permission !== 'AUTHORIZED' || l.promotion_permission !== 'AUTHORIZED' || (o && o.promotion_permission !== 'AUTHORIZED')) reasons.push('PROMOTION_PERMISSION');
   if (a.eligibility_status !== 'ELIGIBLE' || l.eligibility_status !== 'ELIGIBLE' || (o && o.eligibility_status !== 'ELIGIBLE')) reasons.push('ELIGIBILITY');
   if (l.product_price === null || l.stock_status !== 'AVAILABLE') reasons.push('PRICE_OR_STOCK_UNKNOWN');
@@ -96,7 +112,15 @@ export function publishingDecision(raw: Inputs, variants: VariantT[], g: Governa
 }
 export function rankOffers(raw: Inputs[], now: string) {
   if (!Number.isFinite(Date.parse(now))) throw new Error('INVALID_CLOCK');
-  return raw.map(validateInputs).filter(i => i.account.commerce_type === 'AFFILIATE' && i.offer
+  const inputs = raw.map(validateInputs);
+  const scope = (i: Inputs) => ({account_id: i.account.account_id, affiliate_id: i.campaign.affiliate_id,
+    brand_id: i.product.brand_id, market_id: i.campaign.market_id, shop_id: i.listing.shop_id,
+    seller_id: i.listing.seller_id, platform_id: i.campaign.platform_id, currency: i.campaign.currency,
+    language: i.campaign.language, evidence: i.campaign.evidence});
+  if (inputs.some(i => i.account.commerce_type !== 'AFFILIATE')
+    || (inputs[0] && inputs.some(i => fingerprint(scope(i)) !== fingerprint(scope(inputs[0]!)))))
+    throw new Error('OFFER_RANKING_SCOPE_MISMATCH');
+  return inputs.filter(i => i.offer
     && i.account.promotion_permission === 'AUTHORIZED' && i.account.eligibility_status === 'ELIGIBLE'
     && i.offer.promotion_permission === 'AUTHORIZED' && i.offer.eligibility_status === 'ELIGIBLE'
     && i.listing.promotion_permission === 'AUTHORIZED' && i.listing.eligibility_status === 'ELIGIBLE'
@@ -106,9 +130,10 @@ export function rankOffers(raw: Inputs[], now: string) {
       const parts = {commission: o.commission.commission_rate / 10000, quality: o.quality, reputation: o.reputation,
         editorial_fit: o.editorial_fit, demonstrability: o.demonstrability, return_safety: o.return_risk === null ? null : 1 - o.return_risk};
       const known = Object.values(parts).filter((x): x is number => x !== null);
-      return {offer_id: o.offer_id, evidence: o.evidence, currency: o.currency, product_price: i.listing.product_price,
+      return {...scope(i), campaign_id: i.campaign.campaign_id, product_id: i.product.product_id,
+        listing_id: i.listing.listing_id, offer_id: o.offer_id, product_price: i.listing.product_price,
         estimated_commission: commission(i.listing.product_price!, o.commission.commission_rate),
-        score: known.reduce((n, x) => n + x, 0) / Object.keys(parts).length,
+        score: known.reduce((n, x) => n + x, 0) / known.length, data_completeness: known.length / Object.keys(parts).length,
         score_parts: parts, unknown: Object.entries(parts).filter(([, x]) => x === null).map(([k]) => k)};
     }).sort((a, b) => b.score - a.score || a.offer_id.localeCompare(b.offer_id));
 }

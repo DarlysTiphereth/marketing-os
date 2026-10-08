@@ -16,10 +16,14 @@ const Context = {...Scope, account_id: Id, commerce_type: z.enum(['SELLER', 'AFF
 export const Claim = z.object({claim_id: Id, text: Text, source_ref: Text, approved: z.boolean(), language: Scope.language}).strict();
 export const Brand = z.object({brand_id: Id, name: Text, evidence: Evidence}).strict();
 export const Product = z.object({product_id: Id, brand_id: Id, name: Text, category: Id,
-  version: Id, evidence: Evidence, claims: z.array(Claim).min(1),
+  version: Id, evidence: Evidence, fixture_labels: z.tuple([z.literal('TEST_FIXTURE'), z.literal('NOT_REAL_PRODUCT_DATA')]).nullable(),
+  claims: z.array(Claim).min(1),
   assets: z.array(z.object({asset_id: Id, sha256: z.string().regex(/^[a-f0-9]{64}$/),
     license_status: z.enum(['OWNED', 'LICENSED', 'UNKNOWN']), source_ref: Text}).strict()).min(1),
-}).strict();
+}).strict().superRefine((p, ctx) => {
+  if (p.evidence === 'MOCK' ? p.fixture_labels === null : p.fixture_labels !== null)
+    ctx.addIssue({code: 'custom', message: 'FIXTURE_CLASSIFICATION'});
+});
 const Account = {account_id: Id, market_id: Id, platform_id: Scope.platform_id,
   evidence: Evidence, eligibility_status: Eligibility, promotion_permission: Permission};
 export const SellerAccount = z.object({...Account, commerce_type: z.literal('SELLER'), seller_id: Id, brand_id: Id}).strict();

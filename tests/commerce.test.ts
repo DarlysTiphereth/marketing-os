@@ -10,7 +10,7 @@ import {dashboardHtml, performanceReport} from '../src/commerce/performance.ts';
 const hash = 'a'.repeat(64);
 const now = '2026-10-08T12:00:00Z';
 const mock = () => affiliatePilot(hash);
-const seller = () => sellerPilot(Product.parse({...mock().product, evidence: 'REAL_DATA', brand_id: 'grand', product_id: 'real-product',
+const seller = () => sellerPilot(Product.parse({...mock().product, evidence: 'REAL_DATA', fixture_labels: null, brand_id: 'grand', product_id: 'real-product',
   name: 'Produto aprovado', claims: [{claim_id: 'name', text: 'Produto aprovado', source_ref: 'Approved product source', approved: true, language: 'pt-BR'}]}));
 const order = (mode: 'SELLER' | 'AFFILIATE' = 'AFFILIATE'): OrderT => {
   const c = (mode === 'SELLER' ? seller() : mock()).campaign;
@@ -84,6 +84,10 @@ test('commerce: unapproved or unavailable translations cannot generate', () => {
   assert.throws(() => planCampaign(en), /NO_APPROVED_LOCALIZED/);
   en.product.claims = [{claim_id: 'translated', text: 'Fictional cloth', source_ref: 'Approved mock translation', approved: true, language: 'en-US'}];
   assert.match(planCampaign(en)[0]!.script, /Discover/);
+  assert.match(planCampaign(en)[0]!.caption, /Fictional product/);
+  en.campaign.language = en.listing.language = en.offer!.language = 'es';
+  en.product.claims = [{claim_id: 'translated', text: 'Paño ficticio', source_ref: 'Approved mock translation', approved: true, language: 'es'}];
+  assert.match(planCampaign(en)[0]!.caption, /Producto ficticio/);
 });
 test('commerce: revoked, expired, unknown stock and unavailable offers are excluded', () => {
   assert.equal(rankOffers([mock()], now).length, 1);
@@ -95,9 +99,43 @@ test('commerce: revoked, expired, unknown stock and unavailable offers are exclu
   const r = rankOffers([mock()], now)[0]!; assert.equal(r.estimated_commission, 300);
   assert.deepEqual(r.unknown, ['quality', 'reputation', 'return_safety']); assert.equal(r.evidence, 'MOCK');
 });
+test('commerce: independent-review P1 ranking rejects mixed caller scopes and retains ownership', () => {
+  const changes = [
+    (i: ReturnType<typeof mock>) => {i.account.account_id = i.campaign.account_id = 'other'; if (i.account.commerce_type === 'AFFILIATE') i.account.affiliate_id = 'other'; i.campaign.affiliate_id = i.offer!.affiliate_id = 'other';},
+    (i: ReturnType<typeof mock>) => {i.product.brand_id = i.campaign.brand_id = i.listing.brand_id = i.offer!.brand_id = 'other';},
+    (i: ReturnType<typeof mock>) => {i.account.market_id = i.campaign.market_id = i.listing.market_id = i.offer!.market_id = 'us';},
+    (i: ReturnType<typeof mock>) => {i.campaign.shop_id = i.listing.shop_id = i.offer!.shop_id = 'other';},
+    (i: ReturnType<typeof mock>) => {i.campaign.currency = i.listing.currency = i.offer!.currency = i.offer!.commission.currency = 'USD';},
+    (i: ReturnType<typeof mock>) => {i.campaign.language = i.listing.language = i.offer!.language = 'en-US';},
+    (i: ReturnType<typeof mock>) => {i.account.platform_id = i.campaign.platform_id = i.listing.platform_id = i.offer!.platform_id = 'instagram';},
+  ];
+  for (const change of changes) {const i = mock(); change(i); assert.ok(validateInputs(i)); assert.throws(() => rankOffers([mock(), i], now), /OFFER_RANKING_SCOPE_MISMATCH/);}
+  const row = rankOffers([mock()], now)[0]!;
+  assert.equal(row.account_id, 'mock-affiliate'); assert.equal(row.affiliate_id, 'mock-affiliate');
+  assert.equal(row.brand_id, 'mock-home'); assert.equal(row.market_id, 'br'); assert.equal(row.shop_id, 'mock-shop');
+});
+test('commerce: independent-review P1 mock fixtures require exact metadata markers, never real data', () => {
+  assert.deepEqual(mock().product.fixture_labels, ['TEST_FIXTURE', 'NOT_REAL_PRODUCT_DATA']);
+  const {fixture_labels: _labels, ...unmarked} = mock().product;
+  assert.throws(() => Product.parse(unmarked));
+  assert.throws(() => Product.parse({...mock().product, fixture_labels: null}));
+  assert.throws(() => Product.parse({...seller().product, fixture_labels: ['TEST_FIXTURE', 'NOT_REAL_PRODUCT_DATA']}));
+  assert.equal(seller().product.fixture_labels, null);
+});
+test('commerce: independent-review scoring keeps unknown data separate from measured score', () => {
+  const row = rankOffers([mock()], now)[0]!;
+  assert.ok(Math.abs(row.score - (0.1 + 0.8 + 0.7) / 3) < 1e-10);
+  assert.equal(row.data_completeness, 0.5); assert.equal(row.score_parts.quality, null);
+});
 test('commerce: publication cannot infer account permission, price, policy or human approval', () => {
   const result = publishingDecision(seller(), planCampaign(seller()), REVIEW_REQUIRED, now);
   for (const reason of ['PROMOTION_PERMISSION', 'ELIGIBILITY', 'PRICE_OR_STOCK_UNKNOWN', 'CATEGORY_REVIEW', 'QC', 'HUMAN_APPROVAL', 'API_NOT_AUTHORIZED']) assert.ok(result.reasons.includes(reason));
+});
+test('commerce: runtime governance rejects truthy strings, invalid counters and unexpected authorization fields', () => {
+  for (const g of [{...REVIEW_REQUIRED, qc_pass: 'false'}, {...REVIEW_REQUIRED, api_authorized: 'no'},
+    {...REVIEW_REQUIRED, publication_limit_remaining: -1}, {...REVIEW_REQUIRED, bypass: true}]) {
+    assert.throws(() => publishingDecision(mock(), planCampaign(mock()), g as unknown as typeof REVIEW_REQUIRED, now));
+  }
 });
 test('commerce: copy injection or variant from another campaign cannot pass governance', () => {
   const vs = planCampaign(mock()); vs[0]!.script = 'Guaranteed results';
@@ -109,7 +147,8 @@ test('commerce: identical approvals are stable; product, policy and variants inv
   i.product.assets.forEach(a => {a.license_status = 'OWNED';});
   i.account.promotion_permission = i.listing.promotion_permission = 'AUTHORIZED'; i.listing.product_price = 3000; i.listing.stock_status = 'AVAILABLE';
   const g = {...REVIEW_REQUIRED, category_status: 'ALLOWED' as const, commercial_policy_verified: true,
-    ai_disclosure_required: false, publication_limit_remaining: 1, api_authorized: true, qc_pass: true};
+    ai_disclosure_required: false, publication_limit_remaining: 1, api_authorized: true, qc_pass: true,
+    publication_assets: planCampaign(i).flatMap(v => (['VIDEO', 'STATIC_AD'] as const).map(kind => ({creative_id: v.creative_id, kind, sha256: hash})))};
   const vs = planCampaign(i); const approved = publishingDecision(i, vs, g, now).input_fingerprint;
   const signed = {...g, human_approved_fingerprint: approved};
   assert.equal(publishingDecision(i, vs, signed, now).status, 'PREPARED');
@@ -120,6 +159,20 @@ test('commerce: identical approvals are stable; product, policy and variants inv
 test('commerce: mock never grants real publication, even with simulated authorization', () => {
   assert.ok(publishingDecision(mock(), planCampaign(mock()), {...REVIEW_REQUIRED, api_authorized: true}, now).reasons.includes('MOCK_NEVER_REAL_PUBLICATION'));
   assert.throws(() => new MockCommerceAdapter(seller()), /REJECTS_REAL_DATA/);
+});
+test('commerce: independent-review approval binds exact video/static hashes and refuses missing or crossed assets', () => {
+  const i = seller(), vs = [planCampaign(i)[0]!];
+  const g = {...REVIEW_REQUIRED, qc_pass: true, publication_assets: [
+    {creative_id: vs[0]!.creative_id, kind: 'VIDEO' as const, sha256: hash},
+    {creative_id: vs[0]!.creative_id, kind: 'STATIC_AD' as const, sha256: hash}]};
+  const signed = {...g, human_approved_fingerprint: publishingDecision(i, vs, g, now).input_fingerprint};
+  assert.ok(!publishingDecision(i, vs, signed, now).reasons.includes('HUMAN_APPROVAL'));
+  for (const index of [0, 1]) {
+    const changed = structuredClone(signed); changed.publication_assets[index]!.sha256 = 'b'.repeat(64);
+    assert.ok(publishingDecision(i, vs, changed, now).reasons.includes('HUMAN_APPROVAL'));
+  }
+  assert.ok(publishingDecision(i, vs, {...signed, publication_assets: []}, now).reasons.includes('PUBLICATION_ASSETS_MISSING'));
+  assert.throws(() => publishingDecision(i, vs, {...signed, publication_assets: [{creative_id: 'other', kind: 'VIDEO', sha256: hash}]}, now), /ASSET_ISOLATION/);
 });
 test('commerce: every live adapter method explicitly unavailable; no network capability', () => {
   const a = new UnsupportedPlatformAdapter(), vs = planCampaign(seller());

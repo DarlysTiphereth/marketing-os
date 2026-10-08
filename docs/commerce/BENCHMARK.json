@@ -1,12 +1,12 @@
 {
   "schema_version": "commerce-benchmark.v1",
-  "elapsed_s": 31.606,
+  "elapsed_s": 37.835,
   "pilots": [
     {
       "campaign_id": "grand-commerce-pilot",
       "commerce_type": "SELLER",
       "evidence": "REAL_DATA",
-      "directory": ".mos/commerce/grand-commerce-pilot-65a74afd5f8c",
+      "directory": ".mos/commerce/grand-commerce-pilot-a5942ee92319",
       "scripts": 3,
       "video_sha256": "8d5bd02dbc5eb5a4cdf40d5ea2df7bca2153f3a9bdd6e523558492a68c6ba8e6",
       "video_bytes": 2379998,
@@ -25,7 +25,7 @@
       "campaign_id": "mock-affiliate-pilot",
       "commerce_type": "AFFILIATE",
       "evidence": "MOCK",
-      "directory": ".mos/commerce/mock-affiliate-pilot-a147d154e7a9",
+      "directory": ".mos/commerce/mock-affiliate-pilot-1f94bc0f3113",
       "scripts": 3,
       "video_sha256": "684db26e3a23998676f3e1f6ce9c08dd637c410aa2c1ee342b005c273c29b0bd",
       "video_bytes": 2477896,

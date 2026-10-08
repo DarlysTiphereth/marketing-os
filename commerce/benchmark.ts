@@ -13,7 +13,7 @@ import {openChrome, renderPiece, qcPiece} from '../factories/static/src/render.t
 import {TOOLS, run, sha256, sha256File, writeJson} from '../experiments/remotion/pipeline/lib.ts';
 import {buildAudio} from '../experiments/remotion/pipeline/audio.ts';
 import {technicalQc} from '../experiments/remotion/pipeline/qc.ts';
-import type {Timeline, TimedScene} from '../experiments/remotion/src/schema.ts';
+import type {Timeline} from '../experiments/remotion/src/schema.ts';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUTPUT = path.join(REPO, '.mos/commerce');
@@ -25,7 +25,7 @@ writeFileSync(mockAsset, ownedSvg);
 const real = loadProduct('grand', 'sabao-liquido-premium-5l');
 const packshot = resolveAsset(real, 'packshot'); // existing loader verifies bytes before rendering
 const grand = Product.parse({brand_id: real.brand_id, product_id: real.product_id, name: real.name,
-  category: 'laundry-saneante', version: 'approved-source-v1', evidence: 'REAL_DATA',
+  category: 'laundry-saneante', version: 'approved-source-v1', evidence: 'REAL_DATA', fixture_labels: null,
   claims: real.claims.filter(c => c.approval === 'USER_APPROVED').map(c => ({claim_id: c.claim_id, text: c.text,
     source_ref: c.source_ref, approved: true, language: 'pt-BR'})),
   assets: [{asset_id: 'packshot', sha256: sha256File(packshot), license_status: 'UNKNOWN',
@@ -109,10 +109,25 @@ try {
         '-map', '[v]', '-an', '-t', '6', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-threads', '2', segment]);
       segments.push(segment);
     }
-    const timeline = {duration: 18, fps: 30, scenes: story.map((s, i) => ({scene_id: `scene-${i}`, start: s.start_s,
-      duration: 6, slot: ['hook', 'benefits', 'cta'][i], vo_start: s.start_s, vo_duration: 0, words: [], beats: [0, 3],
-      sfx: ['pop'], on_screen_text: [s.on_screen_text]} as TimedScene))} as Timeline;
-    const audio = buildAudio(timeline, story.map(() => ({wav48: null})) as never, {bpm: 104, seed: 800 + pilotIndex, workDir: dir});
+    const timeline: Timeline = {variant_id: selected.creative_id, creative_id: selected.creative_id,
+      selection: {hook: 'discovery', body: 'catalog', cta: 'details', style: 'blue', voice: 'none', music: 'procedural', pacing: 'standard', captions: 'off'},
+      style: {style_id: 'blue', palette: {bg0: '#04124a', bg1: '#0a3fc2', accent: '#e0ad45', ink: '#071237', paper: '#ffffff', danger: '#cc3333'},
+        font_display: 'Archivo', font_body: 'Archivo', palette_status: pilotIndex ? 'DESIGN_CHOICE' : 'DERIVED_FROM_APPROVED_ASSET'},
+      width: 1080, height: 1920, duration: 18, fps: 30, assets: {packshot: path.basename(asset)},
+      display: {brand_name: inputs.product.brand_id, brand_tagline: '', product_title: inputs.product.name, product_subtitle: ''},
+      scenes: story.map((s, i) => ({scene_id: `scene-${i}`, start: s.start_s, duration: 6,
+        slot: (['hook', 'benefits', 'cta'] as const)[i]!, min_duration_s: 6, purpose: 'Sourced catalog copy with illustrative stock',
+        voiceover: '', visual_type: 'stock_footage', visual_prompt: 'Existing licensed stock inset; not efficacy proof',
+        camera: 'crop', motion: 'source footage', transition: 'cut', music_direction: 'procedural bed',
+        asset_source: 'stock', generation_model: 'NONE', estimated_cost_usd: 0, claim_refs: selected.claim_refs,
+        layout: {component: 'commerce-html-stock', params: {stock_x: 565, stock_y: 620}},
+        vo_start: s.start_s, vo_duration: 0, words: [], beats: [0, 3], sfx: ['pop'],
+        on_screen_text: [s.on_screen_text, i === 1 ? 'Detalhes do catálogo' : facts,
+          selected.commercial_disclosure, 'Cenas ilustrativas · Sem depoimento']}))};
+    writeJson(path.join(dir, 'timeline.json'), timeline);
+    const silentLines = story.map(() => ({wav48: '', cache_key: 'none', cached: true, seconds: 0, speech_start: 0,
+      speech_end: 0, words: [], voice: 'none', provider: 'none', source_rate_hz: 0}));
+    const audio = buildAudio(timeline, silentLines, {bpm: 104, seed: 800 + pilotIndex, workDir: dir});
     const concat = path.join(dir, 'segments.txt');
     // Fixed managed filenames, quoted for ffmpeg's concat demuxer; paths are relative to this list.
     writeFileSync(concat, segments.map((_, k) => `file 'segment-${k}.mp4'`).join('\n') + '\n');
@@ -128,8 +143,10 @@ try {
     writeJson(path.join(dir, 'qc.json'), {technical: videoQc, static: staticQc, visual_review: 'HUMAN_REVIEW_REQUIRED', efficacy_proof: 'NONE'});
     if (videoQc.verdict !== 'PASS') throw new Error(`VIDEO_QC: ${JSON.stringify(videoQc.checks.filter(x => x.status === 'FAIL'))}`);
     run(TOOLS.ffmpeg, ['-v', 'error', '-y', '-i', mp4, '-vf', 'fps=1/3,scale=270:480,tile=3x2', '-frames:v', '1', path.join(dir, 'contact-sheet.jpg')]);
-    const governance = {...REVIEW_REQUIRED, qc_pass: true};
-    const decision = publishingDecision(inputs, variants, governance, new Date().toISOString());
+    const governance = {...REVIEW_REQUIRED, qc_pass: true, publication_assets: [
+      {creative_id: selected.creative_id, kind: 'VIDEO' as const, sha256: sha256File(mp4)},
+      {creative_id: selected.creative_id, kind: 'STATIC_AD' as const, sha256: sha256File(staticResult.png)}]};
+    const decision = publishingDecision(inputs, [selected], governance, new Date().toISOString());
     const media = ShoppableVideo.parse({creative_id: selected.creative_id, campaign_id: c.campaign_id, listing_id: c.listing_id,
       sha256: sha256File(mp4), width: 1080, height: 1920, duration_s: Number(videoQc.ffprobe.format.duration), qc_status: 'PASS',
       attachment_status: 'NOT_SUPPORTED', evidence: c.evidence});
@@ -138,7 +155,8 @@ try {
       currency: c.currency, evidence: c.evidence, publication_id: `${c.campaign_id}-preview`, campaign_id: c.campaign_id,
       creative_id: selected.creative_id, status: decision.status, human_approved: false, reasons: decision.reasons, input_fingerprint: decision.input_fingerprint});
     const adapter = c.evidence === 'MOCK' ? new MockCommerceAdapter(inputs) : new UnsupportedPlatformAdapter();
-    writeJson(path.join(dir, 'tiktok-shop-package.json'), {publication, media, caption: selected.caption,
+    writeJson(path.join(dir, 'tiktok-shop-package.json'), {publication, media, fixture_labels: inputs.product.fixture_labels,
+      approved_asset_candidates: governance.publication_assets, caption: selected.caption,
       static_asset: {file: 'static-ad.png', sha256: sha256File(staticResult.png)},
       api: adapter.prepareShoppableAsset(variants), offer_ranking: c.commerce_type === 'AFFILIATE' ? rankOffers([inputs], new Date().toISOString()) : [],
       attachment: 'NOT_SUPPORTED: manual human-reviewed preparation only; no Shop link or actual listing exists',

@@ -41,7 +41,7 @@ export class MockCommerceAdapter implements CommercePlatformAdapter {
   prepareShoppableAsset(variants: VariantT[]) {
     const result = publishingDecision(this.inputs, variants, {human_approved_fingerprint: null, qc_pass: false,
       category_status: 'UNKNOWN', commercial_policy_verified: false, ai_disclosure_required: null,
-      ai_disclosure_present: false, publication_limit_remaining: null, api_authorized: false}, new Date().toISOString());
+      ai_disclosure_present: false, publication_limit_remaining: null, api_authorized: false, publication_assets: []}, new Date().toISOString());
     return this.result({listing_id: this.inputs.listing.listing_id, creative_ids: variants.map(v => v.creative_id), ...result});
   }
   checkPublishingEligibility(variants: VariantT[], g: Governance, now: string) {
