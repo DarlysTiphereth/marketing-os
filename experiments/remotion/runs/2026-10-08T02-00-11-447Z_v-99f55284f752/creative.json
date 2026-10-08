@@ -1,0 +1,408 @@
+{
+  "schema_version": "creative.v1",
+  "template": "experiments/remotion/creatives/fixture.creative.json",
+  "template_sha256": "5889af5b0967d8c939e80a0baa986ac0da282e4c2745ef9f8dac9da7842a47fa",
+  "variant_id": "v-99f55284f752",
+  "selection": {
+    "hook": "hook-a2",
+    "body": "body-1",
+    "cta": "cta-a",
+    "style": "fixture-grey",
+    "voice": "none",
+    "music": "pulse-116",
+    "pacing": "standard",
+    "captions": "off"
+  },
+  "objective": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA — renderer resource benchmark (local vs remote). Not marketing content.",
+  "audience": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA",
+  "platforms": [
+    "instagram_reels"
+  ],
+  "awareness_level": "problem_aware",
+  "angle": {
+    "angle_id": "angle-fixture",
+    "text": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA"
+  },
+  "promise": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA",
+  "problem": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA",
+  "mechanism": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA",
+  "proof": {
+    "status": "NONE_AVAILABLE",
+    "items": [],
+    "note": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA"
+  },
+  "benefits": [
+    "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA"
+  ],
+  "objections": [],
+  "claims_used": [
+    {
+      "claim_id": "c-fixture",
+      "text": "TEST_FIXTURE",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "TEST_FIXTURE / NOT_REAL_PRODUCT_DATA",
+      "approval": "USER_APPROVED"
+    }
+  ],
+  "style": {
+    "style_id": "fixture-grey",
+    "palette": {
+      "bg0": "#1d2230",
+      "bg1": "#4a5468",
+      "accent": "#e0b347",
+      "ink": "#ffffff",
+      "paper": "#eef0f4",
+      "danger": "#e05a4f"
+    },
+    "font_display": "Archivo",
+    "font_body": "Archivo",
+    "palette_status": "TEST_FIXTURE"
+  },
+  "voice": {
+    "voice_id": "none",
+    "provider": "none",
+    "voice_name": "none",
+    "rate_pct": 0
+  },
+  "music": {
+    "music_id": "pulse-116",
+    "provider": "procedural-local",
+    "bpm": 116,
+    "mood": "bright, punchy, minor-to-major lift",
+    "seed": 1729
+  },
+  "scenes": [
+    {
+      "scene_id": "hook-a2",
+      "slot": "hook",
+      "min_duration_s": 2.4,
+      "purpose": "TEST_FIXTURE: Same question as hook-a in <= 2.2 s (creative QC cycle 2: hook too long)",
+      "voiceover": "",
+      "on_screen_text": [
+        "PRODUTO DE TESTE",
+        "ISTO É UM FIXTURE?"
+      ],
+      "visual_type": "illustration",
+      "visual_prompt": "Dull grey T-shirt slams into frame with stink lines; hard zoom punch on the question",
+      "camera": "zoom punch-in 1.25x on beat 1",
+      "motion": "shirt drops with overshoot; words pop per beat",
+      "transition": "flash",
+      "music_direction": "music drops in on frame 0, kick on the slam",
+      "sfx": [
+        "impact",
+        "whoosh"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "HookQuestion",
+        "params": {}
+      },
+      "start": 0,
+      "duration": 2.4,
+      "vo_start": 0.05,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        0,
+        1.7999999999999998
+      ]
+    },
+    {
+      "scene_id": "b1-problem",
+      "slot": "problem",
+      "min_duration_s": 3.5,
+      "purpose": "TEST_FIXTURE: Name the pain in two short beats",
+      "voiceover": "",
+      "on_screen_text": [
+        "CENA DE PROBLEMA",
+        "TEXTO NEUTRO"
+      ],
+      "visual_type": "illustration",
+      "visual_prompt": "Close-up of fabric weave with brown stains growing; second beat: faded scent waves dissolving",
+      "camera": "macro, slight drift",
+      "motion": "stains bloom; scent lines fade out",
+      "transition": "whip",
+      "music_direction": "keep groove, minor feel",
+      "sfx": [
+        "whoosh"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "ProblemStains",
+        "params": {}
+      },
+      "start": 2.4,
+      "duration": 3.5,
+      "vo_start": 2.52,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        0.875,
+        2.625
+      ]
+    },
+    {
+      "scene_id": "b1-tension",
+      "slot": "tension",
+      "min_duration_s": 4.5,
+      "purpose": "TEST_FIXTURE: Agitate: the repetitive rewash loop",
+      "voiceover": "",
+      "on_screen_text": [
+        "PASSO UM",
+        "PASSO DOIS",
+        "PASSO TRÊS DE TESTE"
+      ],
+      "visual_type": "motion_graphic",
+      "visual_prompt": "Three verbs stamp in rhythm around a spinning loop arrow",
+      "camera": "static, shake on each stamp",
+      "motion": "stamps + loop arrow spin accelerating",
+      "transition": "zoom_punch",
+      "music_direction": "tension: hats double-time, riser into reveal",
+      "sfx": [
+        "stamp",
+        "stamp",
+        "stamp",
+        "riser"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "TensionLoop",
+        "params": {}
+      },
+      "start": 5.9,
+      "duration": 4.5,
+      "vo_start": 6.0200000000000005,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        0.75,
+        2.25,
+        3.75
+      ]
+    },
+    {
+      "scene_id": "b1-reveal",
+      "slot": "demo",
+      "min_duration_s": 6,
+      "purpose": "TEST_FIXTURE: Product reveal + mechanism (packshot claim)",
+      "voiceover": "",
+      "on_screen_text": [
+        "MECANISMO DE TESTE",
+        "SEM ALEGAÇÃO REAL",
+        "APENAS FIXTURE"
+      ],
+      "visual_type": "product_hero",
+      "visual_prompt": "Real packshot rises from a blue liquid wave; gloss sweep; a blue wave washes stains off a shirt",
+      "camera": "rise + slow push",
+      "motion": "spring rise, shine sweep, wave wipe",
+      "transition": "wipe",
+      "music_direction": "drop: full beat on reveal",
+      "sfx": [
+        "impact",
+        "shine",
+        "wave"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "ProductReveal",
+        "params": {}
+      },
+      "start": 10.4,
+      "duration": 6,
+      "vo_start": 10.52,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "scene_id": "b1-howto",
+      "slot": "demo",
+      "min_duration_s": 5,
+      "purpose": "TEST_FIXTURE: Demonstrate usage (label 'modo de usar') to lower friction",
+      "voiceover": "",
+      "on_screen_text": [
+        "MODO A",
+        "TEXTO DE EXEMPLO",
+        "MODO B",
+        "TEXTO DE EXEMPLO"
+      ],
+      "visual_type": "step_cards",
+      "visual_prompt": "Two step cards with machine and hand icons",
+      "camera": "static",
+      "motion": "cards slide in staggered",
+      "transition": "whip",
+      "music_direction": "groove",
+      "sfx": [
+        "pop",
+        "pop"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "StepCards",
+        "params": {}
+      },
+      "start": 16.4,
+      "duration": 5,
+      "vo_start": 16.52,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        0.625,
+        1.875,
+        3.125,
+        4.375
+      ]
+    },
+    {
+      "scene_id": "b1-benefits",
+      "slot": "benefits",
+      "min_duration_s": 6,
+      "purpose": "TEST_FIXTURE: Benefit stack using the label's own icons",
+      "voiceover": "",
+      "on_screen_text": [
+        "BENEFÍCIO FICTÍCIO UM",
+        "BENEFÍCIO FICTÍCIO DOIS",
+        "BENEFÍCIO FICTÍCIO TRÊS"
+      ],
+      "visual_type": "benefit_stack",
+      "visual_prompt": "Three chips with the real label icons stack next to the product",
+      "camera": "static with parallax",
+      "motion": "chips pop in sync with voice",
+      "transition": "cut",
+      "music_direction": "groove",
+      "sfx": [
+        "pop",
+        "pop",
+        "pop"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "BenefitStack",
+        "params": {}
+      },
+      "start": 21.4,
+      "duration": 6,
+      "vo_start": 21.52,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "scene_id": "b1-payoff",
+      "slot": "payoff",
+      "min_duration_s": 3.4,
+      "purpose": "TEST_FIXTURE: Transformation payoff: clean bright shirt + product",
+      "voiceover": "",
+      "on_screen_text": [
+        "FIXTURE",
+        "0 L"
+      ],
+      "visual_type": "product_hero",
+      "visual_prompt": "Bright white shirt with sparkles beside the product, '5 L' badge",
+      "camera": "slow push",
+      "motion": "sparkles, badge stamp",
+      "transition": "flash",
+      "music_direction": "lift",
+      "sfx": [
+        "shine",
+        "impact"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "Payoff",
+        "params": {}
+      },
+      "start": 27.4,
+      "duration": 3.4,
+      "vo_start": 27.52,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        0.85,
+        2.55
+      ]
+    },
+    {
+      "scene_id": "cta-a",
+      "slot": "cta",
+      "min_duration_s": 3.4,
+      "purpose": "TEST_FIXTURE: Brand CTA with approved copy",
+      "voiceover": "",
+      "on_screen_text": [
+        "NÃO É UM PRODUTO"
+      ],
+      "visual_type": "cta_card",
+      "visual_prompt": "Logo, product, CTA button pulse",
+      "camera": "static",
+      "motion": "button pulse, logo settle",
+      "transition": "none",
+      "music_direction": "final hit then ring-out",
+      "sfx": [
+        "impact"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-fixture"
+      ],
+      "layout": {
+        "component": "CtaCard",
+        "params": {
+          "button": "NÃO É UM PRODUTO"
+        }
+      },
+      "start": 30.8,
+      "duration": 3.4,
+      "vo_start": 30.92,
+      "vo_duration": 0,
+      "words": [],
+      "beats": [
+        1.7
+      ]
+    }
+  ]
+}

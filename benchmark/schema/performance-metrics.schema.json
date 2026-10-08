@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "marketing-os/performance-metrics.v1",
+  "title": "Creative performance record (future learning loop; NOT implemented in v0.1)",
+  "type": "object",
+  "required": ["variant_id", "platform", "window_start", "window_end", "source", "metrics", "dimensions"],
+  "additionalProperties": false,
+  "properties": {
+    "variant_id": {"type": "string", "pattern": "^v-[a-f0-9]{12}$"},
+    "creative_id": {"type": "string"},
+    "platform": {"enum": ["instagram_reels", "facebook_reels", "tiktok", "youtube_shorts", "tiktok_shop", "shopee_video", "mercado_livre", "other"]},
+    "window_start": {"type": "string", "format": "date-time"},
+    "window_end": {"type": "string", "format": "date-time"},
+    "source": {"type": "object", "required": ["kind", "ref"], "properties": {"kind": {"enum": ["platform_export", "ads_api", "manual_entry"]}, "ref": {"type": "string"}}},
+    "currency": {"enum": ["BRL", "USD", "EUR"]},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Every metric is nullable: null = not reported. Never impute.",
+      "properties": {
+        "impressions": {"type": ["integer", "null"], "minimum": 0},
+        "3_sec_views": {"type": ["integer", "null"], "minimum": 0},
+        "watch_time_s": {"type": ["number", "null"], "minimum": 0},
+        "completion_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "ctr": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "cpc": {"type": ["number", "null"], "minimum": 0},
+        "cpm": {"type": ["number", "null"], "minimum": 0},
+        "cpa": {"type": ["number", "null"], "minimum": 0},
+        "cvr": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "roas": {"type": ["number", "null"], "minimum": 0},
+        "revenue": {"type": ["number", "null"], "minimum": 0},
+        "spend": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "description": "Copied from the variant manifest at render time, never edited afterwards.",
+      "required": ["hook_id", "body_id", "cta_id", "angle_id", "visual_style", "voice", "duration_s", "pacing"],
+      "properties": {
+        "hook_id": {"type": "string"}, "body_id": {"type": "string"}, "cta_id": {"type": "string"}, "angle_id": {"type": "string"},
+        "visual_style": {"type": "string"}, "voice": {"type": "string"}, "music": {"type": "string"}, "captions": {"type": "string"},
+        "duration_s": {"type": "number"}, "pacing": {"type": "string"}, "renderer": {"type": "string"}
+      }
+    }
+  }
+}

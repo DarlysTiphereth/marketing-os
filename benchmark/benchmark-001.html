@@ -1,0 +1,324 @@
+<title>Benchmark 001 Content Factory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~72ch) with wide data blocks that scroll inside themselves; evidence tags as the recurring signature. */
+:root {
+  --bg: #f5f7fb; --surface: #ffffff; --ink: #0d1b3d; --muted: #55627d; --line: #d9dfeb;
+  --accent: #b7841b; --brand: #1946c4;
+  --m: #1f7a4d; --m-bg: #e3f3ea; --o: #1d5fb8; --o-bg: #e2ecfa; --i: #8a5a12; --i-bg: #f7ecd6; --nt: #6b7385; --nt-bg: #eceef3;
+  --pass: #1f7a4d; --fail: #b3261e; --fail-bg: #fbe7e5; --warn: #9a6400;
+  --hook: #1946c4; --problem: #6e4f2a; --tension: #b3261e; --demo: #2c7fd6; --benefits: #1f7a4d; --payoff: #b7841b; --cta: #0d1b3d;
+  --f-display: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+  --f-body: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b1222; --surface: #121b30; --ink: #e6ecf8; --muted: #9aa6c0; --line: #26324c;
+  --accent: #e2b04f; --brand: #7aa2ff;
+  --m: #6fd3a0; --m-bg: #12332a; --o: #8fb6ff; --o-bg: #172a4a; --i: #e7bd6b; --i-bg: #3a2c12; --nt: #a3abbd; --nt-bg: #222b3d;
+  --pass: #6fd3a0; --fail: #ff8a80; --fail-bg: #3d1a18; --warn: #f1c06a;
+  --hook: #7aa2ff; --problem: #c49a66; --tension: #ff7a70; --demo: #6fb8ff; --benefits: #6fd3a0; --payoff: #e2b04f; --cta: #c9d4ee;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0b1222; --surface: #121b30; --ink: #e6ecf8; --muted: #9aa6c0; --line: #26324c;
+  --accent: #e2b04f; --brand: #7aa2ff;
+  --m: #6fd3a0; --m-bg: #12332a; --o: #8fb6ff; --o-bg: #172a4a; --i: #e7bd6b; --i-bg: #3a2c12; --nt: #a3abbd; --nt-bg: #222b3d;
+  --pass: #6fd3a0; --fail: #ff8a80; --fail-bg: #3d1a18; --warn: #f1c06a;
+  --hook: #7aa2ff; --problem: #c49a66; --tension: #ff7a70; --demo: #6fb8ff; --benefits: #6fd3a0; --payoff: #e2b04f; --cta: #c9d4ee;
+  color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 56px; }
+.prose { max-width: 72ch; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; font-weight: 700; }
+p { margin: 0; }
+section { display: grid; gap: 18px; }
+.eyebrow { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.15rem; color: var(--ink); }
+.muted { color: var(--muted); }
+a { color: var(--brand); }
+code, .mono { font-family: var(--f-mono); font-size: .88em; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* header */
+header { display: grid; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 28px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--f-mono); font-size: .82rem; color: var(--muted); }
+
+/* decision block */
+.decision { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line); background: var(--surface); }
+.decision > div { padding: 20px 22px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.decision > div + div { border-left: 1px solid var(--line); }
+@media (max-width: 760px) { .decision > div + div { border-left: 0; border-top: 1px solid var(--line); } }
+.big { font-family: var(--f-display); font-weight: 800; font-size: 1.7rem; line-height: 1.05; letter-spacing: -0.01em; }
+.big.gold { color: var(--accent); }
+.big.fail { color: var(--fail); }
+
+/* evidence tags */
+.tag { display: inline-block; font-family: var(--f-mono); font-size: .7rem; font-weight: 500; letter-spacing: .04em; padding: 1px 6px; border-radius: 3px; vertical-align: 1px; white-space: nowrap; }
+.t-m { color: var(--m); background: var(--m-bg); } .t-o { color: var(--o); background: var(--o-bg); }
+.t-i { color: var(--i); background: var(--i-bg); } .t-nt { color: var(--nt); background: var(--nt-bg); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: .88rem; color: var(--muted); }
+
+/* tables */
+.tbl { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; background: var(--bg); }
+tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr.total td { font-weight: 600; border-top: 2px solid var(--ink); }
+tr.hl td { background: color-mix(in srgb, var(--accent) 9%, transparent); }
+.score { font-family: var(--f-display); font-weight: 700; font-size: 1rem; }
+.pass { color: var(--pass); font-weight: 600; } .fail { color: var(--fail); font-weight: 600; } .warn { color: var(--warn); font-weight: 600; }
+
+/* timeline strip */
+.strip { display: grid; gap: 8px; }
+.track { display: flex; height: 44px; border: 1px solid var(--line); background: var(--surface); }
+.seg { position: relative; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--f-mono); font-size: .68rem; overflow: hidden; min-width: 0; border-right: 2px solid var(--bg); }
+.seg span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
+.track.target .seg { background: transparent !important; color: var(--muted); border-right: 1px dashed var(--line); }
+.track.target .seg::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--c); }
+.axis { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: .7rem; color: var(--muted); }
+.strip-label { font-family: var(--f-mono); font-size: .75rem; color: var(--muted); }
+
+/* pipeline */
+.pipe { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--f-mono); font-size: .8rem; }
+.pipe span { padding: 6px 10px; border: 1px solid var(--line); background: var(--surface); }
+.pipe i { color: var(--muted); font-style: normal; }
+.pipe span.key { border-color: var(--brand); color: var(--brand); }
+
+/* lists */
+ul.clean { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; }
+.callout { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.two > * { min-width: 0; }
+footer { border-top: 1px solid var(--line); padding-top: 20px; font-size: .85rem; color: var(--muted); display: grid; gap: 6px; }
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Marketing OS · Content Factory · Benchmark 001</div>
+  <h1>Qual arquitetura produz o melhor criativo, com evidência?</h1>
+  <p class="lede prose">Primeiro teste real: anúncio vertical de performance para <strong>GRAND Sabão Líquido Premium 5 L</strong>, gerado a partir de um JSON criativo, com variantes, voz, música, render, QC e manifests. Uso interno, não publicado.</p>
+  <div class="meta"><span>2026-10-07/08</span><span>8 renders medidos</span><span>US$ 0 de API</span><span>núcleo Marketing OS: 63/63 testes</span></div>
+</header>
+
+<section>
+  <div class="decision">
+    <div>
+      <span class="eyebrow">Decisão (provisória)</span>
+      <span class="big gold">KEEP_AS_OPTIONAL</span>
+      <span class="muted">OpenMontage fora do caminho crítico. Arquitetura-alvo <strong>HYBRID</strong> com núcleo Remotion-first.</span>
+    </div>
+    <div>
+      <span class="eyebrow">Melhor criativo</span>
+      <span class="big fail">7,0 / 10</span>
+      <span class="muted">Não aprovado (limite 8) após os 2 ciclos de melhoria permitidos.</span>
+    </div>
+    <div>
+      <span class="eyebrow">Gargalo</span>
+      <span class="big">Credibilidade</span>
+      <span class="muted">Voz sintética 16 kHz, nenhuma prova real disponível, problema mostrado só com ilustração.</span>
+    </div>
+  </div>
+  <div class="legend">
+    <span><span class="tag t-m">M</span> medido por ferramenta</span>
+    <span><span class="tag t-o">O</span> observado em execução</span>
+    <span><span class="tag t-i">I</span> julgamento do agente</span>
+    <span><span class="tag t-nt">NT</span> não testado</span>
+  </div>
+</section>
+
+<section>
+  <h2>Por que manter o OpenMontage apenas como opcional</h2>
+  <ul class="clean prose">
+    <li>O valor observado dele é <strong>processo</strong> (checkpoints, schemas, revisão). O Marketing OS já faz planejamento determinístico, claims com fonte, budgets e idempotência. Adotá-lo como orquestrador duplicaria isso e colocaria AGPLv3 no caminho crítico.</li>
+    <li>Sem chaves de provider, o teto visual do OpenMontage é o mesmo HTML/GSAP que o agente escreve: 0 de 23 geradores de imagem, 0 de 31 de vídeo e 0 de 13 de voz configurados <span class="tag t-o">O</span>.</li>
+    <li>Produção em lote é o requisito central, e ele não é nativo nisso. O pipeline novo já endereça 192 variantes com IDs determinísticos <span class="tag t-o">O</span>.</li>
+    <li>O bloqueio que motivava trocar o Remotion foi resolvido: o Remotion gera só os frames e o FFmpeg externo faz o encode, sem mexer na segurança do Windows <span class="tag t-m">M</span>.</li>
+  </ul>
+  <p class="callout prose muted">A comparação ainda não é controlada. OpenMontage puro e OpenMontage + Remotion não rodaram com este conceito; a coluna do OpenMontage vem do benchmark anterior do laboratório (vídeo de 15 s, outro briefing).</p>
+</section>
+
+<section>
+  <h2>O hero final, cena a cena</h2>
+  <p class="prose muted">36,4 s em 8 cenas. A barra de cima é o render; a de baixo é a estrutura pedida no brief. A duração de cada cena vem da fala medida, não de estimativa.</p>
+  <div class="strip">
+    <div class="strip-label">Render (hook-a2 / body-1 / cta-a, ritmo rápido)</div>
+    <div class="track" aria-label="Duração real das cenas">
+      <div class="seg" style="flex:2.27;background:var(--hook)" title="Hook 0–2,27 s"><span>hook 2,3</span></div>
+      <div class="seg" style="flex:3.50;background:var(--problem)" title="Problema 2,27–5,77 s"><span>problema 3,5</span></div>
+      <div class="seg" style="flex:4.73;background:var(--tension)" title="Tensão 5,77–10,5 s"><span>tensão 4,7</span></div>
+      <div class="seg" style="flex:7.03;background:var(--demo)" title="Mecanismo 10,5–17,53 s"><span>mecanismo 7,0</span></div>
+      <div class="seg" style="flex:5.33;background:var(--demo)" title="Como usar 17,53–22,87 s"><span>como usar 5,3</span></div>
+      <div class="seg" style="flex:7.17;background:var(--benefits)" title="Benefícios 22,87–30,03 s"><span>benefícios 7,2</span></div>
+      <div class="seg" style="flex:3.37;background:var(--payoff)" title="Payoff 30,03–33,4 s"><span>payoff 3,4</span></div>
+      <div class="seg" style="flex:3.00;background:var(--cta)" title="CTA 33,4–36,4 s"><span>CTA 3,0</span></div>
+      <div style="flex:8.6"></div>
+    </div>
+    <div class="strip-label">Brief (0–45 s)</div>
+    <div class="track target" aria-label="Estrutura do brief">
+      <div class="seg" style="flex:2;--c:var(--hook)"><span>hook</span></div>
+      <div class="seg" style="flex:4;--c:var(--problem)"><span>problema</span></div>
+      <div class="seg" style="flex:6;--c:var(--tension)"><span>tensão</span></div>
+      <div class="seg" style="flex:10;--c:var(--demo)"><span>demonstração</span></div>
+      <div class="seg" style="flex:8;--c:var(--benefits)"><span>benefícios/prova</span></div>
+      <div class="seg" style="flex:8;--c:var(--payoff)"><span>payoff</span></div>
+      <div class="seg" style="flex:7;--c:var(--cta)"><span>CTA</span></div>
+    </div>
+    <div class="axis num"><span>0 s</span><span>15 s</span><span>30 s</span><span>45 s</span></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Métrica do hero</th><th class="r">Valor</th><th>Gate</th></tr></thead>
+    <tbody>
+      <tr><td>Primeira fala</td><td class="r">0,03 s</td><td><span class="pass">PASS</span> ≤ 0,5 s <span class="tag t-m">M</span></td></tr>
+      <tr><td>Texto na tela</td><td class="r">frame 0</td><td><span class="pass">PASS</span> <span class="tag t-m">M</span></td></tr>
+      <tr><td>Um beat visual a cada</td><td class="r">1,82 s</td><td>métrica <span class="tag t-m">M</span></td></tr>
+      <tr><td>Loudness integrado / true peak</td><td class="r">−14,4 LUFS / −1,5 dBTP</td><td><span class="pass">PASS</span> −14 ±1 / ≤ −1 <span class="tag t-m">M</span></td></tr>
+      <tr><td>Frames decodificados</td><td class="r">1.092 = timeline</td><td><span class="pass">PASS</span> <span class="tag t-m">M</span></td></tr>
+      <tr><td>Tempo total do run (laptop)</td><td class="r">172 s</td><td>frames 100 s · encode 53 s · QC 11 s <span class="tag t-m">M</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Como o pipeline funciona</h2>
+  <div class="pipe">
+    <span class="key">creative.json</span><i>→</i><span>validação de claims</span><i>→</i><span class="key">variant engine</span><i>→</i><span>voz local + cache</span><i>→</i><span>timeline pela fala</span><i>→</i><span>música e SFX procedurais</span><i>→</i><span class="key">Remotion (frames)</span><i>→</i><span>FFmpeg externo</span><i>→</i><span class="key">QC</span><i>→</i><span>6 manifests</span>
+  </div>
+  <div class="two">
+    <div class="prose" style="display:grid;gap:10px">
+      <h3>No source, no claim</h3>
+      <p>Cada afirmação sobre o produto aponta para uma fonte: rótulo, packshot ou copy aprovada. O slot de prova está marcado como vazio porque nenhum review ou teste foi fornecido. A cena do mecanismo leva "Animação ilustrativa".</p>
+    </div>
+    <div class="prose" style="display:grid;gap:10px">
+      <h3>Variantes baratas</h3>
+      <p>4 hooks × 2 corpos × 2 CTAs × 2 estilos × 2 vozes × 2 ritmos × legendas: 192 variantes possíveis. Falas repetidas vêm do cache (até 8 de 8 no mesmo render). Trocar estilo, voz ou CTA custa só tempo de render local.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Os 8 renders</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Seleção</th><th class="r">Duração</th><th>QC técnico</th><th class="r">Tempo</th><th>O que mostrou</th></tr></thead>
+    <tbody>
+      <tr><td>hook-a · body-1 · cta-a</td><td class="r">41,8 s</td><td><span class="fail">FAIL</span></td><td class="r">171 s</td><td>Gates pegaram cor em formato errado e pico de áudio +0,6 dBTP</td></tr>
+      <tr><td>idem, corrigido</td><td class="r">41,8 s</td><td><span class="pass">PASS</span> <span class="warn">WARN</span></td><td class="r">~170 s</td><td>Cena de 8 s; base do review criativo (6,5)</td></tr>
+      <tr><td>idem, ritmo rápido (ciclo 1)</td><td class="r">37,4 s</td><td><span class="pass">PASS</span></td><td class="r">212 s</td><td>Cena mais longa cai para 7,2 s</td></tr>
+      <tr><td>hook-b · body-1 · cta-b</td><td class="r">37,0 s</td><td><span class="pass">PASS</span></td><td class="r">175 s</td><td>6 de 8 falas do cache</td></tr>
+      <tr><td>hook-c · body-2 · estilo claro · Daniel</td><td class="r">22,3 s</td><td><span class="fail">FAIL</span></td><td class="r">122 s</td><td>Corpo curto não atende 30–46 s; contraste ruim no estilo claro</td></tr>
+      <tr><td>hook-a2 · body-1 · cta-a (ciclo 2)</td><td class="r">36,4 s</td><td><span class="pass">PASS</span></td><td class="r">176 s</td><td>Hook de 3,3 s para 2,3 s</td></tr>
+      <tr class="hl"><td><strong>Hero final</strong>, com correções visuais</td><td class="r">36,4 s</td><td><span class="pass">PASS</span></td><td class="r">172 s</td><td>Zero avisos; código identificado por fingerprint</td></tr>
+      <tr><td>hook-c · body-1 · cta-b · estilo claro · Daniel</td><td class="r">35,5 s</td><td><span class="pass">PASS</span></td><td class="r">170 s</td><td>Estilo claro corrigido</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose muted">Todos <span class="tag t-m">M</span>. Defeito residual: legendas às vezes juntam palavras de duas frases da mesma cena, porque a voz local não marca pontuação.</p>
+</section>
+
+<section>
+  <h2>Scorecard</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Critério</th><th class="r">OpenMontage</th><th class="r">OM + Remotion</th><th class="r">Remotion-first</th><th class="r">Hybrid</th></tr></thead>
+    <tbody>
+      <tr><td>Hook</td><td class="r">6 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">6,5 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Visual</td><td class="r">6 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">7 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Motion</td><td class="r">6 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">7 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Storytelling</td><td class="r">5 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">7,5 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Qualidade de anúncio</td><td class="r">5 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">6,5 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Faceless</td><td class="r"><span class="tag t-nt">NT</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Controle</td><td class="r">6 <span class="tag t-o">O</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">9 <span class="tag t-o">O</span></td><td class="r">9 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Automação</td><td class="r">5 <span class="tag t-o">O</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">8 <span class="tag t-o">O</span></td><td class="r">8 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Reprodutibilidade</td><td class="r">9 <span class="tag t-m">M</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">8 <span class="tag t-o">O</span></td><td class="r">7 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Integração via API</td><td class="r">6 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">8 <span class="tag t-i">I</span></td><td class="r">8 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Potencial de lote</td><td class="r">4 <span class="tag t-i">I</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">9 <span class="tag t-o">O</span></td><td class="r">9 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Custo</td><td class="r">9 <span class="tag t-m">M</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">10 <span class="tag t-m">M</span></td><td class="r">6 <span class="tag t-i">I</span></td></tr>
+      <tr><td>Velocidade</td><td class="r">6 <span class="tag t-m">M</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">7 <span class="tag t-m">M</span></td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+      <tr><td>Manutenção</td><td class="r">4 <span class="tag t-o">O</span></td><td class="r"><span class="tag t-nt">NT</span></td><td class="r">7 <span class="tag t-o">O</span></td><td class="r">6 <span class="tag t-i">I</span></td></tr>
+      <tr class="total"><td>Geral</td><td class="r score">5,5</td><td class="r"><span class="tag t-nt">NT</span></td><td class="r score">7,5</td><td class="r"><span class="tag t-nt">NT</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>QC criativo do hero, por ciclo <span class="tag t-i">I</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Versão</th><th class="r">Hook</th><th class="r">Clareza</th><th class="r">Ritmo</th><th class="r">Curiosidade</th><th class="r">Variedade</th><th class="r">Benefício</th><th class="r">Credib.</th><th class="r">Emoção</th><th class="r">CTA</th><th class="r">Geral</th></tr></thead>
+    <tbody>
+      <tr><td>Base (41,8 s)</td><td class="r">6,5</td><td class="r">8</td><td class="r">6,5</td><td class="r">6</td><td class="r">7</td><td class="r">8</td><td class="r">5,5</td><td class="r">5</td><td class="r">7,5</td><td class="r score">6,5</td></tr>
+      <tr><td>Ciclo 1: ritmo</td><td class="r">6,5</td><td class="r">8</td><td class="r">7</td><td class="r">6</td><td class="r">7</td><td class="r">8</td><td class="r">5,5</td><td class="r">5</td><td class="r">7,5</td><td class="r score">6,7</td></tr>
+      <tr class="hl"><td>Ciclo 2: hook + correções</td><td class="r">7</td><td class="r">8</td><td class="r">7,5</td><td class="r">6,5</td><td class="r">7</td><td class="r">8</td><td class="r">5,5</td><td class="r">5</td><td class="r">7,5</td><td class="r score">7,0</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Custo</h2>
+  <p class="prose">Nesta rodada: <strong>US$ 0 de API</strong> <span class="tag t-m">M</span>, cerca de 3 minutos de laptop por vídeo <span class="tag t-m">M</span>. Tokens do agente, energia e tempo de autoria ficaram sem medição. Projeção por perfil, com preços de fontes secundárias que precisam ser confirmados <span class="tag t-i">I</span>:</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Perfil (vídeo de ~40 s)</th><th class="r">Por vídeo</th><th class="r">100 vídeos</th><th class="r">1.000 vídeos</th></tr></thead>
+    <tbody>
+      <tr><td>Remotion-first local (atual)</td><td class="r">US$ 0</td><td class="r">US$ 0</td><td class="r">US$ 0*</td></tr>
+      <tr><td>+ voz premium (ElevenLabs)</td><td class="r">≈ US$ 0,06</td><td class="r">US$ 6</td><td class="r">US$ 60</td></tr>
+      <tr><td>Hybrid leve: + 2 clipes de IA de 5 s (Veo 3.1 Lite)</td><td class="r">≈ US$ 0,36</td><td class="r">US$ 36</td><td class="r">US$ 360</td></tr>
+      <tr><td>Hybrid padrão: + 2 clipes de 5 s (Kling v3 Pro)</td><td class="r">≈ US$ 1,18</td><td class="r">US$ 118</td><td class="r">US$ 1.180</td></tr>
+      <tr><td>Vídeo todo gerado por IA (40 s, Kling v3 Pro)</td><td class="r">≈ US$ 4,54</td><td class="r">US$ 454</td><td class="r">US$ 4.540</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose muted">* Licença Remotion: grátis para empresas de até 3 pessoas; acima disso, US$ 0,01 por render (mínimo de US$ 100 por mês) ou US$ 25 por dev por mês. Vídeo de IA costuma exigir retakes, então trate esses valores como piso.</p>
+</section>
+
+<section>
+  <h2>Escala (modelagem, não executada)</h2>
+  <div class="tbl"><table>
+    <thead><tr><th class="r">Vídeos/dia</th><th>Topologia</th><th>Fila e retry</th><th class="r">Armazenamento/dia</th></tr></thead>
+    <tbody>
+      <tr><td class="r">10</td><td>Laptop atual</td><td>Desnecessária; idempotência por variant_id</td><td class="r">0,25 GB</td></tr>
+      <tr><td class="r">50</td><td>1 máquina dedicada</td><td>Fila local + retry 2×</td><td class="r">1,2 GB</td></tr>
+      <tr><td class="r">100</td><td>1–2 workers</td><td>Fila persistente, estágios separados</td><td class="r">2,5 GB</td></tr>
+      <tr><td class="r">500</td><td>4–6 workers ou render em nuvem</td><td>Rate limit por provider, DLQ</td><td class="r">12 GB</td></tr>
+      <tr><td class="r">1.000</td><td>Autoscaling</td><td>Idem + prioridade por experimento</td><td class="r">25 GB</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose muted">Acima de ~50 por dia, o gargalo real passa a ser a aprovação humana de claims e criativos, não o render.</p>
+</section>
+
+<section>
+  <h2>Ambiente auditado</h2>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td>Máquina</td><td>Windows 11 · Core 5 120U (12 threads) · 7,7 GiB RAM · Intel Graphics</td></tr>
+      <tr><td>Runtimes</td><td>Node, Python e FFmpeg fora do PATH; reaproveitados do runtime Codex e do laboratório anterior</td></tr>
+      <tr><td>Remotion</td><td>4.0.534; renderizador nativo bloqueado pelo Windows, contornado sem alterar segurança</td></tr>
+      <tr><td>OpenMontage</td><td>Instalado no laboratório anterior (AGPLv3); lido, não modificado</td></tr>
+      <tr><td>Voz</td><td>OneCore Maria e Daniel pt-BR, offline, 16 kHz mono</td></tr>
+      <tr><td>Chaves de API</td><td>Nenhuma. Kling, Veo, Seedance, ElevenLabs e Shotstack não testados</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Próximos passos</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Passo</th><th class="r">Custo máx.</th><th>Depende de</th></tr></thead>
+    <tbody>
+      <tr><td>Aprovar ou ajustar as afirmações tiradas do rótulo (o brief anterior proibia usá-las no layout)</td><td class="r">US$ 0</td><td>Decisão do dono da marca</td></tr>
+      <tr><td>Enviar prova verdadeira, se existir (avaliações com permissão, testes, fotos de uso)</td><td class="r">US$ 0</td><td>Dados</td></tr>
+      <tr><td>Voz premium no hero (ElevenLabs, ~1.200 caracteres, 2 vozes)</td><td class="r">≈ US$ 1</td><td>Aprovação + chave</td></tr>
+      <tr><td>Hybrid real: trocar 2 cenas por vídeo de IA (Veo 3.1 Lite e Kling v3 Pro, 8 clipes de 5 s)</td><td class="r">≈ US$ 3</td><td>Aprovação + chave fal</td></tr>
+      <tr><td>Rodar OpenMontage puro e OM + Remotion com o mesmo creative.json e o mesmo QC</td><td class="r">US$ 0</td><td>Nada</td></tr>
+      <tr><td>Teste B: vídeo faceless de 30–60 s</td><td class="r">US$ 0</td><td>Tema e fontes</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <span>Fontes de preço (set–out/2026, secundárias): <a href="https://devtk.ai/en/blog/ai-video-generation-pricing-2026/">devtk.ai</a> · <a href="https://www.teamday.ai/blog/ai-api-pricing-comparison-2026">teamday.ai</a> · <a href="https://developer.puter.com/tutorials/elevenlabs-api-pricing/">puter.com</a>. Licenças Remotion e Shotstack: registro do laboratório anterior.</span>
+  <span>Detalhes completos em <code>benchmark/</code> e <code>experiments/remotion/</code> no repositório Marketing OS.</span>
+</footer>
+
+</div>

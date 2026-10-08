@@ -1,0 +1,194 @@
+{
+  "technical": {
+    "verdict": "PASS",
+    "checks": [
+      {
+        "id": "resolution",
+        "status": "PASS",
+        "measured": "1080x1920",
+        "threshold": "1080x1920",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "aspect_ratio",
+        "status": "PASS",
+        "measured": "9:16",
+        "threshold": "9:16",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "fps",
+        "status": "PASS",
+        "measured": {
+          "nominal": "30/1",
+          "average": "30/1"
+        },
+        "threshold": "30/1 nominal and average",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "codec",
+        "status": "PASS",
+        "measured": "h264 High yuv420p",
+        "threshold": "h264 yuv420p",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "frame_count",
+        "status": "PASS",
+        "measured": {
+          "decoded": 1092,
+          "expected": 1092
+        },
+        "threshold": "decoded == timeline frames",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "duration",
+        "status": "PASS",
+        "measured": 36.4,
+        "threshold": "30–46 s (brief 30–45 s)",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "audio_stream",
+        "status": "PASS",
+        "measured": "aac 48000Hz 2ch",
+        "threshold": "AAC 48 kHz stereo",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "loudness_integrated",
+        "status": "PASS",
+        "measured": "-14.4 LUFS",
+        "threshold": "-14 ±1 LUFS (social target)",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "true_peak",
+        "status": "PASS",
+        "measured": "-1.5 dBTP",
+        "threshold": "<= -1.0 dBTP (no clipping)",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "loudness_range",
+        "status": "PASS",
+        "measured": "2.4 LU",
+        "threshold": "<= 12 LU",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "black_frames",
+        "status": "PASS",
+        "measured": [],
+        "threshold": "no black segment >= 0.1 s",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "static_too_long",
+        "status": "PASS",
+        "measured": [],
+        "threshold": "no frozen video >= 1.5 s",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "awkward_silence",
+        "status": "PASS",
+        "measured": [],
+        "threshold": "no audio < -45 dB for >= 0.6 s",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "caption_safe_zone",
+        "status": "PASS",
+        "measured": "captions y∈[1470,1570]",
+        "threshold": "captions above platform UI (y<1600)",
+        "evidence": "STATIC_LAYOUT_RULE"
+      },
+      {
+        "id": "content_safe_zone",
+        "status": "PASS",
+        "measured": "scene content authored in y∈[140,1440], critical text x∈[60,1020]",
+        "threshold": "design rule",
+        "evidence": "STATIC_LAYOUT_RULE"
+      },
+      {
+        "id": "hook_voice_starts_fast",
+        "status": "PASS",
+        "measured": "0.03s",
+        "threshold": "voice <= 0.5 s",
+        "evidence": "MEASURED"
+      },
+      {
+        "id": "max_scene_length",
+        "status": "PASS",
+        "measured": "7.166666666666667s",
+        "threshold": "<= 7.5 s per scene (retention)",
+        "evidence": "MEASURED"
+      }
+    ],
+    "loudness": {
+      "I": -14.4,
+      "LRA": 2.4,
+      "TP": -1.5
+    }
+  },
+  "metrics": {
+    "scenes": 8,
+    "visual_beats": 20,
+    "avg_shot_s": 4.55,
+    "avg_beat_s": 1.82,
+    "max_scene_s": 7.166666666666667,
+    "cuts_per_10s": 1.92,
+    "first_text_frame": 0,
+    "first_voice_s": 0.03,
+    "hook_duration_s": 2.2666666666666666,
+    "vo_words_per_min": 129,
+    "on_screen_words": 59,
+    "on_screen_words_per_s": 1.62
+  },
+  "contact_sheet": {
+    "file": "contact-sheet.jpg",
+    "frames": [
+      2,
+      37,
+      66,
+      70,
+      126,
+      171,
+      175,
+      251,
+      313,
+      317,
+      431,
+      524,
+      528,
+      614,
+      684,
+      688,
+      804,
+      899,
+      903,
+      957,
+      1000,
+      1004,
+      1052,
+      1090
+    ]
+  },
+  "visual": "PENDING_REVIEW",
+  "creative": "PENDING_REVIEW",
+  "latency_s": {
+    "research_time": "NOT_APPLICABLE (sources pre-supplied)",
+    "script_time": "UNKNOWN (agent-authored template)",
+    "asset_time": 8.95,
+    "voice_time": 3.13,
+    "audio_time": 5.81,
+    "render_time": 154.09,
+    "frame_render_time": 97.79,
+    "encode_time": 56.3,
+    "qc_time": 11.85,
+    "total_time": 176.26
+  }
+}

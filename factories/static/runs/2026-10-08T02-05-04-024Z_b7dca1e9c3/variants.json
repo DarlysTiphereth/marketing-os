@@ -1,0 +1,578 @@
+[
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 10,
+    "selected": true
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "square",
+    "score": 8,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "story",
+    "score": 8,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 9,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "square",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "story",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "story",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "story",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "story",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "hero-spotlight",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "story",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 10,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "square",
+    "score": 8,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "story",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 9,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "square",
+    "score": 7,
+    "selected": true
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "story",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 7,
+    "selected": true
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "story",
+    "score": 3,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "story",
+    "score": 2,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "story",
+    "score": 3,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "editorial-split",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "story",
+    "score": 2,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 8,
+    "selected": true
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "square",
+    "score": 8,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "story",
+    "score": 10,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "square",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "story",
+    "score": 9,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "story",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "story",
+    "score": 6,
+    "selected": true
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "square",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "story",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "square",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "bold-block",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "story",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "square",
+    "score": 10,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta1",
+    "format": "story",
+    "score": 4,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 5,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "square",
+    "score": 9,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h1",
+    "cta": "cta2",
+    "format": "story",
+    "score": 3,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 3,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "square",
+    "score": 7,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta1",
+    "format": "story",
+    "score": 1,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 2,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "square",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h2",
+    "cta": "cta2",
+    "format": "story",
+    "score": 0,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "feed_4x5",
+    "score": 3,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "square",
+    "score": 7,
+    "selected": true
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta1",
+    "format": "story",
+    "score": 1,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "feed_4x5",
+    "score": 2,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "square",
+    "score": 6,
+    "selected": false
+  },
+  {
+    "concept": "catalog-clean",
+    "headline": "h3",
+    "cta": "cta2",
+    "format": "story",
+    "score": 0,
+    "selected": false
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "schema_version": "brand-kit.v1",
+  "brand_id": "grand",
+  "name": "GRAND Limpeza & Proteção",
+  "market": "BR",
+  "language": "pt-BR",
+  "status": "WORKING_KIT — derived from the approved product label; official brand book UNKNOWN",
+  "assets_private": true,
+  "logo": {
+    "asset": "logo",
+    "sha256": "57d41eef790e176fbbc5813fa482f3046fe842d946162594b93cf622f49ac17b",
+    "source": "lossless crop of official label (300×310)",
+    "aspect_ratio": 0.9677,
+    "min_px": 120,
+    "clearspace_ratio": 0.15,
+    "may_recolor": false
+  },
+  "palette": {
+    "status": "DERIVED_FROM_APPROVED_ASSET (sampled from label); not certified official colors",
+    "tokens": {
+      "navy": "#04124a",
+      "royal": "#0a3fc2",
+      "electric": "#1d6dff",
+      "aqua": "#5fb3ff",
+      "mist": "#e8f0ff",
+      "gold": "#e0ad45",
+      "gold_deep": "#a8740f",
+      "white": "#ffffff",
+      "ink": "#071237"
+    }
+  },
+  "typography": {
+    "status": "DESIGN_CHOICE (official typeface UNKNOWN); OFL license",
+    "family": "Archivo Variable",
+    "package": "@fontsource-variable/archivo@5.2.8",
+    "roles": {
+      "display": {
+        "wdth": 125,
+        "wght": 800,
+        "tracking_em": -0.02
+      },
+      "headline": {
+        "wdth": 112,
+        "wght": 750,
+        "tracking_em": -0.01
+      },
+      "body": {
+        "wdth": 100,
+        "wght": 450,
+        "tracking_em": 0
+      },
+      "label": {
+        "wdth": 110,
+        "wght": 650,
+        "tracking_em": 0.14,
+        "uppercase": true
+      }
+    }
+  },
+  "elements": [
+    {
+      "id": "gold-rim-band",
+      "description": "navy pill with gold rim, spaced caps — from the label's 'LIMPEZA PROFUNDA' band"
+    },
+    {
+      "id": "drop-arc",
+      "description": "water drop + gold arc from the logo; use only the real logo crop, never redrawn"
+    },
+    {
+      "id": "liquid-light",
+      "description": "deep blue liquid light and caustics backgrounds"
+    }
+  ],
+  "tone": {
+    "voice": "direto, confiável, cuidadoso com a casa e a família",
+    "avoid": [
+      "superlativos sem prova",
+      "números de eficácia",
+      "comparação com concorrentes",
+      "urgência falsa"
+    ]
+  },
+  "compliance": {
+    "category": "saneante (lavanderia) — regras de publicidade ANVISA/CONAR aplicáveis: UNKNOWN, revisão humana obrigatória",
+    "rules": [
+      "no source → no claim (claims só da product database)",
+      "sem preço, desconto, frete ou estoque sem fonte",
+      "não usar registro ANVISA como prova",
+      "composições digitais rotuladas como SYNTHETIC_COMPOSITE nos metadados; nunca chamadas de fotografia real",
+      "imagem principal de marketplace: fundo branco, sem texto promocional",
+      "não alterar embalagem, rótulo, logotipo ou cores do produto"
+    ]
+  },
+  "templates": [
+    "hero-spotlight",
+    "editorial-split",
+    "bold-block",
+    "catalog-clean"
+  ],
+  "products": [
+    "sabao-liquido-premium-5l"
+  ],
+  "approved_versions": []
+}

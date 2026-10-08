@@ -1,0 +1,18 @@
+{
+  "currency": "USD",
+  "evidence": "MEASURED for API spend (no paid API called); compute time MEASURED; other items UNKNOWN",
+  "total_cost": 0,
+  "cost_script": 0,
+  "cost_images": 0,
+  "cost_video_generation": 0,
+  "cost_voice": 0,
+  "cost_music": 0,
+  "cost_render": 0,
+  "paid_api_calls": 0,
+  "llm_tokens_for_authoring": "UNKNOWN (copy/storyboard authored by the Claude Code session; tokens not metered here)",
+  "electricity": "UNKNOWN",
+  "compute_time_s": 169.74,
+  "human_minutes": 0,
+  "human_minutes_note": "no human edit during the run; human/agent authoring time before the run UNKNOWN",
+  "elapsed_time_s": 169.74
+}

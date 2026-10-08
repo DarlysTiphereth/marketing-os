@@ -1,0 +1,236 @@
+{
+  "brand_assets": [
+    {
+      "name": "product",
+      "path": "public/product-5l.png",
+      "sha256": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+      "bytes": 330913,
+      "kind": "AUTHENTIC_PRODUCT_ASSET",
+      "status": "extracted unchanged from official catalog (lab Benchmark 001)",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "label",
+      "path": "public/label.png",
+      "sha256": "f21e3d6cade77e09e1fefb55aa41d51514259b2eb1f51d59c0a68994bff2d6ae",
+      "bytes": 1400761,
+      "kind": "OFFICIAL_LABEL_ART",
+      "status": "user-supplied",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "logo",
+      "path": "public/logo-drop.png",
+      "sha256": "57d41eef790e176fbbc5813fa482f3046fe842d946162594b93cf622f49ac17b",
+      "bytes": 100166,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=300:310:465:40",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_shirt",
+      "path": "public/icon-shirt.png",
+      "sha256": "6f61982a989568d9cea68a6f7ef7c4dda74c0cccce9b2ffab70d0811db6de72b",
+      "bytes": 9366,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1061:62",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_leaf",
+      "path": "public/icon-leaf.png",
+      "sha256": "6c440572cc44ab2e3f18d1f8bae2dee7e71523cf85b0ba9ae86abf0cec3e84d3",
+      "bytes": 9025,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1064:223",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_sparkle",
+      "path": "public/icon-sparkle.png",
+      "sha256": "a434ae2f23f20c6333af87bb5b8c0461979507923257184220a748f605325365",
+      "bytes": 9388,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1070:410",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    }
+  ],
+  "voice_lines": [
+    {
+      "scene_id": "hook-a",
+      "text": "Sua roupa sai da máquina… sem cheiro de limpa?",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "699c247aa3230b032512",
+      "cached": true,
+      "seconds": 4.28
+    },
+    {
+      "scene_id": "b1-problem",
+      "text": "Sujeira que não sai. Cheiro que não fica.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "dcfd115dc23bcae805ef",
+      "cached": true,
+      "seconds": 4.465
+    },
+    {
+      "scene_id": "b1-tension",
+      "text": "E lá vai você: esfregar, enxaguar… e torcer pra dar certo.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "f9c6b2c6ecaeeb0f21c7",
+      "cached": true,
+      "seconds": 5.81
+    },
+    {
+      "scene_id": "b1-reveal",
+      "text": "GRAND Sabão Líquido Premium. Fórmula avançada para remoção de manchas, e cuidado com as cores.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "4d1dbe3e848ce6cd08df",
+      "cached": true,
+      "seconds": 8.42
+    },
+    {
+      "scene_id": "b1-howto",
+      "text": "Na máquina, use puro ou diluído. À mão, dilua em água e aplique.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "cec120ea58a3acf23b1b",
+      "cached": true,
+      "seconds": 6.465
+    },
+    {
+      "scene_id": "b1-benefits",
+      "text": "Remove as sujeiras. Deixa as roupas mais limpas e perfumadas. E cuida das suas roupas.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "e246cd6d0986519e253b",
+      "cached": true,
+      "seconds": 8.59
+    },
+    {
+      "scene_id": "b1-payoff",
+      "text": "Limpeza profunda… num galão de cinco litros.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "df6b6d3e3194febbcd4a",
+      "cached": true,
+      "seconds": 4.315
+    },
+    {
+      "scene_id": "cta-a",
+      "text": "Conheça a GRAND.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Maria",
+      "source_rate_hz": 16000,
+      "cache_key": "cae63566cd5a98ddd224",
+      "cached": true,
+      "seconds": 1.875
+    }
+  ],
+  "music": {
+    "music_id": "pulse-116",
+    "provider": "procedural-local",
+    "bpm": 116,
+    "mood": "bright, punchy, minor-to-major lift",
+    "seed": 1729,
+    "generator": "pipeline/audio.ts music()",
+    "license": "procedurally generated in-house, no samples"
+  },
+  "sfx_cues": [
+    {
+      "name": "impact",
+      "at": 0
+    },
+    {
+      "name": "whoosh",
+      "at": -0.18
+    },
+    {
+      "name": "whoosh",
+      "at": 3.487
+    },
+    {
+      "name": "stamp",
+      "at": 8.768
+    },
+    {
+      "name": "stamp",
+      "at": 9.768
+    },
+    {
+      "name": "stamp",
+      "at": 10.923
+    },
+    {
+      "name": "riser",
+      "at": 11.233
+    },
+    {
+      "name": "impact",
+      "at": 12.833
+    },
+    {
+      "name": "shine",
+      "at": 15.557
+    },
+    {
+      "name": "wave",
+      "at": 17.137
+    },
+    {
+      "name": "pop",
+      "at": 20.876
+    },
+    {
+      "name": "pop",
+      "at": 22.076
+    },
+    {
+      "name": "pop",
+      "at": 26.643
+    },
+    {
+      "name": "pop",
+      "at": 29.5
+    },
+    {
+      "name": "pop",
+      "at": 32.735
+    },
+    {
+      "name": "shine",
+      "at": 34.68
+    },
+    {
+      "name": "impact",
+      "at": 34.633
+    },
+    {
+      "name": "impact",
+      "at": 38.4
+    }
+  ],
+  "generated_media": "none (no image/video generation models used)"
+}

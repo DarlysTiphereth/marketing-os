@@ -1,0 +1,324 @@
+<title>Storyboard GRAND Três Gestos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Archivo:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: production storyboard sheet. Paper panels in a 4-up grid (2-up on tablet, 1-up on phone); notes in a reading column below. Panels stay paper-colored in both themes on purpose: they are physical sheets. */
+:root {
+  --bg: #eceae4; --sheet: #fbfaf6; --ink: #1b2233; --pencil: #4a4f5c; --muted: #6a7080; --line: #d3d0c6;
+  --liquid: #1e5fd8; --light: #d99a1e; --accent: #1e5fd8; --tag-bg: #e3e9f7; --gold: #a8740f;
+  --f-display: 'Archivo', Arial, sans-serif; --f-label: 'Archivo Narrow', 'Arial Narrow', sans-serif;
+  --f-body: 'IBM Plex Sans', 'Segoe UI', sans-serif; --f-mono: 'IBM Plex Mono', Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151821; --ink: #e8e9ee; --muted: #a2a8b8; --line: #2c3140; --accent: #8fb0ff; --tag-bg: #1f2a44; --gold: #e2b04f; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #151821; --ink: #e8e9ee; --muted: #a2a8b8; --line: #2c3140; --accent: #8fb0ff; --tag-bg: #1f2a44; --gold: #e2b04f; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15.5px; line-height: 1.6; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 72px; display: grid; gap: 52px; }
+h1, h2, h3 { font-family: var(--f-display); margin: 0; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; font-weight: 800; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+section { display: grid; gap: 18px; }
+.prose { max-width: 74ch; }
+header { display: grid; gap: 14px; }
+.slate { display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--f-mono); font-size: .8rem; color: var(--muted); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); padding-block: 10px; }
+.slate b { color: var(--ink); font-weight: 500; }
+
+.board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 18px; }
+@media (max-width: 1000px) { .board { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .board { grid-template-columns: 1fr; } }
+.panel { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.frame { background: var(--sheet); border: 1.5px solid #2a2f3a; aspect-ratio: 9 / 16; max-width: 100%; position: relative; }
+.frame canvas { width: 100%; height: 100%; display: block; }
+.ph { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-family: var(--f-mono); font-size: .74rem; color: var(--muted); }
+.ph b { font-family: var(--f-label); font-size: 1.05rem; color: var(--ink); font-weight: 700; letter-spacing: .01em; }
+.notes { font-size: .84rem; line-height: 1.45; display: grid; gap: 3px; }
+.notes span { color: var(--muted); font-family: var(--f-label); font-weight: 600; text-transform: uppercase; font-size: .72rem; letter-spacing: .06em; margin-right: 4px; }
+.tool { font-family: var(--f-mono); font-size: .72rem; padding: 2px 7px; background: var(--tag-bg); color: var(--accent); justify-self: start; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .84rem; color: var(--muted); align-items: center; }
+.sw { display: inline-block; width: 22px; height: 0; border-top: 3px solid; vertical-align: middle; margin-right: 6px; }
+
+.tbl { overflow-x: auto; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+tr.pick td { background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 600; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.cols > * { min-width: 0; display: grid; gap: 10px; align-content: start; }
+.ask { border: 2px solid var(--ink); padding: 22px; display: grid; gap: 12px; }
+ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: .82rem; color: var(--muted); }
+a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Marketing OS · Creative Quality Recovery · storyboard para aprovação</div>
+  <h1>GRAND Sabão Líquido Premium — "Três gestos"</h1>
+  <p class="prose">Comercial demonstrativo de 26 s com linguagem de publicidade premium: o líquido entrando nas fibras, os três gestos reais de uso que estão no rótulo, e o galão como herói. Todas as cenas têm ação física; nada é desenhado em código. A embalagem aparece sempre com os pixels originais.</p>
+  <div class="slate"><span>Formato <b>1080×1920 · 24 fps</b></span><span>Duração <b>26 s · 8 planos</b></span><span>Texto <b>4 linhas no filme</b></span><span>Produção estimada <b>≈ US$ 12–17</b></span><span>Status <b>aguardando aprovação do teste</b></span></div>
+</header>
+
+<section>
+  <div class="legend">
+    <span><span class="sw" style="border-color:#1b2233"></span>enquadramento / sujeito</span>
+    <span><span class="sw" style="border-color:#d63a2f"></span>movimento de câmera</span>
+    <span><span class="sw" style="border-color:#d99a1e"></span>direção da luz</span>
+    <span><span class="sw" style="border-color:#1e5fd8"></span>sabão líquido / água</span>
+  </div>
+  <div class="board" id="board"></div>
+</section>
+
+<section>
+  <h2>Três conceitos avaliados</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Conceito</th><th class="r">Salto visual</th><th class="r">Demonstração</th><th class="r">Retenção 3 s</th><th class="r">Sustentado por claims</th><th class="r">Variantes</th><th class="r">Média</th></tr></thead>
+    <tbody>
+      <tr><td>1 · "Fibra" — cinematográfico premium</td><td class="r">9</td><td class="r">4</td><td class="r">7</td><td class="r">9</td><td class="r">5</td><td class="r">7,0</td></tr>
+      <tr><td>2 · "Cheiro de limpo" — Direct Response</td><td class="r">7</td><td class="r">6</td><td class="r">9</td><td class="r">5</td><td class="r">9</td><td class="r">7,3</td></tr>
+      <tr class="pick"><td>3 · "Três gestos" — demonstrativo ⭐</td><td class="r">8,5</td><td class="r">9</td><td class="r">8</td><td class="r">9</td><td class="r">8</td><td class="r">8,3</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose muted">Recomendo o 3 com a direção de arte do 1. É o único que demonstra de verdade sem prometer resultado que não podemos provar; o DR (conceito 2) pede problema e prova que o rótulo não sustenta hoje. As mesmas imagens depois geram cortes DR de 15–20 s pelo variant engine.</p>
+</section>
+
+<section>
+  <h2>Pipelines comparados</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Pipeline</th><th class="r">Qualidade</th><th class="r">Fidelidade</th><th class="r">Automação</th><th class="r">Controle</th><th class="r">Ponderado</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>A · OpenMontage + IA + Remotion</td><td class="r">8</td><td class="r">6</td><td class="r">8</td><td class="r">6</td><td class="r">7,0</td><td>Já integra Kling, Veo, Seedance, Wan, LTX, Runway e stock; AGPL e estimativas de custo desatualizadas</td></tr>
+      <tr><td>B · Claude Code + Kling/Veo + Remotion</td><td class="r">8</td><td class="r">7</td><td class="r">7</td><td class="r">8</td><td class="r">7,7</td><td>Simples e controlável; precisamos escrever o cliente de provider</td></tr>
+      <tr><td>C · ComfyUI + modelos + Remotion/FFmpeg</td><td class="r">7</td><td class="r">8</td><td class="r">5</td><td class="r">9</td><td class="r">6,9</td><td>Inviável nesta máquina (sem GPU NVIDIA); só com GPU de nuvem</td></tr>
+      <tr class="pick"><td>D · Híbrido: vídeo IA para o mundo físico, pixels reais da embalagem, Remotion só no acabamento</td><td class="r">8,5</td><td class="r">9</td><td class="r">8</td><td class="r">9</td><td class="r">8,6</td><td>Embalagem nunca é redesenhada; i2v só em movimentos curtos com gate de rótulo</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose muted">Notas são julgamento sobre pesquisa e código, sem render ainda. Pesos: qualidade 30%, fidelidade 25%, automação 20%, controle 15%, custo 10%.</p>
+</section>
+
+<section class="cols">
+  <div>
+    <h2>Por que o vídeo anterior parecia slide</h2>
+    <ul>
+      <li>Todo pixel era desenhado em código: nenhum tecido, água ou luz real.</li>
+      <li>O packshot de 800 px só podia deslizar e escalar, então o produto ficava parado.</li>
+      <li>Sem imagem forte, o texto carregou a mensagem (1,6 palavra por segundo).</li>
+      <li>"Problema" e "mecanismo" eram ilustrações, sem nenhuma demonstração.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Gates novos de rejeição</h2>
+    <ul>
+      <li>Movimento óptico mínimo por cena (pega imagem parada disfarçada).</li>
+      <li>Duas cenas seguidas só com zoom são rejeitadas.</li>
+      <li>Texto acima de 12% da área do quadro fora do CTA.</li>
+      <li>Rótulo: SSIM ≥ 0,90 e OCR de GRAND, SABÃO LÍQUIDO, PREMIUM e 5L em todo frame com embalagem.</li>
+      <li>Pelo menos uma cena de uso real; fades e wipes proibidos por padrão.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ask">
+  <div class="eyebrow">Teste de 7 s · planos 1 + 7 · aguardando você</div>
+  <h2>Gota → Herói: física do líquido e fidelidade da embalagem</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Geração</th><th class="r">Qtde</th><th class="r">Máx.</th></tr></thead>
+    <tbody>
+      <tr><td>Plano 1 · Veo 3.1 (fal), 4 s, 1080p</td><td class="r">2</td><td class="r">US$ 1,60</td></tr>
+      <tr><td>Plano 1 · Kling v3 Pro, 5 s</td><td class="r">2</td><td class="r">US$ 1,12</td></tr>
+      <tr><td>Plano 7 · plate sem produto, Veo 3.1, 4 s</td><td class="r">2</td><td class="r">US$ 1,60</td></tr>
+      <tr><td>Plano 7 · plate sem produto, Kling v3 Pro, 5 s</td><td class="r">2</td><td class="r">US$ 1,12</td></tr>
+      <tr><td>Plano 7 · i2v da composição real (teste de rótulo)</td><td class="r">2</td><td class="r">US$ 1,36</td></tr>
+      <tr><td><b>Total</b> (teto pedido US$ 10)</td><td class="r"><b>9</b></td><td class="r"><b>≈ US$ 6,80</b></td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Autorizar o teto de US$ 10.</li>
+    <li>Criar a chave do fal.ai e colocar em <code>C:\Marketing-OS\.env</code> como <code>FAL_KEY=...</code>. Eu não crio contas nem digito credenciais.</li>
+    <li>Se existir, enviar o packshot em alta resolução (≥ 2.000 px de altura).</li>
+  </ul>
+  <p class="muted">Preços: Veo 3.1 pela página do fal; Kling por fontes de terceiros. Confirmo no painel antes de rodar.</p>
+</section>
+
+<footer>Fontes: <a href="https://fal.ai/models/fal-ai/veo3.1/reference-to-video/llms.txt">fal Veo 3.1</a> · <a href="https://pixverse.ai/en/blog/kling-o3-and-3-0-now-available-on-pixverse">Kling O3/3.0</a> · <a href="https://www.runflow.io/blog/comfyui-wan-2-2-image-to-video">Wan 2.2 em ComfyUI</a> · <a href="https://docs.comfy.org/tutorials/video/ltx/ltx-2.md">LTX-2</a> · <a href="https://nightjar.so/blog/best-ai-tools-for-packaging-heavy-product-photos">fidelidade de embalagem</a>. Documentos completos em <code>benchmark/002-creative-recovery/</code>.</footer>
+</div>
+
+<script>
+(function () {
+  const SHOTS = [
+    {n: 1, t: '0,0–3,0', name: 'Gota', frame: 'Macro extremo das fibras', cam: 'Push-in macro + rack focus', light: 'Contraluz frio, fundo preto', act: 'Gota azul cai e é absorvida, abrindo as fibras', out: 'Match cut: mancha → porta da máquina', tool: 'Veo 3.1 × Kling 3 · US$ 2,40'},
+    {n: 2, t: '3,0–5,5', name: 'Despejar', frame: 'Close ¾ da gaveta; só a tampa', cam: 'Dolly lateral lento', light: 'Softbox lateral neutra', act: 'Fita de líquido escorre na gaveta · "Na máquina: puro ou diluído"', out: 'Corte seco', tool: 'Kling O3 ref2v × Veo 3.1 · US$ 1,70'},
+    {n: 3, t: '5,5–8,5', name: 'Tambor', frame: 'POV dentro do tambor', cam: 'Roll com o giro', light: 'Contraluz pelo vidro', act: 'Roupas giram em água e espuma', out: 'Whip natural pelo giro', tool: 'Kling 3 ou stock · US$ 0–1,70'},
+    {n: 4, t: '8,5–12,0', name: 'À mão', frame: 'Top-down; só mãos', cam: 'Rotação lenta ~15°', light: 'Janela lateral, manhã', act: 'Mãos diluem na bacia e pressionam a camiseta · "À mão: dilua e aplique"', out: 'Corte no gesto de levantar', tool: 'Veo 3.1 + gate de mãos · US$ 2,40'},
+    {n: 5, t: '12,0–15,0', name: 'Fibra limpa', frame: 'Macro do tecido saindo da água', cam: 'Pull-up vertical', light: 'Contraluz quente', act: 'Água escorre em fios do tecido', out: 'Match cut ascendente → varal', tool: 'Veo 3.1 · US$ 2,40'},
+    {n: 6, t: '15,0–19,0', name: 'Ar livre', frame: 'Médio em contra-plongée', cam: 'Crane down lento', light: 'Sol de fim de tarde', act: 'Roupas ondulam ao vento · "Roupas mais limpas e perfumadas"', out: 'Corte para o set escuro', tool: 'Kling 3 ou stock · US$ 0–1,70'},
+    {n: 7, t: '19,0–23,0', name: 'Herói', frame: 'Galão 5 L em ~60% da altura', cam: 'Dolly-in + parallax; órbita ≤ 8° só com gate', light: 'Recorte que varre o rótulo', act: 'Água ondula na base; feixe percorre a embalagem', out: 'Hold', tool: 'Plate IA + pixels reais no Remotion · US$ 2,40'},
+    {n: 8, t: '23,0–26,0', name: 'Assinatura', frame: 'Mesmo set, galão estável', cam: 'Micro-drift', light: 'Mesma luz, flare dourado', act: 'Logo GRAND · "Limpeza Profunda" · "Conheça a GRAND"', out: 'Fim', tool: 'Remotion (tipografia) · US$ 0'},
+  ];
+  const INK = '#1b2233', PEN = '#4a4f5c', CAM = '#d63a2f', LIGHT = '#d99a1e', LIQ = '#1e5fd8', LIQ2 = 'rgba(30,95,216,0.18)';
+  const W = 270, H = 480;
+  let seed = 7;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+  const j = (a) => (rnd() - 0.5) * a;
+
+  function rough(ctx, pts, {color = PEN, width = 1.4, close = false, passes = 2, jitter = 1.6} = {}) {
+    ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (let p = 0; p < passes; p++) {
+      ctx.beginPath();
+      pts.forEach(([x, y], i) => { const X = x + j(jitter), Y = y + j(jitter); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); });
+      if (close) ctx.closePath();
+      ctx.stroke();
+    }
+  }
+  const line = (ctx, x1, y1, x2, y2, o) => rough(ctx, [[x1, y1], [x2, y2]], o);
+  function ellipse(ctx, cx, cy, rx, ry, o, a0 = 0, a1 = Math.PI * 2) {
+    const pts = []; for (let i = 0; i <= 40; i++) { const a = a0 + (a1 - a0) * i / 40; pts.push([cx + Math.cos(a) * rx, cy + Math.sin(a) * ry]); }
+    rough(ctx, pts, o);
+  }
+  function fillPath(ctx, pts, fill) { ctx.fillStyle = fill; ctx.beginPath(); pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.closePath(); ctx.fill(); }
+  function hatch(ctx, x, y, w, h, gap = 7, color = 'rgba(40,45,60,0.35)') {
+    ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
+    for (let k = -h; k < w; k += gap) line(ctx, x + k, y + h, x + k + h, y, {color, width: 0.9, passes: 1, jitter: 1});
+    ctx.restore();
+  }
+  function arrow(ctx, x1, y1, x2, y2, color = CAM, label) {
+    line(ctx, x1, y1, x2, y2, {color, width: 2.2, passes: 1, jitter: 0.8});
+    const a = Math.atan2(y2 - y1, x2 - x1), s = 9;
+    rough(ctx, [[x2 - Math.cos(a - 0.45) * s, y2 - Math.sin(a - 0.45) * s], [x2, y2], [x2 - Math.cos(a + 0.45) * s, y2 - Math.sin(a + 0.45) * s]], {color, width: 2.2, passes: 1, jitter: 0.5});
+    if (label) { ctx.fillStyle = color; ctx.font = '600 11px "Archivo Narrow", sans-serif'; ctx.fillText(label, Math.min(x1, x2) + 2, Math.min(y1, y2) - 5); }
+  }
+  function arcArrow(ctx, cx, cy, r, a0, a1, color = CAM, label) {
+    const pts = []; for (let i = 0; i <= 24; i++) { const a = a0 + (a1 - a0) * i / 24; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+    rough(ctx, pts, {color, width: 2.2, passes: 1, jitter: 0.6});
+    const [ex, ey] = pts[pts.length - 1], [px, py] = pts[pts.length - 3];
+    arrow(ctx, px, py, ex, ey, color);
+    if (label) { ctx.fillStyle = color; ctx.font = '600 11px "Archivo Narrow", sans-serif'; ctx.fillText(label, cx - r, cy - r - 6); }
+  }
+  function sun(ctx, x, y, label) {
+    ellipse(ctx, x, y, 7, 7, {color: LIGHT, width: 2, passes: 1});
+    for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; line(ctx, x + Math.cos(a) * 10, y + Math.sin(a) * 10, x + Math.cos(a) * 15, y + Math.sin(a) * 15, {color: LIGHT, width: 1.6, passes: 1, jitter: 0.4}); }
+    if (label) { ctx.fillStyle = LIGHT; ctx.font = '600 11px "Archivo Narrow", sans-serif'; ctx.fillText(label, x + 18, y + 4); }
+  }
+  function beam(ctx, x1, y1, x2, y2, w) {
+    const g = ctx.createLinearGradient(x1, y1, x2, y2); g.addColorStop(0, 'rgba(217,154,30,0.35)'); g.addColorStop(1, 'rgba(217,154,30,0)');
+    const a = Math.atan2(y2 - y1, x2 - x1) + Math.PI / 2, dx = Math.cos(a) * w, dy = Math.sin(a) * w;
+    fillPath(ctx, [[x1, y1], [x2 + dx, y2 + dy], [x2 - dx, y2 - dy]], g);
+  }
+  function jug(ctx, cx, by, h, {fill = null, label = true} = {}) {
+    const w = h * 0.5, top = by - h;
+    const body = [[cx - w / 2, by], [cx - w / 2, top + h * 0.32], [cx - w * 0.28, top + h * 0.2], [cx - w * 0.12, top + h * 0.17], [cx - w * 0.12, top + h * 0.06], [cx + w * 0.12, top + h * 0.06], [cx + w * 0.12, top + h * 0.17], [cx + w * 0.28, top + h * 0.2], [cx + w / 2, top + h * 0.32], [cx + w / 2, by]];
+    if (fill) fillPath(ctx, body, fill);
+    rough(ctx, body, {color: INK, width: 1.8, close: true});
+    ellipse(ctx, cx + w * 0.18, top + h * 0.12, w * 0.32, h * 0.1, {color: INK, width: 1.6, passes: 1}, Math.PI * 1.05, Math.PI * 1.95);
+    rough(ctx, [[cx - w * 0.14, top + h * 0.06], [cx - w * 0.14, top], [cx + w * 0.14, top], [cx + w * 0.14, top + h * 0.06]], {color: INK, width: 1.6});
+    if (label) {
+      rough(ctx, [[cx - w * 0.42, top + h * 0.45], [cx + w * 0.42, top + h * 0.45], [cx + w * 0.42, top + h * 0.85], [cx - w * 0.42, top + h * 0.85]], {color: PEN, width: 1.2, close: true, passes: 1});
+      ctx.fillStyle = INK; ctx.font = `700 ${Math.round(h * 0.07)}px "Archivo Narrow", sans-serif`; ctx.textAlign = 'center';
+      ctx.fillText('GRAND', cx, top + h * 0.58); ctx.font = `600 ${Math.round(h * 0.045)}px "Archivo Narrow", sans-serif`;
+      ctx.fillText('rótulo real', cx, top + h * 0.68); ctx.fillText('5 L', cx, top + h * 0.79); ctx.textAlign = 'left';
+    }
+  }
+  function shirt(ctx, cx, cy, s, rot = 0, color = PEN) {
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot);
+    rough(ctx, [[-0.32, -0.42], [-0.12, -0.5], [0, -0.42], [0.12, -0.5], [0.32, -0.42], [0.55, -0.18], [0.38, -0.05], [0.3, -0.15], [0.3, 0.5], [-0.3, 0.5], [-0.3, -0.15], [-0.38, -0.05], [-0.55, -0.18]].map(([x, y]) => [x * s, y * s]), {color, width: 1.5, close: true});
+    ctx.restore();
+  }
+  function textBar(ctx, y, txt) {
+    ctx.fillStyle = 'rgba(27,34,51,0.08)'; ctx.fillRect(28, y - 15, W - 56, 24);
+    ctx.fillStyle = INK; ctx.font = '700 12px "Archivo Narrow", sans-serif'; ctx.textAlign = 'center'; ctx.fillText(txt, W / 2, y + 2); ctx.textAlign = 'left';
+  }
+
+  const DRAW = [
+    (c) => { // 1 Gota
+      ctx(c).fillStyle = 'rgba(27,34,51,0.86)'; c.fillRect(0, 0, W, H);
+      for (let k = 0; k < 26; k++) { const y0 = 250 + k * 9; const pts = []; for (let x = -10; x <= W + 10; x += 15) pts.push([x, y0 + Math.sin(x / 22 + k) * 4]); rough(c, pts, {color: 'rgba(235,232,222,0.55)', width: 1.2, passes: 1, jitter: 1.2}); }
+      fillPath(c, [[135, 120], [150, 160], [146, 182], [124, 182], [120, 160]], LIQ); ellipse(c, 135, 168, 15, 16, {color: '#bcd0ff', width: 1, passes: 1});
+      ellipse(c, 135, 300, 46, 14, {color: LIQ, width: 2.2}); ellipse(c, 135, 300, 72, 22, {color: 'rgba(80,140,255,0.6)', width: 1.4, passes: 1}); c.fillStyle = LIQ2; c.beginPath(); c.ellipse(135, 300, 46, 14, 0, 0, 7); c.fill();
+      beam(c, 268, 40, 150, 290, 26); sun(c, 238, 34, 'contraluz');
+      arrow(c, 40, 440, 40, 398, CAM, 'push-in'); line(c, 20, 90, 60, 90, {color: CAM, width: 1.4, passes: 1}); c.fillStyle = CAM; c.font = '600 11px "Archivo Narrow"'; c.fillText('foco: gota → fibras', 20, 82);
+    },
+    (c) => { // 2 Despejar
+      rough(c, [[30, 270], [230, 250], [240, 330], [40, 355]], {color: INK, width: 1.8, close: true}); rough(c, [[60, 290], [200, 276], [206, 318], [66, 334]], {color: PEN, width: 1.3, close: true});
+      hatch(c, 66, 296, 136, 34, 8);
+      rough(c, [[150, 60], [205, 85], [190, 120], [140, 100]], {color: INK, width: 1.8, close: true}); c.fillStyle = 'rgba(30,95,216,0.25)'; c.fillRect(150, 70, 40, 30);
+      const s = []; for (let y = 110; y <= 300; y += 8) s.push([168 + Math.sin(y / 30) * 4, y]); rough(c, s, {color: LIQ, width: 4, passes: 1, jitter: 0.6});
+      c.fillStyle = PEN; c.font = '600 11px "Archivo Narrow"'; c.fillText('só a tampa no quadro', 148, 52);
+      arrow(c, 40, 430, 120, 430, CAM, 'dolly lateral'); beam(c, 0, 200, 150, 240, 50); sun(c, 18, 180, 'softbox');
+      textBar(c, 400, 'NA MÁQUINA: PURO OU DILUÍDO');
+    },
+    (c) => { // 3 Tambor
+      ellipse(c, 135, 230, 118, 118, {color: INK, width: 2.4}); ellipse(c, 135, 230, 96, 96, {color: PEN, width: 1.4, passes: 1});
+      c.fillStyle = 'rgba(30,95,216,0.16)'; c.beginPath(); c.arc(135, 230, 96, 0.15, Math.PI - 0.15); c.fill();
+      shirt(c, 105, 210, 70, -0.6); shirt(c, 165, 255, 60, 0.9); rough(c, [[90, 280], [130, 300], [170, 290], [150, 320], [100, 310]], {color: PEN, width: 1.3, close: true});
+      for (let k = 0; k < 12; k++) ellipse(c, 70 + rnd() * 130, 260 + rnd() * 60, 3 + rnd() * 4, 3 + rnd() * 4, {color: LIQ, width: 1, passes: 1});
+      arcArrow(c, 135, 230, 136, -2.4, -0.7, CAM, 'roll com o tambor'); beam(c, 135, 40, 135, 200, 40); sun(c, 135, 30);
+    },
+    (c) => { // 4 À mão
+      ellipse(c, 135, 240, 110, 90, {color: INK, width: 2.2}); ellipse(c, 135, 240, 92, 74, {color: PEN, width: 1.2, passes: 1});
+      c.fillStyle = 'rgba(30,95,216,0.14)'; c.beginPath(); c.ellipse(135, 240, 92, 74, 0, 0, 7); c.fill();
+      arcArrow(c, 135, 240, 40, 0.2, 4.2, LIQ); shirt(c, 150, 270, 70, 0.4);
+      rough(c, [[40, 120], [80, 175], [100, 190], [92, 202], [70, 196], [30, 150]], {color: INK, width: 1.6, close: true}); rough(c, [[235, 115], [195, 180], [178, 196], [188, 206], [210, 196], [250, 140]], {color: INK, width: 1.6, close: true});
+      c.fillStyle = PEN; c.font = '600 11px "Archivo Narrow"'; c.fillText('top-down · só mãos', 20, 30);
+      arcArrow(c, 135, 240, 132, -0.4, 0.15, CAM, 'rotação 15°'); beam(c, 0, 60, 120, 220, 40); sun(c, 18, 60, 'janela');
+      textBar(c, 410, 'À MÃO: DILUA E APLIQUE');
+    },
+    (c) => { // 5 Fibra limpa
+      const top = []; for (let x = 20; x <= 250; x += 10) top.push([x, 120 + Math.sin(x / 30) * 10]);
+      rough(c, top, {color: INK, width: 1.8}); line(c, 20, 120, 30, 330, {color: INK, width: 1.8}); line(c, 250, 120, 240, 330, {color: INK, width: 1.8});
+      for (let k = 0; k < 14; k++) line(c, 30 + k * 15, 130, 32 + k * 15, 320, {color: 'rgba(74,79,92,0.35)', width: 0.8, passes: 1});
+      for (let k = 0; k < 9; k++) { const x = 40 + k * 24; line(c, x, 330, x + j(4), 360 + rnd() * 50, {color: LIQ, width: 2, passes: 1}); ellipse(c, x, 410 + rnd() * 20, 2.5, 3.5, {color: LIQ, width: 1.4, passes: 1}); }
+      const w = []; for (let x = 0; x <= W; x += 12) w.push([x, 440 + Math.sin(x / 18) * 4]); rough(c, w, {color: LIQ, width: 1.6});
+      arrow(c, 245, 300, 245, 180, CAM, 'pull-up'); beam(c, 135, 0, 135, 140, 60); sun(c, 135, 22, 'contraluz quente');
+    },
+    (c) => { // 6 Ar livre
+      line(c, 0, 150, W, 175, {color: INK, width: 1.6}); shirt(c, 80, 225, 90, -0.12); shirt(c, 195, 240, 80, 0.15);
+      [[60, 158], [100, 162], [178, 167], [214, 171]].forEach(([x, y]) => line(c, x, y - 6, x, y + 8, {color: INK, width: 2, passes: 1}));
+      for (let k = 0; k < 4; k++) { const pts = []; for (let x = 30; x <= 120; x += 10) pts.push([x + k * 40, 320 + k * 14 + Math.sin(x / 10) * 3]); rough(c, pts, {color: 'rgba(74,79,92,0.45)', width: 1, passes: 1}); }
+      line(c, 0, 420, W, 410, {color: PEN, width: 1.2});
+      sun(c, 225, 70, 'sol baixo'); arrow(c, 30, 60, 30, 120, CAM, 'crane down');
+      c.fillStyle = PEN; c.font = '600 11px "Archivo Narrow"'; c.fillText('contra-plongée', 20, 455);
+      textBar(c, 380, 'ROUPAS MAIS LIMPAS E PERFUMADAS');
+    },
+    (c) => { // 7 Herói
+      c.fillStyle = 'rgba(27,34,51,0.86)'; c.fillRect(0, 0, W, H);
+      beam(c, 268, 60, 120, 260, 40); sun(c, 245, 50, 'recorte');
+      jug(c, 135, 345, 230, {fill: 'rgba(30,95,216,0.55)'});
+      ellipse(c, 135, 352, 95, 18, {color: 'rgba(160,200,255,0.8)', width: 1.4}); ellipse(c, 135, 352, 125, 26, {color: 'rgba(160,200,255,0.45)', width: 1.2, passes: 1});
+      hatch(c, 0, 370, W, 110, 9, 'rgba(235,232,222,0.25)');
+      arrow(c, 30, 450, 30, 400, CAM, 'dolly-in'); c.fillStyle = '#f0c46a'; c.font = '600 11px "Archivo Narrow"'; c.fillText('pixels reais do galão', 150, 395); c.fillText('sobre plate gerado', 150, 409);
+    },
+    (c) => { // 8 Assinatura
+      c.fillStyle = 'rgba(27,34,51,0.86)'; c.fillRect(0, 0, W, H);
+      jug(c, 135, 300, 190, {fill: 'rgba(30,95,216,0.55)'}); ellipse(c, 135, 306, 80, 15, {color: 'rgba(160,200,255,0.7)', width: 1.3});
+      c.fillStyle = '#f0c46a'; c.font = '800 22px "Archivo", sans-serif'; c.textAlign = 'center'; c.fillText('GRAND', 135, 70);
+      c.fillStyle = '#e8e6df'; c.font = '600 12px "Archivo Narrow"'; c.fillText('LIMPEZA PROFUNDA', 135, 90);
+      c.strokeStyle = '#f0c46a'; c.lineWidth = 1.6; c.beginPath(); c.roundRect(60, 360, 150, 34, 17); c.stroke();
+      c.fillStyle = '#f0c46a'; c.font = '700 13px "Archivo Narrow"'; c.fillText('CONHEÇA A GRAND', 135, 382); c.textAlign = 'left';
+      c.fillStyle = '#e8e6df'; c.font = '600 11px "Archivo Narrow"'; c.fillText('micro-drift', 20, 455);
+    },
+  ];
+  function ctx(c) { return c; }
+
+  const board = document.getElementById('board');
+  SHOTS.forEach((s, i) => {
+    const el = document.createElement('article'); el.className = 'panel';
+    el.innerHTML = `<div class="ph"><b>${s.n} · ${s.name}</b><span>${s.t} s</span></div>
+      <div class="frame"><canvas width="${W * 2}" height="${H * 2}" aria-label="Esboço do plano ${s.n}: ${s.frame}"></canvas></div>
+      <div class="notes"><div><span>Quadro</span>${s.frame}</div><div><span>Câmera</span>${s.cam}</div><div><span>Luz</span>${s.light}</div><div><span>Ação</span>${s.act}</div><div><span>Saída</span>${s.out}</div></div>
+      <span class="tool">${s.tool}</span>`;
+    board.appendChild(el);
+    const cv = el.querySelector('canvas'), c = cv.getContext('2d');
+    c.scale(2, 2); seed = 11 + i * 97;
+    c.fillStyle = '#fbfaf6'; c.fillRect(0, 0, W, H);
+    try { DRAW[i](c); } catch (e) { c.fillStyle = INK; c.fillText('esboço indisponível', 20, 40); }
+  });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => {
+    board.querySelectorAll('canvas').forEach((cv, i) => { const c = cv.getContext('2d'); c.setTransform(2, 0, 0, 2, 0, 0); seed = 11 + i * 97; c.fillStyle = '#fbfaf6'; c.fillRect(0, 0, W, H); try { DRAW[i](c); } catch (e) {} });
+  });
+})();
+</script>

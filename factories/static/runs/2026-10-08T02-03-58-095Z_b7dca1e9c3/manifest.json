@@ -1,0 +1,377 @@
+{
+  "run_id": "2026-10-08T02-03-58-095Z_b7dca1e9c3",
+  "brief": "factories/static/briefs/grand-sabao-5l.brief.json",
+  "brief_sha256": "b7dca1e9c3cfa6f43cca7926d8f24ec6f1c3ece6892b85c11e4cd3f53b895231",
+  "brand_kit": "factories/shared/brand-kits/grand/kit.json",
+  "product": "factories/shared/products/grand/sabao-liquido-premium-5l.json",
+  "renderer": "playwright-core 1.56.1 + chrome-headless-shell (existing install) · ffmpeg for JPG/WebP · Chrome print-to-PDF",
+  "fonts": "Archivo Variable (OFL-1.1)",
+  "claims_pending_approval": [
+    "c-limpas-perfumadas",
+    "c-remove",
+    "c-cuida",
+    "c-encomende",
+    "c-formula",
+    "c-modo-uso"
+  ],
+  "labels": {
+    "synthetic_composites": [
+      "A-photo-composite",
+      "A2-marketplace-main"
+    ],
+    "statement": "SYNTHETIC_COMPOSITE: digital composition using the real product photo; not a studio photograph."
+  },
+  "variant_space": {
+    "combinations": 72,
+    "dims": {
+      "concepts": 4,
+      "headlines": 3,
+      "ctas": 2,
+      "formats": 3
+    },
+    "selected": [
+      {
+        "concept": "hero-spotlight",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      {
+        "concept": "bold-block",
+        "headline": "h2",
+        "cta": "cta2",
+        "format": "story"
+      },
+      {
+        "concept": "catalog-clean",
+        "headline": "h3",
+        "cta": "cta1",
+        "format": "square"
+      },
+      {
+        "concept": "editorial-split",
+        "headline": "h1",
+        "cta": "cta2",
+        "format": "square"
+      },
+      {
+        "concept": "bold-block",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      {
+        "concept": "editorial-split",
+        "headline": "h2",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      }
+    ],
+    "best": {
+      "concept": "hero-spotlight",
+      "headline": "h1",
+      "cta": "cta1",
+      "format": "feed_4x5"
+    },
+    "concept_notes": {
+      "hero-spotlight": "Estúdio escuro, uma fonte de luz, produto como sujeito único; tipografia expandida centralizada. Premium/marca.",
+      "editorial-split": "Grid assimétrico, coluna tipográfica alinhada à esquerda, produto atravessando um campo de cor. Informativo/benefícios.",
+      "bold-block": "Blocos de cor, numeral de volume gigante, adesivo de CTA. Energia promocional sem preço.",
+      "catalog-clean": "Fundo branco, produto em primeiro plano, ritmo de especificações. Marketplace/catálogo."
+    }
+  },
+  "pieces": [
+    {
+      "id": "A-photo-composite",
+      "group": "A",
+      "fmt": "feed_4x5",
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A-photo-composite.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A-photo-composite.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A-photo-composite.webp"
+      },
+      "sha256": "2b6b5460618c7e255082a8cba15e10a1a09cb16441ba854d8a24784db2281f75",
+      "bytes": 1060059,
+      "synthetic": true
+    },
+    {
+      "id": "A2-marketplace-main",
+      "group": "A",
+      "fmt": "marketplace",
+      "concept": "catalog-clean",
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A2-marketplace-main.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A2-marketplace-main.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\A2-marketplace-main.webp"
+      },
+      "sha256": "b35bfa13850c9f39a2aaf16ebc31c9497ac3e500fe0b9692f5bdfb410ab1860d",
+      "bytes": 407140,
+      "synthetic": true
+    },
+    {
+      "id": "B-best-hero-spotlight-h1-cta1-feed_4x5",
+      "group": "B",
+      "fmt": "feed_4x5",
+      "concept": "hero-spotlight",
+      "combo": {
+        "concept": "hero-spotlight",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\B-best-hero-spotlight-h1-cta1-feed_4x5.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\B-best-hero-spotlight-h1-cta1-feed_4x5.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\B-best-hero-spotlight-h1-cta1-feed_4x5.webp"
+      },
+      "sha256": "a3f4d2620de50a679410b53b6860da4468d0f4d78313c47c7a5fc36a8cd15c2e",
+      "bytes": 882163,
+      "synthetic": false
+    },
+    {
+      "id": "E-variation-editorial-split",
+      "group": "E",
+      "fmt": "feed_4x5",
+      "concept": "editorial-split",
+      "combo": {
+        "concept": "editorial-split",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-editorial-split.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-editorial-split.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-editorial-split.webp"
+      },
+      "sha256": "fcc9e00c3cf81b7c87736f1f409e501df12a54626be488f13cd3b6c8c472813d",
+      "bytes": 673375,
+      "synthetic": false
+    },
+    {
+      "id": "E-variation-bold-block",
+      "group": "E",
+      "fmt": "feed_4x5",
+      "concept": "bold-block",
+      "combo": {
+        "concept": "bold-block",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-bold-block.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-bold-block.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-bold-block.webp"
+      },
+      "sha256": "d62cbecc9d0186a134cf213503172a543611a15d3508d8e6def0614817ef9036",
+      "bytes": 375353,
+      "synthetic": false
+    },
+    {
+      "id": "E-variation-catalog-clean",
+      "group": "E",
+      "fmt": "feed_4x5",
+      "concept": "catalog-clean",
+      "combo": {
+        "concept": "catalog-clean",
+        "headline": "h1",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-catalog-clean.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-catalog-clean.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\E-variation-catalog-clean.webp"
+      },
+      "sha256": "83c9f301365e0fd684bc2591f0b2f9ac0a699f367481224e04054ccdcc880a3a",
+      "bytes": 370076,
+      "synthetic": false
+    },
+    {
+      "id": "V-bold-block-h2-cta2-story",
+      "group": "V",
+      "fmt": "story",
+      "concept": "bold-block",
+      "combo": {
+        "concept": "bold-block",
+        "headline": "h2",
+        "cta": "cta2",
+        "format": "story"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-bold-block-h2-cta2-story.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-bold-block-h2-cta2-story.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-bold-block-h2-cta2-story.webp"
+      },
+      "sha256": "0c20b07a968c11c0ee7b85aaafc61413e18217134d5ff74d66ae6b7528c629b4",
+      "bytes": 381645,
+      "synthetic": false
+    },
+    {
+      "id": "V-catalog-clean-h3-cta1-square",
+      "group": "V",
+      "fmt": "square",
+      "concept": "catalog-clean",
+      "combo": {
+        "concept": "catalog-clean",
+        "headline": "h3",
+        "cta": "cta1",
+        "format": "square"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-catalog-clean-h3-cta1-square.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-catalog-clean-h3-cta1-square.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-catalog-clean-h3-cta1-square.webp"
+      },
+      "sha256": "d306b88e9f18780e83b8ff9e041694fd6ce3682cecbe1d0a57232506bff167e1",
+      "bytes": 294390,
+      "synthetic": false
+    },
+    {
+      "id": "V-editorial-split-h1-cta2-square",
+      "group": "V",
+      "fmt": "square",
+      "concept": "editorial-split",
+      "combo": {
+        "concept": "editorial-split",
+        "headline": "h1",
+        "cta": "cta2",
+        "format": "square"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h1-cta2-square.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h1-cta2-square.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h1-cta2-square.webp"
+      },
+      "sha256": "ae2fe139735c92ba259b8c2032144ffebeab136d5ce325f9ad8d09b5c09aa9cf",
+      "bytes": 536048,
+      "synthetic": false
+    },
+    {
+      "id": "V-editorial-split-h2-cta1-feed_4x5",
+      "group": "V",
+      "fmt": "feed_4x5",
+      "concept": "editorial-split",
+      "combo": {
+        "concept": "editorial-split",
+        "headline": "h2",
+        "cta": "cta1",
+        "format": "feed_4x5"
+      },
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h2-cta1-feed_4x5.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h2-cta1-feed_4x5.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\V-editorial-split-h2-cta1-feed_4x5.webp"
+      },
+      "sha256": "2fad490bb4f6ae26ccf00fdc72b621596f116f3d4a503af6ccf09345af85a7aa",
+      "bytes": 676811,
+      "synthetic": false
+    },
+    {
+      "id": "C-carousel-01",
+      "group": "C",
+      "fmt": "feed_4x5",
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-01.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-01.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-01.webp"
+      },
+      "sha256": "5563d716b1d2e14cc58c1bc438719a038bcb054d1dcae034d99497f94df9f571",
+      "bytes": 78814,
+      "synthetic": false
+    },
+    {
+      "id": "C-carousel-02",
+      "group": "C",
+      "fmt": "feed_4x5",
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-02.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-02.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-02.webp"
+      },
+      "sha256": "7c1160e88cd34b24dfd2ebe9a14acee5804d78f0e9ba413b1483ac4fd0575f84",
+      "bytes": 72648,
+      "synthetic": false
+    },
+    {
+      "id": "C-carousel-03",
+      "group": "C",
+      "fmt": "feed_4x5",
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-03.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-03.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-03.webp"
+      },
+      "sha256": "cd8aac6ffe0c724efe54af5cc773c96cd6786e88742bb14c7ce7f15e8c74a91e",
+      "bytes": 664510,
+      "synthetic": false
+    },
+    {
+      "id": "C-carousel-04",
+      "group": "C",
+      "fmt": "feed_4x5",
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-04.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-04.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-04.webp"
+      },
+      "sha256": "2569257a60fe8cd8904119b2a0c86185e2ed930f4ee58e83b7f3a8c505f265dc",
+      "bytes": 60767,
+      "synthetic": false
+    },
+    {
+      "id": "C-carousel-05",
+      "group": "C",
+      "fmt": "feed_4x5",
+      "verdict": "PASS",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-05.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-05.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\C-carousel-05.webp"
+      },
+      "sha256": "0da23d2e79f6d3f2f91d009dd0809f35f5b58c86016677c51d99e653ff7aa16d",
+      "bytes": 214442,
+      "synthetic": false
+    },
+    {
+      "id": "D-story-promo",
+      "group": "D",
+      "fmt": "story",
+      "verdict": "FAIL",
+      "outputs": {
+        "png": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\D-story-promo.png",
+        "jpg": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\D-story-promo.jpg",
+        "webp": "C:\\Marketing-OS\\factories\\static\\runs\\2026-10-08T02-03-58-095Z_b7dca1e9c3\\final\\D-story-promo.webp"
+      },
+      "sha256": "c4f910f5a08ec72f6c094cdc43caea8edfd16ba91a705ac5a30e9634d22450a2",
+      "bytes": 864849,
+      "synthetic": false
+    }
+  ],
+  "repeats": [],
+  "contact_sheet": "contact-sheet.jpg",
+  "gallery": "index.html",
+  "timings_s": {
+    "total": 12.52
+  },
+  "cost": {
+    "api_usd": 0,
+    "paid_calls": 0
+  },
+  "review": "PENDING_HUMAN_REVIEW (no piece is approved or published automatically)"
+}

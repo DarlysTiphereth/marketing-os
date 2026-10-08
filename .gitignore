@@ -6,3 +6,21 @@ outputs/
 !.env.example
 *.log
 .pnpm-store/
+# Benchmark media (large/private brand assets stay local; manifests are versioned)
+experiments/**/node_modules/
+experiments/**/.cache/
+experiments/**/public/*.png
+experiments/**/runs/**/*.mp4
+experiments/**/runs/**/*.wav
+experiments/**/runs/**/frames/
+# Cloud-first control plane: local state, caches, CAS store (never versioned)
+.mos/
+# Public repository: brand-derived images and rendered media never go to Git (manifests do)
+experiments/**/runs/**/*.jpg
+experiments/**/runs/**/*.png
+factories/**/node_modules/
+factories/**/runs/**/final/
+factories/**/runs/**/source/
+factories/**/runs/**/*.jpg
+factories/**/runs/**/index.html
+factories/**/runs/**/*.png

@@ -1,0 +1,41 @@
+{
+  "schema_version": "static-brief.v1",
+  "brief_id": "grand-sabao-5l-static-001",
+  "brand": "grand",
+  "product": "sabao-liquido-premium-5l",
+  "objective": "Prova funcional da Static Creative Factory: anúncio de performance, foto comercial composta, carrossel, stories e variações. Uso interno, sem publicação.",
+  "audience": "UNKNOWN (sem dados de público). Hipótese de trabalho: compradores de produtos de lavanderia no Brasil.",
+  "platforms": ["instagram_feed", "instagram_stories", "facebook_feed", "marketplace"],
+  "campaign": "UNKNOWN",
+  "offer": {"status": "NONE", "note": "Preço, desconto, frete e estoque UNKNOWN: nenhuma oferta é exibida."},
+  "message": "Limpeza profunda num galão de 5 L, com benefícios tirados do rótulo.",
+  "display": {"brand": "GRAND", "tagline": "Limpeza & Proteção", "product": "Sabão Líquido Premium", "variant": "5 L"},
+  "headlines": [
+    {"id": "h1", "text": "Limpeza *profunda* em 5 litros.", "claim_refs": ["c-limpeza-profunda", "c-5l"]},
+    {"id": "h2", "text": "Roupas mais limpas e *perfumadas*.", "claim_refs": ["c-limpas-perfumadas"]},
+    {"id": "h3", "text": "Remove as sujeiras. *Cuida* das suas roupas.", "claim_refs": ["c-remove", "c-cuida"]}
+  ],
+  "ctas": [
+    {"id": "cta1", "text": "Conheça a GRAND", "claim_refs": ["c-cta-conheca"]},
+    {"id": "cta2", "text": "Encomende o seu", "claim_refs": ["c-encomende"]}
+  ],
+  "band": {"id": "band", "text": "Limpeza Profunda", "claim_refs": ["c-limpeza-profunda"]},
+  "benefits": [
+    {"id": "b1", "icon": "icon_sparkle", "text": "Remove as sujeiras", "claim_refs": ["c-remove"]},
+    {"id": "b2", "icon": "icon_shirt", "text": "Roupas mais limpas e perfumadas", "claim_refs": ["c-limpas-perfumadas"]},
+    {"id": "b3", "icon": "icon_leaf", "text": "Cuida das suas roupas", "claim_refs": ["c-cuida"]}
+  ],
+  "carousel": {
+    "structure": "hook-problem-explain-solution-cta",
+    "format": "feed_4x5",
+    "pages": [
+      {"kind": "hook", "eyebrow": "Lavanderia", "headline": "Sua roupa sai da máquina sem *cheiro de limpa*?", "footer": "Arraste", "claim_refs": []},
+      {"kind": "problem", "headline": "Lavar de novo gasta *tempo*, água e paciência.", "body": "Quando a roupa não sai como você esperava, o trabalho volta para o cesto.", "claim_refs": []},
+      {"kind": "solution", "eyebrow": "GRAND Sabão Líquido Premium", "headline": "Fórmula avançada para remoção de manchas e *cuidado com as cores*.", "band": "Limpeza Profunda", "claim_refs": ["c-name", "c-formula", "c-limpeza-profunda"]},
+      {"kind": "steps", "headline": "Como *usar*", "steps": [{"icon": "machine", "title": "Na máquina", "text": "Puro ou diluído em água, conforme a necessidade."}, {"icon": "hand", "title": "À mão", "text": "Dilua em água e aplique."}], "claim_refs": ["c-modo-uso"]},
+      {"kind": "cta", "headline": "Limpeza *profunda* em 5 litros.", "benefits": [{"icon": "icon_sparkle", "text": "Remove as sujeiras"}, {"icon": "icon_shirt", "text": "Roupas mais limpas e perfumadas"}, {"icon": "icon_leaf", "text": "Cuida das suas roupas"}], "cta": "Conheça a GRAND", "note": "Galão de 5 L", "claim_refs": ["c-limpeza-profunda", "c-5l", "c-remove", "c-limpas-perfumadas", "c-cuida", "c-cta-conheca"]}
+    ]
+  },
+  "story": {"eyebrow": "Galão de 5 L", "headline": "Limpeza *profunda* em 5 litros.", "sticker": "Encomende o seu", "chips": ["Remove as sujeiras", "Cuida das suas roupas"], "claim_refs": ["c-limpeza-profunda", "c-5l", "c-encomende", "c-remove", "c-cuida"]},
+  "variant_space": {"concepts": ["hero-spotlight", "editorial-split", "bold-block", "catalog-clean"], "headlines": ["h1", "h2", "h3"], "ctas": ["cta1", "cta2"], "formats": ["feed_4x5", "square", "story"], "render_budget": 6}
+}

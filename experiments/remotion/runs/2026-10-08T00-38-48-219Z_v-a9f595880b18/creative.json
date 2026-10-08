@@ -1,0 +1,908 @@
+{
+  "schema_version": "creative.v1",
+  "template": "experiments/remotion/creatives/grand-sabao-5l.creative.json",
+  "template_sha256": "41ec72c1037d0becc4bbe74eca55d6b111e51acb1f409bddfe29ede4ec67b430",
+  "variant_id": "v-a9f595880b18",
+  "selection": {
+    "hook": "hook-b",
+    "body": "body-1",
+    "cta": "cta-b",
+    "style": "deep-blue",
+    "voice": "maria",
+    "music": "pulse-116",
+    "pacing": "fast",
+    "captions": "karaoke"
+  },
+  "objective": "Benchmark 001: performance-ad structure (hook > problem > tension > demo > benefits > payoff > CTA) for internal evaluation. NOT for publication.",
+  "audience": "UNKNOWN (no audience data supplied). Working assumption for creative only: Brazilian household laundry buyers, pt-BR.",
+  "platforms": [
+    "instagram_reels",
+    "tiktok",
+    "facebook_reels",
+    "youtube_shorts"
+  ],
+  "awareness_level": "problem_aware",
+  "angle": {
+    "angle_id": "angle-rewash-frustration",
+    "text": "Laundry that comes out without that clean smell and with stains -> a liquid soap whose label states deep cleaning, stain removal and fabric care."
+  },
+  "promise": "Roupas mais limpas e perfumadas, com limpeza profunda (label claims).",
+  "problem": "Roupa que sai da lavagem sem cheiro de limpa e com sujeira que não sai (problem framing, not a product claim).",
+  "mechanism": "Fórmula avançada para remoção de manchas e cuidado com as cores (packshot side panel). Uso: puro ou diluído na máquina; diluído na lavagem manual (label).",
+  "proof": {
+    "status": "NONE_AVAILABLE",
+    "items": [],
+    "note": "No reviews, lab tests, sales numbers or certifications were supplied. Proof slot intentionally left empty; nothing fabricated. ANVISA registration printed on label is NOT used as a marketing proof (regulatory-advertising rules UNKNOWN)."
+  },
+  "benefits": [
+    "Remove as sujeiras",
+    "Roupas mais limpas e perfumadas",
+    "Cuida das suas roupas",
+    "Limpeza profunda",
+    "Galão de 5 L"
+  ],
+  "objections": [
+    {
+      "objection": "Serve pra máquina de lavar?",
+      "answer": "Sim: na máquina, use puro ou diluído (modo de usar do rótulo).",
+      "claim_refs": [
+        "c-modo-uso"
+      ]
+    },
+    {
+      "objection": "Vai estragar as cores?",
+      "answer": "Fórmula com cuidado com as cores (painel lateral do galão).",
+      "claim_refs": [
+        "c-formula"
+      ]
+    }
+  ],
+  "claims_used": [
+    {
+      "claim_id": "c-name",
+      "text": "GRAND Sabão Líquido Premium",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "media-stack-lab/benchmarks/common/GRAND_BASELINE_BRIEF.md#dados-e-copy-aprovados",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-5l",
+      "text": "5 L",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "GRAND_BASELINE_BRIEF.md; catalog p.1",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-limpeza-profunda",
+      "text": "Limpeza Profunda",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png band 'LIMPEZA PROFUNDA'; approved in Benchmark 002 copy",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-remove",
+      "text": "Remove as sujeiras",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 3",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-limpas-perfumadas",
+      "text": "Roupas mais limpas e perfumadas",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 1",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-cuida",
+      "text": "Cuida das suas roupas",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 2",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-formula",
+      "text": "Fórmula avançada para remoção de manchas e cuidado com as cores",
+      "source_type": "PRODUCT_PACKSHOT",
+      "source_ref": "product-5l.png side panel text",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-modo-uso",
+      "text": "Use puro ou diluído em água; lavagem manual: dilua em água e aplique",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png 'MODO DE USAR'",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-encomende",
+      "text": "Encomende",
+      "source_type": "PRODUCT_PACKSHOT",
+      "source_ref": "product-5l.png side panel 'Encomende via contatos'",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    }
+  ],
+  "style": {
+    "style_id": "deep-blue",
+    "palette": {
+      "bg0": "#020b33",
+      "bg1": "#0a3fc2",
+      "accent": "#f2c14e",
+      "ink": "#ffffff",
+      "paper": "#eef4ff",
+      "danger": "#ff4d4d"
+    },
+    "font_display": "Segoe UI Black",
+    "font_body": "Bahnschrift",
+    "palette_status": "DERIVED_FROM_APPROVED_ASSET"
+  },
+  "voice": {
+    "voice_id": "maria",
+    "provider": "windows-onecore-local",
+    "voice_name": "Maria",
+    "rate_pct": 12
+  },
+  "music": {
+    "music_id": "pulse-116",
+    "provider": "procedural-local",
+    "bpm": 116,
+    "mood": "bright, punchy, minor-to-major lift",
+    "seed": 1729
+  },
+  "scenes": [
+    {
+      "scene_id": "hook-b",
+      "slot": "hook",
+      "min_duration_s": 2.4,
+      "purpose": "Pattern interrupt with a giant fact (5 L) and the label's core promise",
+      "voiceover": "Cinco litros de limpeza profunda.",
+      "on_screen_text": [
+        "5 LITROS",
+        "DE LIMPEZA PROFUNDA"
+      ],
+      "visual_type": "kinetic_type",
+      "visual_prompt": "Giant '5' fills the frame, product drops through it",
+      "camera": "static, scale-down reveal",
+      "motion": "number slams from 3x to 1x, product falls in with bounce",
+      "transition": "flash",
+      "music_direction": "full beat from frame 0",
+      "sfx": [
+        "impact",
+        "riser_short"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-5l",
+        "c-limpeza-profunda"
+      ],
+      "layout": {
+        "component": "HookSlam",
+        "params": {}
+      },
+      "start": 0,
+      "duration": 2.3,
+      "vo_start": -0.08,
+      "vo_duration": 2.885375,
+      "words": [
+        {
+          "text": "Cinco",
+          "start": 0.002799999999999997,
+          "end": 0.39139999999999997
+        },
+        {
+          "text": "litros",
+          "start": 0.39139999999999997,
+          "end": 0.8168
+        },
+        {
+          "text": "de",
+          "start": 0.8168,
+          "end": 0.9305
+        },
+        {
+          "text": "limpeza",
+          "start": 0.9305,
+          "end": 1.4134000000000002
+        },
+        {
+          "text": "profunda",
+          "start": 1.4134000000000002,
+          "end": 2.115375
+        }
+      ],
+      "beats": [
+        0,
+        0.8705
+      ]
+    },
+    {
+      "scene_id": "b1-problem",
+      "slot": "problem",
+      "min_duration_s": 3,
+      "purpose": "Name the pain in two short beats",
+      "voiceover": "Sujeira que não sai. Cheiro que não fica.",
+      "on_screen_text": [
+        "SUJEIRA QUE NÃO SAI",
+        "CHEIRO QUE NÃO FICA"
+      ],
+      "visual_type": "illustration",
+      "visual_prompt": "Close-up of fabric weave with brown stains growing; second beat: faded scent waves dissolving",
+      "camera": "macro, slight drift",
+      "motion": "stains bloom; scent lines fade out",
+      "transition": "whip",
+      "music_direction": "keep groove, minor feel",
+      "sfx": [
+        "whoosh"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [],
+      "layout": {
+        "component": "ProblemStains",
+        "params": {}
+      },
+      "start": 2.3,
+      "duration": 3.5,
+      "vo_start": 2.31,
+      "vo_duration": 3.9959375,
+      "words": [
+        {
+          "text": "Sujeira",
+          "start": 2.3931,
+          "end": 2.9238
+        },
+        {
+          "text": "que",
+          "start": 2.9238,
+          "end": 3.0675999999999997
+        },
+        {
+          "text": "não",
+          "start": 3.0675999999999997,
+          "end": 3.2818
+        },
+        {
+          "text": "sai",
+          "start": 3.2818,
+          "end": 4.4331
+        },
+        {
+          "text": "Cheiro",
+          "start": 4.4331,
+          "end": 4.8239
+        },
+        {
+          "text": "que",
+          "start": 4.8239,
+          "end": 4.9544
+        },
+        {
+          "text": "não",
+          "start": 4.9544,
+          "end": 5.1342
+        },
+        {
+          "text": "fica",
+          "start": 5.1342,
+          "end": 5.6159375
+        }
+      ],
+      "beats": [
+        0.033100000000000004,
+        0.5637999999999999
+      ]
+    },
+    {
+      "scene_id": "b1-tension",
+      "slot": "tension",
+      "min_duration_s": 3.6,
+      "purpose": "Agitate: the repetitive rewash loop",
+      "voiceover": "E lá vai você: esfregar, enxaguar… e torcer pra dar certo.",
+      "on_screen_text": [
+        "ESFREGAR",
+        "ENXAGUAR",
+        "TORCER PRA DAR CERTO"
+      ],
+      "visual_type": "motion_graphic",
+      "visual_prompt": "Three verbs stamp in rhythm around a spinning loop arrow",
+      "camera": "static, shake on each stamp",
+      "motion": "stamps + loop arrow spin accelerating",
+      "transition": "zoom_punch",
+      "music_direction": "tension: hats double-time, riser into reveal",
+      "sfx": [
+        "stamp",
+        "stamp",
+        "stamp",
+        "riser"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [],
+      "layout": {
+        "component": "TensionLoop",
+        "params": {}
+      },
+      "start": 5.8,
+      "duration": 4.733333333333333,
+      "vo_start": 5.83,
+      "vo_duration": 5.1960625,
+      "words": [
+        {
+          "text": "E",
+          "start": 5.9079,
+          "end": 5.9614
+        },
+        {
+          "text": "lá",
+          "start": 5.9614,
+          "end": 6.1114
+        },
+        {
+          "text": "vai",
+          "start": 6.1114,
+          "end": 6.3148
+        },
+        {
+          "text": "você",
+          "start": 6.3148,
+          "end": 6.9508
+        },
+        {
+          "text": "esfregar",
+          "start": 6.9508,
+          "end": 7.8414
+        },
+        {
+          "text": "enxaguar",
+          "start": 7.8414,
+          "end": 8.7814
+        },
+        {
+          "text": "e",
+          "start": 8.7814,
+          "end": 8.8743
+        },
+        {
+          "text": "torcer",
+          "start": 8.8743,
+          "end": 9.2963
+        },
+        {
+          "text": "pra",
+          "start": 9.2963,
+          "end": 9.5268
+        },
+        {
+          "text": "dar",
+          "start": 9.5268,
+          "end": 9.7238
+        },
+        {
+          "text": "certo",
+          "start": 9.7238,
+          "end": 10.326062499999999
+        }
+      ],
+      "beats": [
+        1.0908,
+        1.9814000000000003,
+        3.0143000000000004
+      ]
+    },
+    {
+      "scene_id": "b1-reveal",
+      "slot": "demo",
+      "min_duration_s": 5,
+      "purpose": "Product reveal + mechanism (packshot claim)",
+      "voiceover": "GRAND Sabão Líquido Premium. Fórmula avançada para remoção de manchas, e cuidado com as cores.",
+      "on_screen_text": [
+        "FÓRMULA AVANÇADA",
+        "REMOÇÃO DE MANCHAS",
+        "CUIDADO COM AS CORES"
+      ],
+      "visual_type": "product_hero",
+      "visual_prompt": "Real packshot rises from a blue liquid wave; gloss sweep; a blue wave washes stains off a shirt",
+      "camera": "rise + slow push",
+      "motion": "spring rise, shine sweep, wave wipe",
+      "transition": "wipe",
+      "music_direction": "drop: full beat on reveal",
+      "sfx": [
+        "impact",
+        "shine",
+        "wave"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-name",
+        "c-formula"
+      ],
+      "layout": {
+        "component": "ProductReveal",
+        "params": {}
+      },
+      "disclaimer": "Animação ilustrativa",
+      "start": 10.533333333333333,
+      "duration": 7.033333333333333,
+      "vo_start": 10.563333333333333,
+      "vo_duration": 7.5305625,
+      "words": [
+        {
+          "text": "GRAND",
+          "start": 10.645833333333334,
+          "end": 10.854733333333334
+        },
+        {
+          "text": "Sabão",
+          "start": 10.854733333333334,
+          "end": 11.264733333333334
+        },
+        {
+          "text": "Líquido",
+          "start": 11.264733333333334,
+          "end": 11.694733333333334
+        },
+        {
+          "text": "Premium",
+          "start": 11.694733333333334,
+          "end": 13.034833333333333
+        },
+        {
+          "text": "Fórmula",
+          "start": 13.034833333333333,
+          "end": 13.588433333333334
+        },
+        {
+          "text": "avançada",
+          "start": 13.588433333333334,
+          "end": 14.238033333333334
+        },
+        {
+          "text": "para",
+          "start": 14.238033333333334,
+          "end": 14.448833333333333
+        },
+        {
+          "text": "remoção",
+          "start": 14.448833333333333,
+          "end": 14.966933333333333
+        },
+        {
+          "text": "de",
+          "start": 14.966933333333333,
+          "end": 15.086133333333333
+        },
+        {
+          "text": "manchas",
+          "start": 15.086133333333333,
+          "end": 15.881833333333333
+        },
+        {
+          "text": "e",
+          "start": 15.881833333333333,
+          "end": 15.963333333333335
+        },
+        {
+          "text": "cuidado",
+          "start": 15.963333333333335,
+          "end": 16.513333333333335
+        },
+        {
+          "text": "com",
+          "start": 16.513333333333335,
+          "end": 16.700433333333333
+        },
+        {
+          "text": "as",
+          "start": 16.700433333333333,
+          "end": 16.87023333333333
+        },
+        {
+          "text": "cores",
+          "start": 16.87023333333333,
+          "end": 17.383895833333334
+        }
+      ],
+      "beats": [
+        2.4415,
+        3.8554999999999997,
+        5.370000000000001
+      ]
+    },
+    {
+      "scene_id": "b1-howto",
+      "slot": "demo",
+      "min_duration_s": 3.8,
+      "purpose": "Demonstrate usage (label 'modo de usar') to lower friction",
+      "voiceover": "Na máquina, use puro ou diluído. À mão, dilua em água e aplique.",
+      "on_screen_text": [
+        "NA MÁQUINA",
+        "PURO OU DILUÍDO",
+        "À MÃO",
+        "DILUA E APLIQUE"
+      ],
+      "visual_type": "step_cards",
+      "visual_prompt": "Two step cards with machine and hand icons",
+      "camera": "static",
+      "motion": "cards slide in staggered",
+      "transition": "whip",
+      "music_direction": "groove",
+      "sfx": [
+        "pop",
+        "pop"
+      ],
+      "asset_source": "procedural",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-modo-uso"
+      ],
+      "layout": {
+        "component": "StepCards",
+        "params": {}
+      },
+      "start": 17.566666666666666,
+      "duration": 5.333333333333333,
+      "vo_start": 17.60666666666667,
+      "vo_duration": 5.783375,
+      "words": [
+        {
+          "text": "Na",
+          "start": 17.686866666666667,
+          "end": 17.803766666666668
+        },
+        {
+          "text": "máquina",
+          "start": 17.803766666666668,
+          "end": 18.558066666666665
+        },
+        {
+          "text": "use",
+          "start": 18.558066666666665,
+          "end": 18.872366666666665
+        },
+        {
+          "text": "puro",
+          "start": 18.872366666666665,
+          "end": 19.213466666666665
+        },
+        {
+          "text": "ou",
+          "start": 19.213466666666665,
+          "end": 19.348066666666668
+        },
+        {
+          "text": "diluído",
+          "start": 19.348066666666668,
+          "end": 20.703966666666666
+        },
+        {
+          "text": "À",
+          "start": 20.703966666666666,
+          "end": 20.793066666666668
+        },
+        {
+          "text": "mão",
+          "start": 20.793066666666668,
+          "end": 21.301066666666667
+        },
+        {
+          "text": "dilua",
+          "start": 21.301066666666667,
+          "end": 21.627466666666667
+        },
+        {
+          "text": "em",
+          "start": 21.627466666666667,
+          "end": 21.773866666666667
+        },
+        {
+          "text": "água",
+          "start": 21.773866666666667,
+          "end": 22.133066666666664
+        },
+        {
+          "text": "e",
+          "start": 22.133066666666664,
+          "end": 22.216166666666666
+        },
+        {
+          "text": "aplique",
+          "start": 22.216166666666666,
+          "end": 22.690041666666666
+        }
+      ],
+      "beats": [
+        0.17709999999999998,
+        1.2456999999999998,
+        3.1664,
+        3.6744
+      ]
+    },
+    {
+      "scene_id": "b1-benefits",
+      "slot": "benefits",
+      "min_duration_s": 4.5,
+      "purpose": "Benefit stack using the label's own icons",
+      "voiceover": "Remove as sujeiras. Deixa as roupas mais limpas e perfumadas. E cuida das suas roupas.",
+      "on_screen_text": [
+        "REMOVE AS SUJEIRAS",
+        "ROUPAS MAIS LIMPAS E PERFUMADAS",
+        "CUIDA DAS SUAS ROUPAS"
+      ],
+      "visual_type": "benefit_stack",
+      "visual_prompt": "Three chips with the real label icons stack next to the product",
+      "camera": "static with parallax",
+      "motion": "chips pop in sync with voice",
+      "transition": "cut",
+      "music_direction": "groove",
+      "sfx": [
+        "pop",
+        "pop",
+        "pop"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-remove",
+        "c-limpas-perfumadas",
+        "c-cuida"
+      ],
+      "layout": {
+        "component": "BenefitStack",
+        "params": {}
+      },
+      "start": 22.9,
+      "duration": 7.166666666666667,
+      "vo_start": 22.89,
+      "vo_duration": 7.6839375,
+      "words": [
+        {
+          "text": "Remove",
+          "start": 22.970499999999998,
+          "end": 23.475299999999997
+        },
+        {
+          "text": "as",
+          "start": 23.475299999999997,
+          "end": 23.5874
+        },
+        {
+          "text": "sujeiras",
+          "start": 23.5874,
+          "end": 24.9801
+        },
+        {
+          "text": "Deixa",
+          "start": 24.9801,
+          "end": 25.370099999999997
+        },
+        {
+          "text": "as",
+          "start": 25.370099999999997,
+          "end": 25.5201
+        },
+        {
+          "text": "roupas",
+          "start": 25.5201,
+          "end": 26.0306
+        },
+        {
+          "text": "mais",
+          "start": 26.0306,
+          "end": 26.321399999999997
+        },
+        {
+          "text": "limpas",
+          "start": 26.321399999999997,
+          "end": 26.6889
+        },
+        {
+          "text": "e",
+          "start": 26.6889,
+          "end": 26.769599999999997
+        },
+        {
+          "text": "perfumadas",
+          "start": 26.769599999999997,
+          "end": 28.3385
+        },
+        {
+          "text": "E",
+          "start": 28.3385,
+          "end": 28.418499999999998
+        },
+        {
+          "text": "cuida",
+          "start": 28.418499999999998,
+          "end": 28.816499999999998
+        },
+        {
+          "text": "das",
+          "start": 28.816499999999998,
+          "end": 29.005499999999998
+        },
+        {
+          "text": "suas",
+          "start": 29.005499999999998,
+          "end": 29.3085
+        },
+        {
+          "text": "roupas",
+          "start": 29.3085,
+          "end": 29.8639375
+        }
+      ],
+      "beats": [
+        0.01050000000000001,
+        2.5601000000000003,
+        5.458500000000001
+      ]
+    },
+    {
+      "scene_id": "b1-payoff",
+      "slot": "payoff",
+      "min_duration_s": 3.2,
+      "purpose": "Transformation payoff: clean bright shirt + product",
+      "voiceover": "Limpeza profunda… num galão de cinco litros.",
+      "on_screen_text": [
+        "LIMPEZA PROFUNDA",
+        "5 L"
+      ],
+      "visual_type": "product_hero",
+      "visual_prompt": "Bright white shirt with sparkles beside the product, '5 L' badge",
+      "camera": "slow push",
+      "motion": "sparkles, badge stamp",
+      "transition": "flash",
+      "music_direction": "lift",
+      "sfx": [
+        "shine",
+        "impact"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-limpeza-profunda",
+        "c-5l"
+      ],
+      "layout": {
+        "component": "Payoff",
+        "params": {}
+      },
+      "start": 30.066666666666666,
+      "duration": 3.3666666666666667,
+      "vo_start": 30.096666666666668,
+      "vo_duration": 3.859,
+      "words": [
+        {
+          "text": "Limpeza",
+          "start": 30.178066666666666,
+          "end": 30.68476666666667
+        },
+        {
+          "text": "profunda",
+          "start": 30.68476666666667,
+          "end": 31.603566666666666
+        },
+        {
+          "text": "num",
+          "start": 31.603566666666666,
+          "end": 31.819566666666667
+        },
+        {
+          "text": "galão",
+          "start": 31.819566666666667,
+          "end": 32.151066666666665
+        },
+        {
+          "text": "de",
+          "start": 32.151066666666665,
+          "end": 32.27256666666667
+        },
+        {
+          "text": "cinco",
+          "start": 32.27256666666667,
+          "end": 32.68176666666667
+        },
+        {
+          "text": "litros",
+          "start": 32.68176666666667,
+          "end": 33.245666666666665
+        }
+      ],
+      "beats": [
+        0.0514,
+        2.1459
+      ]
+    },
+    {
+      "scene_id": "cta-b",
+      "slot": "cta",
+      "min_duration_s": 3.4,
+      "purpose": "Direct order CTA",
+      "voiceover": "Encomende já o seu galão de cinco litros.",
+      "on_screen_text": [
+        "ENCOMENDE O SEU"
+      ],
+      "visual_type": "cta_card",
+      "visual_prompt": "Logo, product, CTA button pulse",
+      "camera": "static",
+      "motion": "button pulse",
+      "transition": "none",
+      "music_direction": "final hit",
+      "sfx": [
+        "impact"
+      ],
+      "asset_source": "local_brand_asset",
+      "generation_model": "none",
+      "estimated_cost_usd": 0,
+      "claim_refs": [
+        "c-encomende",
+        "c-name",
+        "c-5l"
+      ],
+      "layout": {
+        "component": "CtaCard",
+        "params": {
+          "button": "ENCOMENDE O SEU"
+        }
+      },
+      "start": 33.43333333333333,
+      "duration": 3.533333333333333,
+      "vo_start": 33.463333333333324,
+      "vo_duration": 3.2111875,
+      "words": [
+        {
+          "text": "Encomende",
+          "start": 33.54473333333333,
+          "end": 34.06293333333333
+        },
+        {
+          "text": "já",
+          "start": 34.06293333333333,
+          "end": 34.24753333333333
+        },
+        {
+          "text": "o",
+          "start": 34.24753333333333,
+          "end": 34.30123333333333
+        },
+        {
+          "text": "seu",
+          "start": 34.30123333333333,
+          "end": 34.53363333333333
+        },
+        {
+          "text": "galão",
+          "start": 34.53363333333333,
+          "end": 34.864733333333334
+        },
+        {
+          "text": "de",
+          "start": 34.864733333333334,
+          "end": 34.98753333333333
+        },
+        {
+          "text": "cinco",
+          "start": 34.98753333333333,
+          "end": 35.39813333333333
+        },
+        {
+          "text": "litros",
+          "start": 35.39813333333333,
+          "end": 35.96452083333333
+        }
+      ],
+      "beats": [
+        0.0514
+      ]
+    }
+  ]
+}

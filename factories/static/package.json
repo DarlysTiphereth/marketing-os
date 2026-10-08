@@ -1,0 +1,16 @@
+{
+  "name": "mos-static-factory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static Creative Factory: HTML/CSS templates rendered by headless Chrome (Playwright), shared brand kits and QC. Outside the v0.1 core build.",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "produce": "node src/produce.ts",
+    "test": "node --test tests/static.test.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "5.2.8",
+    "playwright-core": "1.56.1"
+  }
+}

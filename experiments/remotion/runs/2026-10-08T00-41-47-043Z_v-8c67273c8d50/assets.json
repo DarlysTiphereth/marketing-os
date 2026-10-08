@@ -1,0 +1,174 @@
+{
+  "brand_assets": [
+    {
+      "name": "product",
+      "path": "public/product-5l.png",
+      "sha256": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+      "bytes": 330913,
+      "kind": "AUTHENTIC_PRODUCT_ASSET",
+      "status": "extracted unchanged from official catalog (lab Benchmark 001)",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "label",
+      "path": "public/label.png",
+      "sha256": "f21e3d6cade77e09e1fefb55aa41d51514259b2eb1f51d59c0a68994bff2d6ae",
+      "bytes": 1400761,
+      "kind": "OFFICIAL_LABEL_ART",
+      "status": "user-supplied",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "logo",
+      "path": "public/logo-drop.png",
+      "sha256": "57d41eef790e176fbbc5813fa482f3046fe842d946162594b93cf622f49ac17b",
+      "bytes": 100166,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=300:310:465:40",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_shirt",
+      "path": "public/icon-shirt.png",
+      "sha256": "6f61982a989568d9cea68a6f7ef7c4dda74c0cccce9b2ffab70d0811db6de72b",
+      "bytes": 9366,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1061:62",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_leaf",
+      "path": "public/icon-leaf.png",
+      "sha256": "6c440572cc44ab2e3f18d1f8bae2dee7e71523cf85b0ba9ae86abf0cec3e84d3",
+      "bytes": 9025,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1064:223",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    },
+    {
+      "name": "icon_sparkle",
+      "path": "public/icon-sparkle.png",
+      "sha256": "a434ae2f23f20c6333af87bb5b8c0461979507923257184220a748f605325365",
+      "bytes": 9388,
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL",
+      "status": "crop=84:84:1070:410",
+      "source": "local_brand_asset",
+      "generation_model": "none",
+      "cost_usd": 0
+    }
+  ],
+  "voice_lines": [
+    {
+      "scene_id": "hook-c",
+      "text": "O que esse galão azul faz pela sua roupa?",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Daniel",
+      "source_rate_hz": 16000,
+      "cache_key": "ca3db0222fed2e93dffc",
+      "cached": false,
+      "seconds": 3.046
+    },
+    {
+      "scene_id": "b2-benefits",
+      "text": "Remove as sujeiras. Deixa as roupas mais limpas e perfumadas. E cuida das suas roupas.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Daniel",
+      "source_rate_hz": 16000,
+      "cache_key": "d5d6c6156f8124223da1",
+      "cached": false,
+      "seconds": 7.363
+    },
+    {
+      "scene_id": "b2-reveal",
+      "text": "GRAND Sabão Líquido Premium. Fórmula avançada para remoção de manchas, e cuidado com as cores.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Daniel",
+      "source_rate_hz": 16000,
+      "cache_key": "cfdb0b11b72624c37575",
+      "cached": false,
+      "seconds": 7.137
+    },
+    {
+      "scene_id": "b2-payoff",
+      "text": "Limpeza profunda… num galão de cinco litros.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Daniel",
+      "source_rate_hz": 16000,
+      "cache_key": "a20ce39e2d3e50154cb5",
+      "cached": false,
+      "seconds": 3.677
+    },
+    {
+      "scene_id": "cta-a",
+      "text": "Conheça a GRAND.",
+      "provider": "windows-onecore-local",
+      "voice": "Microsoft Daniel",
+      "source_rate_hz": 16000,
+      "cache_key": "0cc543137c649543a221",
+      "cached": false,
+      "seconds": 1.607
+    }
+  ],
+  "music": {
+    "music_id": "pulse-116",
+    "provider": "procedural-local",
+    "bpm": 116,
+    "mood": "bright, punchy, minor-to-major lift",
+    "seed": 1729,
+    "generator": "pipeline/audio.ts music()",
+    "license": "procedurally generated in-house, no samples"
+  },
+  "sfx_cues": [
+    {
+      "name": "riser_short",
+      "at": 1.733
+    },
+    {
+      "name": "pop",
+      "at": 2.563
+    },
+    {
+      "name": "pop",
+      "at": 5.017
+    },
+    {
+      "name": "pop",
+      "at": 7.774
+    },
+    {
+      "name": "impact",
+      "at": 9.4
+    },
+    {
+      "name": "shine",
+      "at": 11.74
+    },
+    {
+      "name": "wave",
+      "at": 13.06
+    },
+    {
+      "name": "shine",
+      "at": 16.151
+    },
+    {
+      "name": "impact",
+      "at": 16.1
+    },
+    {
+      "name": "impact",
+      "at": 19.3
+    }
+  ],
+  "generated_media": "none (no image/video generation models used)"
+}

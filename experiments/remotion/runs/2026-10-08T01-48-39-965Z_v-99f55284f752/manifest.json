@@ -1,0 +1,8 @@
+{
+  "run_id": "2026-10-08T01-48-39-965Z_v-99f55284f752",
+  "variant_id": "v-99f55284f752",
+  "status": "FAILED",
+  "failures": [
+    "TypeError: display2 is not a function\n    at ProductReveal (http://localhost:3000/bundle.js:410:594)\n    at Nh (http://localhost:3000/bundle.js:1432:137)\n    at Vk (http://localhost:3000/bundle.js:1561:337)\n    at Uk (http://localhost:3000/bundle.js:1551:389)\n    at Tk (http://localhost:3000/bundle.js:1551:320)\n    at Ik (http://localhost:3000/bundle.js:1551:180)\n    at Nk (http://localhost:3000/bundle.js:1542:88)\n    at Gk (http://localhost:3000/bundle.js:1539:429)\n    at J (http://localhost:3000/bundle.js:1772:203)\n    at MessagePort.R (http://localhost:3000/bundle.js:1773:128)"
+  ]
+}

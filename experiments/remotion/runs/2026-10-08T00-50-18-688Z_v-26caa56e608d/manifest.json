@@ -1,0 +1,175 @@
+{
+  "run_id": "2026-10-08T00-50-18-688Z_v-26caa56e608d",
+  "variant_id": "v-26caa56e608d",
+  "stack": "remotion",
+  "renderer": "remotion@4.0.534 renderFrames (jpeg q93) + external ffmpeg libx264 crf18",
+  "status": "RENDERED_TECH_PASS",
+  "created_at": "2026-10-08T00:53:08.958Z",
+  "git_commit": "09efcc0dd0766f31d4ec848df3472533697136ee",
+  "git_dirty": true,
+  "code_fingerprint": "4040e95b6cded482",
+  "code_sha256": {
+    "pipeline/audio.ts": "41e0fa19836ded45bf1232087d7defd21049f1f1f180c943e5285278fd4b3146",
+    "pipeline/lib.ts": "46c5bfdc26b3ca7d49abaa8342f6fd102aaa8fc346cb7ee01029301a374d3dfb",
+    "pipeline/preview.ts": "c0f06df266410e8e0156e966e1e75918bb103d845c6eea37308ac1a385e72bf2",
+    "pipeline/produce.ts": "75e5e5043053c5656ac57fdc8ed57a0d0e9a0826bbefe4e2ab8a4006429ff6d0",
+    "pipeline/qc.ts": "528c9e18b17007f5c7d29af64de0853541bbd81d4fb4ef56ad4b5148ed4fdf5c",
+    "pipeline/render.ts": "4b89cc6cd45de85d7c40b9b73d29acc6c0aab918b90a013f93d1f098e3da5a58",
+    "pipeline/timeline.ts": "868d0ac30adec29f1fdce00023a7178512ae2e7713ff721431e647ea3add3721",
+    "pipeline/tts/onecore-tts.ps1": "2318986258de5a2d1eb2e2e9fd656ea463b67cf376dc0505c04b03d6e83f84d6",
+    "pipeline/variants.ts": "75ace2c05542ef63e8f921d47ac65f96654d58099829c09fc466c3271b462a82",
+    "pipeline/voice.ts": "01c6106b1d0cddd397877d608fba1dfa5b4057fbdd6eccfcdbae8db4517e1bab",
+    "src/Ad.tsx": "12bb26b50189bc17c691e6104953d700d95a80046bdb900822cd574630b41b00",
+    "src/index.tsx": "47e7d2b9afc265aaca2bf923e59fcc9b6b4f451c58e505b92bef8845b55f4110",
+    "src/schema.ts": "2e9b9f3bba87ceb708cd3498b19b64255b818911aad1f76b8bc2b4ab1190c459"
+  },
+  "output": {
+    "file": "final.mp4",
+    "sha256": "da4823d5a8a3a79b93bc9641c99c8d700d3d9345f64764df7d20450b06c00cfc",
+    "bytes": 19556673,
+    "duration_s": 35.53333333333333
+  },
+  "tools": {
+    "node": "v24.19.0",
+    "remotion": "4.0.534",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r",
+    "chrome": "chrome-headless-shell (media-stack-lab install)",
+    "tts": "Windows OneCore (WinRT) local",
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "Intel(R) Core(TM) 5 120U",
+    "cpus": 12,
+    "ram_bytes": 8257327104
+  },
+  "models": {
+    "llm": "none at runtime (template authored by Claude Code session)",
+    "image": "none",
+    "video": "none",
+    "voice": "Microsoft Daniel (OneCore, local)",
+    "music": "procedural seed 1729"
+  },
+  "seeds": {
+    "music": 1729,
+    "sfx": 1736,
+    "visual": "remotion random() with fixed string seeds"
+  },
+  "parameters": {
+    "selection": {
+      "hook": "hook-c",
+      "body": "body-1",
+      "cta": "cta-b",
+      "style": "clean-bright",
+      "voice": "daniel",
+      "music": "pulse-116",
+      "pacing": "fast",
+      "captions": "karaoke"
+    },
+    "voice_rate_pct": 18,
+    "encode": [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-framerate",
+      "30",
+      "-i",
+      "element-%04d.jpeg",
+      "-i",
+      "mix.wav",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-vf",
+      "scale=in_range=pc:out_range=tv,format=yuv420p",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "bt709",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "slow",
+      "-crf",
+      "18",
+      "-profile:v",
+      "high",
+      "-pix_fmt",
+      "yuv420p",
+      "-r",
+      "30",
+      "-g",
+      "60",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
+      "-shortest",
+      "-movflags",
+      "+faststart",
+      "-metadata",
+      "comment=Marketing OS Benchmark 001 - internal, not for publication",
+      "final.mp4"
+    ],
+    "concurrency": 4
+  },
+  "combination_space": {
+    "dims": {
+      "hook": [
+        "hook-a",
+        "hook-a2",
+        "hook-b",
+        "hook-c"
+      ],
+      "body": [
+        "body-1",
+        "body-2"
+      ],
+      "cta": [
+        "cta-a",
+        "cta-b"
+      ],
+      "style": [
+        "deep-blue",
+        "clean-bright"
+      ],
+      "voice": [
+        "maria",
+        "daniel"
+      ],
+      "music": [
+        "pulse-116"
+      ],
+      "pacing": [
+        "standard",
+        "fast"
+      ],
+      "captions": [
+        "karaoke",
+        "off"
+      ]
+    },
+    "total": 256,
+    "message_combinations": 16
+  },
+  "files": [
+    "manifest.json",
+    "creative.json",
+    "timeline.json",
+    "assets.json",
+    "cost.json",
+    "qc.json",
+    "run.log",
+    "final.mp4",
+    "contact-sheet.jpg",
+    "mix.wav"
+  ],
+  "failures": []
+}

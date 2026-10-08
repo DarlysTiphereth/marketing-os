@@ -1,0 +1,20 @@
+{
+  "name": "mos-remotion-first",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Benchmark 001 - Remotion-first renderer for Marketing OS creative.json (experiment, outside v0.1 core).",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "produce": "node pipeline/produce.ts"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "5.2.8",
+    "@remotion/bundler": "4.0.534",
+    "@remotion/renderer": "4.0.534",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.534",
+    "zod": "3.25.76"
+  }
+}

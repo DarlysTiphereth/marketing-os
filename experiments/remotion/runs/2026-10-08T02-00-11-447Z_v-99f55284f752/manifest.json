@@ -1,0 +1,168 @@
+{
+  "run_id": "2026-10-08T02-00-11-447Z_v-99f55284f752",
+  "variant_id": "v-99f55284f752",
+  "stack": "remotion",
+  "renderer": "remotion@4.0.534 renderFrames (jpeg q93) + external ffmpeg libx264 crf18",
+  "status": "RENDERED_TECH_PASS",
+  "created_at": "2026-10-08T02:02:46.649Z",
+  "git_commit": "09efcc0dd0766f31d4ec848df3472533697136ee",
+  "git_dirty": true,
+  "code_fingerprint": "411fc483897c7b22",
+  "code_sha256": {
+    "pipeline/audio.ts": "da146412e261563af96f6909b3187c84e29fc4f9f2e2fe352844d10a96edabe5",
+    "pipeline/lib.ts": "9a8918fafe4319069e839c93ca19b339a99b2eecf9577232468843df311076f4",
+    "pipeline/preview.ts": "072cc08a13d09ef16bbc89293281767dd79ee202fa31227f6765ed5e22cfb81d",
+    "pipeline/produce.ts": "2cc638dc6fa656b6fc866efb0bfbbe4ffee5df1bdeffc2382f3f8f07f5e5176a",
+    "pipeline/qc.ts": "259aa2616fab09758dbd24411eb8b6758a0ed430c86184c4b4ecfb263420e6a2",
+    "pipeline/render.ts": "aae6c74fedfcbeb21dee9c5629d40f682f2667ff36328788fa8356e5044fa2ef",
+    "pipeline/timeline.ts": "e3281ec4f59529f04f2510402c9f04b151c0f0355da72e9ea66d81e0312efd47",
+    "pipeline/tts/onecore-tts.ps1": "2318986258de5a2d1eb2e2e9fd656ea463b67cf376dc0505c04b03d6e83f84d6",
+    "pipeline/variants.ts": "75ace2c05542ef63e8f921d47ac65f96654d58099829c09fc466c3271b462a82",
+    "pipeline/voice.ts": "8056f780a60de1e763dca2d822a0de42e4054022a8cc1c5c389d278b05e82056",
+    "src/Ad.tsx": "3dd5e0b4d6ad5d4680cea796bf86e02bface1686a061825e11b261f38a1f293e",
+    "src/index.tsx": "aecd7b536b3cacfb38c280c7644e9436318899cc8df7ca8e2e9497be23f0d46a",
+    "src/schema.ts": "a2540d915e59fe147a35ae523f6d625aaa3632e4b3e37673b893a1e34235778d"
+  },
+  "output": {
+    "file": "final.mp4",
+    "sha256": "2ac526571b72c9cc3c61019cf4bb56e124d5dc69c7917817dd05b5939006cad0",
+    "bytes": 16391645,
+    "duration_s": 34.2
+  },
+  "tools": {
+    "node": "v24.19.0",
+    "remotion": "4.0.534",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r",
+    "chrome": "chrome-headless-shell (media-stack-lab install)",
+    "tts": "Windows OneCore (WinRT) local",
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "Intel(R) Core(TM) 5 120U",
+    "cpus": 12,
+    "ram_bytes": 8257327104
+  },
+  "models": {
+    "llm": "none at runtime (template authored by Claude Code session)",
+    "image": "none",
+    "video": "none",
+    "voice": "none (OneCore, local)",
+    "music": "procedural seed 1729"
+  },
+  "seeds": {
+    "music": 1729,
+    "sfx": 1736,
+    "visual": "remotion random() with fixed string seeds"
+  },
+  "parameters": {
+    "selection": {
+      "hook": "hook-a2",
+      "body": "body-1",
+      "cta": "cta-a",
+      "style": "fixture-grey",
+      "voice": "none",
+      "music": "pulse-116",
+      "pacing": "standard",
+      "captions": "off"
+    },
+    "voice_rate_pct": 0,
+    "encode": [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-framerate",
+      "30",
+      "-i",
+      "element-%04d.jpeg",
+      "-i",
+      "mix.wav",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-vf",
+      "scale=in_range=pc:out_range=tv,format=yuv420p",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "bt709",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "slow",
+      "-crf",
+      "18",
+      "-profile:v",
+      "high",
+      "-pix_fmt",
+      "yuv420p",
+      "-r",
+      "30",
+      "-g",
+      "60",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
+      "-shortest",
+      "-movflags",
+      "+faststart",
+      "-metadata",
+      "comment=Marketing OS Benchmark 001 - internal, not for publication",
+      "final.mp4"
+    ],
+    "concurrency": 4
+  },
+  "combination_space": {
+    "dims": {
+      "hook": [
+        "hook-a2"
+      ],
+      "body": [
+        "body-1"
+      ],
+      "cta": [
+        "cta-a"
+      ],
+      "style": [
+        "fixture-grey"
+      ],
+      "voice": [
+        "none"
+      ],
+      "music": [
+        "pulse-116"
+      ],
+      "pacing": [
+        "standard",
+        "fast"
+      ],
+      "captions": [
+        "karaoke",
+        "off"
+      ]
+    },
+    "total": 4,
+    "message_combinations": 1
+  },
+  "files": [
+    "manifest.json",
+    "creative.json",
+    "timeline.json",
+    "assets.json",
+    "cost.json",
+    "qc.json",
+    "run.log",
+    "final.mp4",
+    "contact-sheet.jpg",
+    "mix.wav"
+  ],
+  "failures": []
+}

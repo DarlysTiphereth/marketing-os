@@ -1,0 +1,986 @@
+{
+  "pieces": [
+    {
+      "id": "A-photo-composite",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "FAIL",
+          "detail": "font fell back"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.07× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "0.0% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "A2-marketplace-main",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "FAIL",
+          "detail": "font fell back"
+        },
+        {
+          "id": "no_text_required",
+          "status": "PASS",
+          "detail": "0 text elements (format forbids promotional text)"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (120/120/120/120)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "WARN",
+          "detail": "packshot upscaled 1.32× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "0.0% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "B-best-hero-spotlight-h1-cta1-feed_4x5",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.98× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "22.1% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "E-variation-editorial-split",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "FAIL",
+          "detail": "Remove as sujeiras | Roupas mais limpas e per | Cuida das suas roupas"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.10× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "18.0% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "E-variation-bold-block",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "FAIL",
+          "detail": "cta:\"Conheça a GRAND\" @757,816 273×273"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.10× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "14.3% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "E-variation-catalog-clean",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.10× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "16.7% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "V-bold-block-h2-cta2-story",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "FAIL",
+          "detail": "cta:\"Encomende o seu\" @764,939 273×273"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "FAIL",
+          "detail": "Roupas mais limpas e per"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.10× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "14.4% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "V-catalog-clean-h3-cta1-square",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/60/60/60)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "FAIL",
+          "detail": "\"Remove as sujeiras\" × \"Conheça a GRAND →\" | \"Roupas mais limpas e\" × \"Conheça a GRAND →\" | \"Cuida das suas roupa\" × \"Conheça a GRAND →\""
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.91× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "21.2% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "V-editorial-split-h1-cta2-square",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/60/60/60)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "FAIL",
+          "detail": "Remove as sujeiras | Roupas mais limpas e per | Cuida das suas roupas"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.88× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "22.9% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "V-editorial-split-h2-cta1-feed_4x5",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "FAIL",
+          "detail": "Remove as sujeiras | Roupas mais limpas e per | Cuida das suas roupas"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 1.10× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "20.8% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "C-carousel-01",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.00× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "24.5% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "C-carousel-02",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.00× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "19.2% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "C-carousel-03",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "FAIL",
+          "detail": "\"GRAND Sabão Líquido \" 4.09<4.5"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.81× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "12.5% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "C-carousel-04",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.00× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "0 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "10.6% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "C-carousel-05",
+      "verdict": "PASS",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "PASS",
+          "detail": "inside safe area (60/72/60/72)"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "PASS",
+          "detail": "packaging not covered by text"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.62× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "20.1% of canvas covered by text boxes"
+        }
+      ]
+    },
+    {
+      "id": "D-story-promo",
+      "verdict": "FAIL",
+      "checks": [
+        {
+          "id": "assets_loaded",
+          "status": "PASS",
+          "detail": "all images and fonts loaded"
+        },
+        {
+          "id": "brand_font",
+          "status": "PASS",
+          "detail": "Archivo loaded"
+        },
+        {
+          "id": "text_cut",
+          "status": "PASS",
+          "detail": "no text outside the canvas"
+        },
+        {
+          "id": "safe_margins",
+          "status": "FAIL",
+          "detail": "cta:\"Encomende o seu\" @735,928 290×290"
+        },
+        {
+          "id": "text_overlap",
+          "status": "PASS",
+          "detail": "no overlapping text blocks"
+        },
+        {
+          "id": "text_over_product",
+          "status": "FAIL",
+          "detail": "Encomende o seu"
+        },
+        {
+          "id": "contrast",
+          "status": "PASS",
+          "detail": "WCAG AA met for all declared text/background pairs"
+        },
+        {
+          "id": "legibility_min_size",
+          "status": "PASS",
+          "detail": "all text ≥ 18 px at 1080 width"
+        },
+        {
+          "id": "product_resolution",
+          "status": "PASS",
+          "detail": "packshot upscaled 0.93× (source jug 690px tall)"
+        },
+        {
+          "id": "logo_aspect",
+          "status": "PASS",
+          "detail": "1 logo(s) at native aspect ratio"
+        },
+        {
+          "id": "text_density",
+          "status": "PASS",
+          "detail": "20.9% of canvas covered by text boxes"
+        }
+      ]
+    }
+  ],
+  "repeats": []
+}

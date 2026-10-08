@@ -1,0 +1,122 @@
+{
+  "schema_version": "product.v1",
+  "brand_id": "grand",
+  "product_id": "sabao-liquido-premium-5l",
+  "name": "GRAND Sabão Líquido Premium",
+  "variant": "5 L",
+  "sku": "UNKNOWN",
+  "price": "UNKNOWN",
+  "availability": "UNKNOWN",
+  "claims": [
+    {
+      "claim_id": "c-name",
+      "text": "GRAND Sabão Líquido Premium",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "media-stack-lab/benchmarks/common/GRAND_BASELINE_BRIEF.md#dados-e-copy-aprovados",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-5l",
+      "text": "5 L",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "GRAND_BASELINE_BRIEF.md; catalog p.1",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-limpeza-profunda",
+      "text": "Limpeza Profunda",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png band 'LIMPEZA PROFUNDA'; approved in Benchmark 002 copy",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-cta-conheca",
+      "text": "Conheça a GRAND",
+      "source_type": "USER_APPROVED_COPY",
+      "source_ref": "GRAND_BASELINE_BRIEF.md CTA",
+      "approval": "USER_APPROVED"
+    },
+    {
+      "claim_id": "c-remove",
+      "text": "Remove as sujeiras",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 3",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-limpas-perfumadas",
+      "text": "Roupas mais limpas e perfumadas",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 1",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-cuida",
+      "text": "Cuida das suas roupas",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png right column icon 2",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-formula",
+      "text": "Fórmula avançada para remoção de manchas e cuidado com as cores",
+      "source_type": "PRODUCT_PACKSHOT",
+      "source_ref": "product-5l.png side panel text",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-modo-uso",
+      "text": "Use puro ou diluído em água; lavagem manual: dilua em água e aplique",
+      "source_type": "PRODUCT_LABEL",
+      "source_ref": "label.png 'MODO DE USAR'",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    },
+    {
+      "claim_id": "c-encomende",
+      "text": "Encomende",
+      "source_type": "PRODUCT_PACKSHOT",
+      "source_ref": "product-5l.png side panel 'Encomende via contatos'",
+      "approval": "SOURCED_PENDING_APPROVAL"
+    }
+  ],
+  "assets": {
+    "packshot": {
+      "sha256": "e70a7e37ced07b34e5d1f78facd26d8a2ec702baa85d69445ef54f350de34026",
+      "local_path_hint": "experiments/remotion/public/product-5l.png",
+      "kind": "AUTHENTIC_PRODUCT_ASSET",
+      "alpha": true,
+      "pixels": "800x800",
+      "quality_note": "low-res for premium formats; hi-res packshot requested"
+    },
+    "label": {
+      "sha256": "f21e3d6cade77e09e1fefb55aa41d51514259b2eb1f51d59c0a68994bff2d6ae",
+      "local_path_hint": "experiments/remotion/public/label.png",
+      "kind": "OFFICIAL_LABEL_ART"
+    },
+    "logo": {
+      "sha256": "57d41eef790e176fbbc5813fa482f3046fe842d946162594b93cf622f49ac17b",
+      "local_path_hint": "experiments/remotion/public/logo-drop.png",
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL"
+    },
+    "icon_shirt": {
+      "sha256": "6f61982a989568d9cea68a6f7ef7c4dda74c0cccce9b2ffab70d0811db6de72b",
+      "local_path_hint": "experiments/remotion/public/icon-shirt.png",
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL"
+    },
+    "icon_leaf": {
+      "sha256": "6c440572cc44ab2e3f18d1f8bae2dee7e71523cf85b0ba9ae86abf0cec3e84d3",
+      "local_path_hint": "experiments/remotion/public/icon-leaf.png",
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL"
+    },
+    "icon_sparkle": {
+      "sha256": "a434ae2f23f20c6333af87bb5b8c0461979507923257184220a748f605325365",
+      "local_path_hint": "experiments/remotion/public/icon-sparkle.png",
+      "kind": "LOSSLESS_CROP_OF_OFFICIAL_LABEL"
+    }
+  },
+  "usage": {
+    "machine": "puro ou diluído",
+    "hand": "dilua em água e aplique",
+    "source": "label 'MODO DE USAR'"
+  }
+}

@@ -1,0 +1,67 @@
+name: Render job (free runner)
+
+# Triggered only by `node ops/cli.ts dispatch`, which pushes refs/heads/render-jobs/<job_id> with ops/jobs/<job_id>.json.
+# Public repository: standard runners are free. Only jobs with spec.public_safe=true are ever dispatched here.
+on:
+  push:
+    branches: ['render-jobs/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      MOS_HOME: ${{ github.workspace }}/.mos
+      MOS_FFMPEG: ffmpeg
+      MOS_FFPROBE: ffprobe
+      HYPERFRAMES_NO_TELEMETRY: '1'
+      DO_NOT_TRACK: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: pnpm/action-setup@v6
+        with:
+          version: '11.25.0'
+          run_install: false
+      - name: FFmpeg
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Renderer dependencies
+        working-directory: experiments/remotion
+        run: pnpm install --frozen-lockfile
+      - name: Resolve job
+        id: job
+        run: |
+          JOB="${GITHUB_REF_NAME#render-jobs/}"
+          [[ "$JOB" =~ ^job-[a-f0-9]{12}$ ]] || { echo "invalid job id"; exit 1; }
+          test -f "ops/jobs/$JOB.json"
+          node -e "const j=require('./ops/jobs/$JOB.json'); if(!j.spec.public_safe){console.error('not public_safe'); process.exit(1)}"
+          echo "id=$JOB" >> "$GITHUB_OUTPUT"
+      - name: Render (measured)
+        run: node ops/bench/measure.ts --label B-remote-runner --watch .mos -- node ops/cli.ts run-here "ops/jobs/${{ steps.job.outputs.id }}.json"
+      - name: Publish metrics as annotation
+        if: always()
+        run: node ops/bench/report-annotation.ts "${{ steps.job.outputs.id }}"
+      - uses: actions/upload-artifact@v5
+        if: success()
+        with:
+          name: ${{ steps.job.outputs.id }}
+          path: |
+            .mos/runs-out/**/final.mp4
+            .mos/runs-out/**/*.json
+            .mos/runs-out/**/run.log
+            .mos/runs-out/**/contact-sheet.jpg
+            .mos/logs/measure-*.json
+          retention-days: 3
+          if-no-files-found: error

@@ -1,0 +1,158 @@
+{
+  "run_id": "2026-10-08T00-31-25-087Z_v-8b8c2caff51d",
+  "variant_id": "v-8b8c2caff51d",
+  "stack": "remotion",
+  "renderer": "remotion@4.0.534 renderFrames (jpeg q93) + external ffmpeg libx264 crf18",
+  "status": "RENDERED_TECH_PASS",
+  "created_at": "2026-10-08T00:34:30.403Z",
+  "git_commit": "09efcc0dd0766f31d4ec848df3472533697136ee",
+  "git_dirty": true,
+  "output": {
+    "file": "final.mp4",
+    "sha256": "348bd7454942d571f1a3caff44b2b6237e838d0fe9ddb252b2927f1809842910",
+    "bytes": 23595747,
+    "duration_s": 41.8
+  },
+  "tools": {
+    "node": "v24.19.0",
+    "remotion": "4.0.534",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r",
+    "chrome": "chrome-headless-shell (media-stack-lab install)",
+    "tts": "Windows OneCore (WinRT) local",
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "Intel(R) Core(TM) 5 120U",
+    "cpus": 12,
+    "ram_bytes": 8257327104
+  },
+  "models": {
+    "llm": "none at runtime (template authored by Claude Code session)",
+    "image": "none",
+    "video": "none",
+    "voice": "Microsoft Maria (OneCore, local)",
+    "music": "procedural seed 1729"
+  },
+  "seeds": {
+    "music": 1729,
+    "sfx": 1736,
+    "visual": "remotion random() with fixed string seeds"
+  },
+  "parameters": {
+    "selection": {
+      "hook": "hook-a",
+      "body": "body-1",
+      "cta": "cta-a",
+      "style": "deep-blue",
+      "voice": "maria",
+      "music": "pulse-116",
+      "pacing": "standard",
+      "captions": "karaoke"
+    },
+    "voice_rate_pct": 12,
+    "encode": [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-framerate",
+      "30",
+      "-i",
+      "element-%04d.jpeg",
+      "-i",
+      "mix.wav",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-vf",
+      "scale=in_range=pc:out_range=tv,format=yuv420p",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "bt709",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "slow",
+      "-crf",
+      "18",
+      "-profile:v",
+      "high",
+      "-pix_fmt",
+      "yuv420p",
+      "-r",
+      "30",
+      "-g",
+      "60",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
+      "-shortest",
+      "-movflags",
+      "+faststart",
+      "-metadata",
+      "comment=Marketing OS Benchmark 001 - internal, not for publication",
+      "final.mp4"
+    ],
+    "concurrency": 4
+  },
+  "combination_space": {
+    "dims": {
+      "hook": [
+        "hook-a",
+        "hook-b",
+        "hook-c"
+      ],
+      "body": [
+        "body-1",
+        "body-2"
+      ],
+      "cta": [
+        "cta-a",
+        "cta-b"
+      ],
+      "style": [
+        "deep-blue",
+        "clean-bright"
+      ],
+      "voice": [
+        "maria",
+        "daniel"
+      ],
+      "music": [
+        "pulse-116"
+      ],
+      "pacing": [
+        "standard",
+        "fast"
+      ],
+      "captions": [
+        "karaoke",
+        "off"
+      ]
+    },
+    "total": 192,
+    "message_combinations": 12
+  },
+  "files": [
+    "manifest.json",
+    "creative.json",
+    "timeline.json",
+    "assets.json",
+    "cost.json",
+    "qc.json",
+    "run.log",
+    "final.mp4",
+    "contact-sheet.jpg",
+    "mix.wav"
+  ],
+  "failures": []
+}
