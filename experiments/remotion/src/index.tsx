@@ -6,6 +6,7 @@ import '@fontsource/archivo/800.css';
 import '@fontsource/archivo/900.css';
 import {Composition, registerRoot} from 'remotion';
 import {Ad} from './Ad.tsx';
+import {CinematicOverlay, type OverlayProps} from './Cinematic.tsx';
 import type {Timeline} from './schema.ts';
 
 const placeholder: Timeline = {
@@ -16,9 +17,16 @@ const placeholder: Timeline = {
   display: {brand_name: '', brand_tagline: '', product_title: '', product_subtitle: ''},
 };
 
+const overlayPlaceholder: OverlayProps = {duration: 1, shots: [], files: {product: 'product.png', logo: 'logo.png'}, display: {brand: '', tagline: '', product: '', variant: ''}, cta: ''};
+
 const Root = () => (
+  <>
   <Composition id="Ad" component={Ad as unknown as React.FC<Record<string, unknown>>} width={1080} height={1920} fps={30} durationInFrames={30}
     defaultProps={placeholder as unknown as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: Math.max(1, Math.round((props as unknown as Timeline).duration * 30))})} />
+  <Composition id="CinematicOverlay" component={CinematicOverlay as unknown as React.FC<Record<string, unknown>>} width={1080} height={1920} fps={30} durationInFrames={30}
+    defaultProps={overlayPlaceholder as unknown as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: Math.max(1, Math.round((props as unknown as OverlayProps).duration * 30))})} />
+  </>
 );
 registerRoot(Root);

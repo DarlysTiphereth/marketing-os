@@ -24,3 +24,6 @@ factories/**/runs/**/source/
 factories/**/runs/**/*.jpg
 factories/**/runs/**/index.html
 factories/**/runs/**/*.png
+
+# Licensed stock media stays local (manifests and EDL are versioned)
+experiments/**/cinematic/runs/**/*.mp4

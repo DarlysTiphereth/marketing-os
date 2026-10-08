@@ -1,0 +1,141 @@
+{
+  "run_id": "2026-10-08T02-36-26-994Z_01884224a7",
+  "edit_id": "grand-tres-gestos-stock-001",
+  "edl": "experiments/remotion/cinematic/edit.json",
+  "edl_sha256": "01884224a7ac0a34c90706e7d38edd9b868fbb81ece94cb987babacb9e99a448",
+  "status": "RENDERED_TECH_PASS",
+  "git": {
+    "commit": "bc26dfb332871fcee5e026eadcc5bc801f39a57a",
+    "dirty": true
+  },
+  "output": {
+    "file": "final.mp4",
+    "sha256": "e0534ff5301c6ac1d9cc5cf8561c61d30142d55439e8f173d1727fa9986a4b2f",
+    "bytes": 28314850,
+    "duration_s": 23.5
+  },
+  "sources": {
+    "drop": {
+      "page": "https://www.pexels.com/video/dropping-paint-on-clear-water-7565623/",
+      "sha256": "7d5009699f890d68f85ff8b8f460c58d4899e0a7bae508f1c26db48680cc6272",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "cloud": {
+      "page": "https://www.pexels.com/video/blue-paint-on-water-7565882/",
+      "sha256": "4bb089d0333cfc14bb96c129a31037f0701397a64ad7643a357605a183c86291",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "drum": {
+      "page": "https://www.pexels.com/video/industrial-washing-machine-8756698/",
+      "sha256": "1720576e5a92be2b35dddcb0bca1dc0cccc76f752c531c3c0945a82c15a5db59",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "hands": {
+      "page": "https://www.pexels.com/video/a-close-up-video-of-a-person-washing-cloths-in-a-basin-6843727/",
+      "sha256": "f4a87b22db13e7052506c6a01bdcb76f69faa8169747d7a15cab0295d5525cbb",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "denim": {
+      "page": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/",
+      "sha256": "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "line": {
+      "page": "https://www.pexels.com/video/laundry-hanging-on-a-clothesline-to-dry-6841998/",
+      "sha256": "0feea5183dea4d7999147d2bb267bc11cdbfde3bcf3960caf88b7deb9ce6cf15",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    },
+    "water": {
+      "page": "https://www.pexels.com/video/peaceful-water-ripple-reflections-in-sunlight-30796007/",
+      "sha256": "65f7a8ffa83f25bdfa97b280ddc32349fc49718f87df304da5bb5fa43218e417",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing."
+    }
+  },
+  "shots": [
+    {
+      "id": "s1-drop",
+      "src": "drop",
+      "in": 2,
+      "dur": 3,
+      "start": 0,
+      "claim_refs": [
+        "c-name",
+        "c-limpeza-profunda"
+      ]
+    },
+    {
+      "id": "s2-cloud",
+      "src": "cloud",
+      "in": 0.6,
+      "dur": 1.8,
+      "start": 2.6,
+      "claim_refs": []
+    },
+    {
+      "id": "s3-drum",
+      "src": "drum",
+      "in": 4,
+      "dur": 3.5,
+      "start": 4.4,
+      "claim_refs": [
+        "c-modo-uso"
+      ]
+    },
+    {
+      "id": "s4-hands",
+      "src": "hands",
+      "in": 2,
+      "dur": 3.6,
+      "start": 7.9,
+      "claim_refs": [
+        "c-modo-uso"
+      ]
+    },
+    {
+      "id": "s5-denim",
+      "src": "denim",
+      "in": 0.5,
+      "dur": 2.8,
+      "start": 11.5,
+      "claim_refs": [
+        "c-cuida"
+      ]
+    },
+    {
+      "id": "s6-line",
+      "src": "line",
+      "in": 2,
+      "dur": 3.2,
+      "start": 14.3,
+      "claim_refs": [
+        "c-limpas-perfumadas"
+      ]
+    },
+    {
+      "id": "s7-hero",
+      "src": "water",
+      "in": 0,
+      "dur": 6,
+      "start": 17.5,
+      "claim_refs": [
+        "c-name",
+        "c-5l",
+        "c-cta-conheca"
+      ]
+    }
+  ],
+  "product_treatment": "real packshot pixels composited (shadow, reflection, light sweep); not generated",
+  "voiceover": "none",
+  "cost": {
+    "api_usd": 0,
+    "stock_usd": 0
+  },
+  "timings_s": {
+    "base_edit": 71.5,
+    "overlay": 70.3,
+    "audio": 3.3,
+    "encode": 64.1,
+    "total": 226.3
+  },
+  "review": "PENDING_HUMAN_REVIEW"
+}

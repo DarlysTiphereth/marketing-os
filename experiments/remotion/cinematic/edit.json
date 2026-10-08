@@ -1,0 +1,235 @@
+{
+  "schema_version": "edl.v1",
+  "edit_id": "grand-tres-gestos-stock-001",
+  "concept": "Três gestos (benchmark/002-creative-recovery) — versão com footage gratuito",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "sources": {
+    "drop": {
+      "provider": "pexels",
+      "pexels_id": "7565623",
+      "page": "https://www.pexels.com/video/dropping-paint-on-clear-water-7565623/",
+      "file_url": "https://videos.pexels.com/video-files/7565623/7565623-hd_1080_1920_25fps.mp4",
+      "local": ".mos/stock/pexels/pexels-7565623.mp4",
+      "sha256": "7d5009699f890d68f85ff8b8f460c58d4899e0a7bae508f1c26db48680cc6272",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "cloud": {
+      "provider": "pexels",
+      "pexels_id": "7565882",
+      "page": "https://www.pexels.com/video/blue-paint-on-water-7565882/",
+      "file_url": "https://videos.pexels.com/video-files/7565882/7565882-hd_1080_1920_25fps.mp4",
+      "local": ".mos/stock/pexels/pexels-7565882.mp4",
+      "sha256": "4bb089d0333cfc14bb96c129a31037f0701397a64ad7643a357605a183c86291",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "drum": {
+      "provider": "pexels",
+      "pexels_id": "8756698",
+      "page": "https://www.pexels.com/video/industrial-washing-machine-8756698/",
+      "file_url": "https://videos.pexels.com/video-files/8756698/8756698-hd_1080_2048_25fps.mp4",
+      "local": ".mos/stock/pexels/pexels-8756698.mp4",
+      "sha256": "1720576e5a92be2b35dddcb0bca1dc0cccc76f752c531c3c0945a82c15a5db59",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "hands": {
+      "provider": "pexels",
+      "pexels_id": "6843727",
+      "page": "https://www.pexels.com/video/a-close-up-video-of-a-person-washing-cloths-in-a-basin-6843727/",
+      "file_url": "https://videos.pexels.com/video-files/6843727/6843727-hd_1080_1920_25fps.mp4",
+      "local": ".mos/stock/pexels/pexels-6843727.mp4",
+      "sha256": "f4a87b22db13e7052506c6a01bdcb76f69faa8169747d7a15cab0295d5525cbb",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "denim": {
+      "provider": "pexels",
+      "pexels_id": "6961608",
+      "page": "https://www.pexels.com/video/close-up-shot-of-pile-of-denims-6961608/",
+      "file_url": "https://videos.pexels.com/video-files/6961608/6961608-hd_1080_1920_24fps.mp4",
+      "local": ".mos/stock/pexels/pexels-6961608.mp4",
+      "sha256": "3093046d6762e8151dfbea9949186ea81f62921f89374464797f5ef442ac6348",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "line": {
+      "provider": "pexels",
+      "pexels_id": "6841998",
+      "page": "https://www.pexels.com/video/laundry-hanging-on-a-clothesline-to-dry-6841998/",
+      "file_url": "https://videos.pexels.com/video-files/6841998/6841998-hd_1080_1920_25fps.mp4",
+      "local": ".mos/stock/pexels/pexels-6841998.mp4",
+      "sha256": "0feea5183dea4d7999147d2bb267bc11cdbfde3bcf3960caf88b7deb9ce6cf15",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    },
+    "water": {
+      "provider": "pexels",
+      "pexels_id": "30796007",
+      "page": "https://www.pexels.com/video/peaceful-water-ripple-reflections-in-sunlight-30796007/",
+      "file_url": "https://videos.pexels.com/video-files/30796007/13171759_1080_1920_24fps.mp4",
+      "local": ".mos/stock/pexels/pexels-30796007.mp4",
+      "sha256": "65f7a8ffa83f25bdfa97b280ddc32349fc49718f87df304da5bb5fa43218e417",
+      "license": "Pexels License: free commercial use, attribution not required. License text could not be re-read by the agent on 2026-10-08 (HTTP 403); confirm at https://www.pexels.com/license/ before publishing.",
+      "downloaded_at": "2026-10-08",
+      "download_approved": "user, chat 2026-10-08"
+    }
+  },
+  "shots": [
+    {
+      "id": "s1-drop",
+      "src": "drop",
+      "in": 2.0,
+      "dur": 3.0,
+      "grade": "eq=contrast=1.06:saturation=1.08,colorbalance=bs=0.06:bm=0.03,curves=all='0/0.02 0.5/0.52 1/1'",
+      "transition_in": "cut",
+      "text": {
+        "label": "GRAND · Sabão Líquido Premium",
+        "line": "Limpeza profunda.",
+        "at": 0.7
+      },
+      "claim_refs": [
+        "c-name",
+        "c-limpeza-profunda"
+      ],
+      "sfx": [
+        "drop"
+      ]
+    },
+    {
+      "id": "s2-cloud",
+      "src": "cloud",
+      "in": 0.6,
+      "dur": 1.8,
+      "grade": "hue=h=14,eq=contrast=1.06:saturation=1.08,colorbalance=bs=0.06:bm=0.03,eq=brightness=-0.03",
+      "transition_in": "dissolve:0.4",
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "id": "s3-drum",
+      "src": "drum",
+      "in": 4.0,
+      "dur": 3.5,
+      "crop": {
+        "w": 540,
+        "h": 960,
+        "x": 270,
+        "y": 700
+      },
+      "push": 0.05,
+      "grade": "eq=contrast=1.06:saturation=1.08,colorbalance=bs=0.06:bm=0.03",
+      "text": {
+        "label": "Na máquina",
+        "line": "Puro ou diluído.",
+        "at": 0.35
+      },
+      "claim_refs": [
+        "c-modo-uso"
+      ],
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "id": "s4-hands",
+      "src": "hands",
+      "in": 2.0,
+      "dur": 3.6,
+      "grade": "eq=contrast=1.05:saturation=1.0,colorbalance=bs=0.03",
+      "push": 0.04,
+      "text": {
+        "label": "À mão",
+        "line": "Dilua em água e aplique.",
+        "at": 0.35
+      },
+      "claim_refs": [
+        "c-modo-uso"
+      ],
+      "sfx": [
+        "splash"
+      ]
+    },
+    {
+      "id": "s5-denim",
+      "src": "denim",
+      "in": 0.5,
+      "dur": 2.8,
+      "grade": "eq=contrast=1.06:saturation=1.08,colorbalance=bs=0.06:bm=0.03",
+      "text": {
+        "label": "",
+        "line": "Cuida das suas roupas.",
+        "at": 0.3
+      },
+      "claim_refs": [
+        "c-cuida"
+      ],
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "id": "s6-line",
+      "src": "line",
+      "in": 2.0,
+      "dur": 3.2,
+      "push": 0.06,
+      "grade": "eq=contrast=1.10:saturation=1.05:gamma=0.97,colorbalance=bs=0.05:bm=0.02",
+      "text": {
+        "label": "",
+        "line": "Roupas mais limpas e perfumadas.",
+        "at": 0.3
+      },
+      "claim_refs": [
+        "c-limpas-perfumadas"
+      ],
+      "sfx": [
+        "riser"
+      ]
+    },
+    {
+      "id": "s7-hero",
+      "src": "water",
+      "in": 0.0,
+      "dur": 6.0,
+      "grade": "hue=h=18,eq=brightness=-0.10:gamma=0.82:saturation=1.15",
+      "hero": true,
+      "text": {
+        "label": "GRAND · Limpeza & Proteção",
+        "line": "Conheça a GRAND",
+        "at": 1.6
+      },
+      "claim_refs": [
+        "c-name",
+        "c-5l",
+        "c-cta-conheca"
+      ],
+      "sfx": [
+        "impact",
+        "shine"
+      ]
+    }
+  ],
+  "audio": {
+    "type": "procedural",
+    "seed": 2611,
+    "bpm": 84,
+    "voiceover": "none (user agreed: no system TTS)"
+  },
+  "product": {
+    "asset": "factories/shared/products/grand/sabao-liquido-premium-5l.json#packshot",
+    "treatment": "real pixels composited in Remotion (shadow, reflection, light sweep); never generated"
+  }
+}

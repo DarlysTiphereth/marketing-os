@@ -147,14 +147,19 @@ export function buildAudio(tl: Timeline, lines: VoiceLine[], opts: {bpm: number;
   }
   const premix = path.join(opts.workDir, 'premix.wav');
   writeWav16(premix, {rate: SR, channels: 2, data: [mix[0], mix[1]]});
+  const final = path.join(opts.workDir, 'mix.wav');
+  const n = normalize(premix, final);
+  return {final, premix, cues, loudnorm_pass1: n.measured, target: n.target};
+}
 
+// Two-pass EBU R128 loudnorm to the social target, then a brickwall limiter (AAC overshoot headroom).
+export function normalize(premix: string, final: string) {
   // Two-pass EBU R128 loudnorm to social target (-14 LUFS, TP -1.5).
   const target = {I: -14, TP: -2.0, LRA: 11}; // -2.0: AAC re-encode overshoots ~1 dB on dense music-only mixes (measured)
   const p1 = run(TOOLS.ffmpeg, ['-hide_banner', '-nostats', '-i', premix, '-af', `loudnorm=I=${target.I}:TP=${target.TP}:LRA=${target.LRA}:print_format=json`, '-f', 'null', '-']);
   const m = JSON.parse(p1.stderr.slice(p1.stderr.lastIndexOf('{'), p1.stderr.lastIndexOf('}') + 1));
-  const final = path.join(opts.workDir, 'mix.wav');
   run(TOOLS.ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', '-i', premix, '-af',
     `loudnorm=I=${target.I}:TP=${target.TP}:LRA=${target.LRA}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true,alimiter=limit=0.7:attack=2:release=60:level=false,aresample=48000`,
     '-c:a', 'pcm_s16le', final]);
-  return {final, premix, cues, loudnorm_pass1: m, target};
+  return {measured: m, target};
 }

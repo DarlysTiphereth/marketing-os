@@ -6,7 +6,8 @@ import type {Timeline} from '../src/schema.ts';
 
 type Check = {id: string; status: 'PASS' | 'FAIL' | 'WARN'; measured: unknown; threshold: string; evidence: 'MEASURED' | 'STATIC_LAYOUT_RULE'};
 
-export function technicalQc(mp4: string, tl: Timeline) {
+export function technicalQc(mp4: string, tl: Timeline, opts: {minDur?: number; maxDur?: number} = {}) {
+  const minDur = opts.minDur ?? 30, maxDur = opts.maxDur ?? 46;
   const checks: Check[] = [];
   const add = (id: string, ok: boolean | 'WARN', measured: unknown, threshold: string, evidence: Check['evidence'] = 'MEASURED') =>
     checks.push({id, status: ok === 'WARN' ? 'WARN' : ok ? 'PASS' : 'FAIL', measured, threshold, evidence});
@@ -20,7 +21,7 @@ export function technicalQc(mp4: string, tl: Timeline) {
   add('fps', v.r_frame_rate === '30/1' && v.avg_frame_rate === '30/1', {nominal: v.r_frame_rate, average: v.avg_frame_rate}, '30/1 nominal and average');
   add('codec', v.codec_name === 'h264' && v.pix_fmt === 'yuv420p', `${v.codec_name} ${v.profile} ${v.pix_fmt}`, 'h264 yuv420p');
   add('frame_count', Number(v.nb_read_frames) === Math.round(tl.duration * 30), {decoded: Number(v.nb_read_frames), expected: Math.round(tl.duration * 30)}, 'decoded == timeline frames');
-  add('duration', dur >= 30 && dur <= 46, +dur.toFixed(3), '30–46 s (brief 30–45 s)');
+  add('duration', dur >= minDur && dur <= maxDur, +dur.toFixed(3), `${minDur}–${maxDur} s (brief)`);
   add('audio_stream', !!a && a.codec_name === 'aac' && a.sample_rate === '48000' && a.channels === 2, a ? `${a.codec_name} ${a.sample_rate}Hz ${a.channels}ch` : 'missing', 'AAC 48 kHz stereo');
 
   const ebu = run(TOOLS.ffmpeg, ['-hide_banner', '-nostats', '-i', mp4, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-']).stderr;
