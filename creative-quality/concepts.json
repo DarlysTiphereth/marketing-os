@@ -1,0 +1,68 @@
+[
+  {
+    "id": "azul-em-movimento",
+    "title": "O azul tem nome",
+    "audience": "Compradores brasileiros de produtos para lavagem de roupas; hipótese editorial sem pesquisa própria.",
+    "problem": "O frasco se perde em anúncios que apresentam listas de características antes de criar reconhecimento visual.",
+    "proven_benefit": {"text": "Limpeza Profunda", "source": "factories/shared/products/grand/sabao-liquido-premium-5l.json#c-limpeza-profunda", "proof_scope": "APPROVED_LABEL_ONLY"},
+    "central_idea": "Transformar o azul real da embalagem no ponto de reconhecimento, em contraste com reflexos fotográficos de água.",
+    "differentiator": "Produto identificável no primeiro frame, fotografia preservada e uma única afirmação do rótulo; nenhuma falsa demonstração.",
+    "hook": "O azul tem nome: embalagem real desde o primeiro frame sobre luz em movimento.",
+    "sales_argument": "Apresentar GRAND e a declaração Limpeza Profunda já aprovada. O rótulo é evidência da declaração, não comprovação laboratorial de desempenho.",
+    "visual_language": "Beauty shot frio e controlado, fotografia de água em tela cheia, navy e ouro discretos, texto editorial pequeno, cortes secos para matéria têxtil.",
+    "cta": "Conheça a GRAND",
+    "scope": "PRODUCT_STUDY",
+    "duration_s": 7,
+    "required_assets": ["packshot", "water", "denim", "water-audio", "archivo"],
+    "narrative": [
+      {"at_s": 0, "duration_s": 2.2, "action": "Hero com frasco real e reflexos de água. Identidade imediata; sem texto competindo com rótulo.", "copy": "GRAND · Sabão Líquido Premium", "asset_ids": ["packshot", "water"]},
+      {"at_s": 2.2, "duration_s": 1.4, "action": "Corte seco para textura fotográfica de tecido; material de categoria, sem alegar resultado da GRAND.", "copy": "Textura de categoria · Cena ilustrativa", "asset_ids": ["denim"]},
+      {"at_s": 3.6, "duration_s": 3.4, "action": "Retorno ao hero. Afirmação aprovada e CTA em momentos separados; reflexo em movimento real.", "copy": "Limpeza Profunda · Conheça a GRAND", "asset_ids": ["packshot", "water"]}
+    ],
+    "limitations": ["Packshot 800×800, objeto útil 262×690; sem fotografia de estúdio nova ou ângulo 3/4.", "Asset do usuário autorizado apenas para estudo interno; publicação depende de direitos.", "Água e tecido são ilustrativos: não são produto, diluição ou prova de eficácia.", "Sem ensaio laboratorial fornecido; não afirmar remoção de manchas, economia ou superioridade."]
+  },
+  {
+    "id": "entre-as-maos",
+    "title": "Entre as mãos",
+    "audience": "Pessoas que lavam peças à mão e reconhecem gestos cotidianos; hipótese editorial sem segmentação observada.",
+    "problem": "Slides e locução genérica escondem a ação e parecem publicidade montada, em vez de uma observação próxima da rotina.",
+    "proven_benefit": {"text": "Ação real visível de lavagem manual", "source": "https://www.pexels.com/video/a-close-up-video-of-a-person-washing-cloths-in-a-basin-6843727/", "proof_scope": "OBSERVED_CATEGORY_ACTION"},
+    "central_idea": "Uma ação contínua de mãos e tecido conduz o olhar; enquadramentos próximos e áudio de água substituem elementos gráficos decorativos.",
+    "differentiator": "Stock real ocupa todo o quadro; não inventar testemunho, antes/depois nem produto usado. Estudo de linguagem demonstrativa da categoria.",
+    "hook": "Entrar no meio do gesto: mãos em movimento no primeiro frame, sem vinheta.",
+    "sales_argument": "A amostra demonstra a ação da categoria, não vende nem comprova eficácia da GRAND. Converter o conceito em argumento de produto requer filmagem própria verificada.",
+    "visual_language": "UGC observacional em luz natural, tons quentes de pele e tecido, montagem por gesto, lettering branco compacto e nenhuma moldura corporativa.",
+    "cta": "Observe o movimento",
+    "scope": "CATEGORY_STUDY",
+    "duration_s": 7,
+    "required_assets": ["hands", "water-audio", "archivo"],
+    "narrative": [
+      {"at_s": 0, "duration_s": 2.4, "action": "Mãos na água já em ação; quadro aberto o suficiente para reconhecer bacia e tecido.", "copy": "Lavagem à mão", "asset_ids": ["hands"]},
+      {"at_s": 2.4, "duration_s": 2.2, "action": "Corte para trecho seguinte do mesmo gesto com enquadramento mais próximo; sem simular transformação.", "copy": "De perto.", "asset_ids": ["hands"]},
+      {"at_s": 4.6, "duration_s": 2.4, "action": "Gesto continua, CTA observacional e disclosure explícito do stock. Não inserir embalagem alheia à ação.", "copy": "Observe o movimento · Stock de categoria", "asset_ids": ["hands"]}
+    ],
+    "limitations": ["Não é UGC captado com a GRAND, nem depoimento real de consumidor.", "Não existe filmagem própria de dosagem/uso ou resultado verificável.", "Áudio licenciado adicionado em pós; não é captação síncrona deste take.", "Sem voz humana fornecida; não usar TTS como testemunho."]
+  },
+  {
+    "id": "do-tecido-ao-rotulo",
+    "title": "Da matéria ao nome",
+    "audience": "Compradores que querem identificar o produto e ler o rótulo antes de decidir uma compra de saneante.",
+    "problem": "Promessas em excesso abafam os dados reais da embalagem e podem sugerir eficácia que ainda não foi demonstrada.",
+    "proven_benefit": {"text": "Limpeza Profunda", "source": "factories/shared/products/grand/sabao-liquido-premium-5l.json#c-limpeza-profunda", "proof_scope": "APPROVED_LABEL_ONLY"},
+    "central_idea": "Match cut entre textura de tecido e detalhe do rótulo original, seguido do frasco inteiro; a leitura faz parte da narrativa.",
+    "differentiator": "Alternar matéria fotográfica e informação real, sem comparação de resultado nem macro inventado por IA.",
+    "hook": "A textura aproxima; o rótulo responde com uma declaração que podemos rastrear.",
+    "sales_argument": "A declaração aprovada Limpeza Profunda recebe origem explícita no rótulo; nenhuma comparação, preço, rendimento ou promessa nova.",
+    "visual_language": "Editorial daylight com fundo claro, azul real do tecido, macro conservador do rótulo e linhas de texto mínimas; sem gráficos de laboratório.",
+    "cta": "Conheça a GRAND",
+    "scope": "PRODUCT_STUDY",
+    "duration_s": 6,
+    "required_assets": ["denim", "packshot", "product-macro", "archivo", "water-audio"],
+    "narrative": [
+      {"at_s": 0, "duration_s": 1.5, "action": "Textura de tecido em fotografia real; ambiente de categoria.", "copy": "Matéria", "asset_ids": ["denim"]},
+      {"at_s": 1.5, "duration_s": 2, "action": "Macro autêntico do rótulo em resolução suficiente, sem upscale generativo.", "copy": "Limpeza Profunda", "asset_ids": ["product-macro"]},
+      {"at_s": 3.5, "duration_s": 2.5, "action": "Frasco inteiro, leitura de identidade e CTA.", "copy": "Conheça a GRAND", "asset_ids": ["packshot"]}
+    ],
+    "limitations": ["Macro autêntico em alta resolução ausente: conceito bloqueado para render.", "Terceiro conceito documentado, não produzir terceira amostra.", "A embalagem 800×800 não suporta macro legível sem interpolação."]
+  }
+]
