@@ -1,5 +1,7 @@
 # Marketing OS — Foundation v0.1
 
+Incremento de assets: [Universal Asset Intelligence Engine](universal-assets/README.md), com biblioteca/licenças, roteador, APIs oficiais condicionais e três estudos visuais GRAND. Gravação própria é opcional; escala e publicação aguardam aprovação humana. O comportamento offline descrito abaixo continua sendo o da CLI Foundation; o benchmark audiovisual é separado.
+
 Vertical slice local e verificável: produto → provenance → compliance → estratégia → matriz → variantes → manifestos → QA → custo/eficiência → READY_FOR_PRODUCTION.
 
 Os dados são **TEST_FIXTURE / NOT_REAL_PRODUCT_DATA**. Os nomes das marcas vieram do pedido; tom, defaults e conteúdo são configurações de teste. Nenhuma mídia, chamada de IA ou publicação acontece. READY_FOR_PRODUCTION significa planejamento aprovado pelo QA, sem autorização para publicar.
