@@ -1,0 +1,202 @@
+{
+  "schema_version": "quality-studies.v1",
+  "base": "011fcd3",
+  "tools": {
+    "node": "v24.19.0",
+    "chrome": "157.0.8080.0",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r",
+    "renderer_sha256": "5b65ffc2fc4129d62fe569215dbeb2055f775ae912f50fe64ba3a84fb1cb9c41"
+  },
+  "elapsed_s": 52.583,
+  "samples": [
+    {
+      "sample": "a",
+      "concept_id": "azul-em-movimento",
+      "scope": "PRODUCT_STUDY",
+      "output": ".mos/creative-recovery/a-sample.mp4",
+      "video_sha256": "e18783f42f6a9654b9d192070aacbf27d2cd3749982621f391b4865f09e67960",
+      "elapsed_s": 25.702,
+      "technical": {
+        "status": "PASS",
+        "checks": {
+          "duration_5_8": true,
+          "portrait_1080": true,
+          "h264_420": true,
+          "fps_and_frames": true,
+          "audio": true,
+          "no_black": true,
+          "loudness": true,
+          "peak": true
+        },
+        "measured": {
+          "duration_s": 7,
+          "frames": 210,
+          "LUFS": -16,
+          "dBTP": -7.2
+        }
+      },
+      "gates": {
+        "TECHNICAL_QC": {
+          "status": "PASS",
+          "notes": [
+            "Measured media checks only"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "CREATIVE_QC": {
+          "status": "PENDING",
+          "notes": [
+            "User rejected previous benchmark; explicit visual review required"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "BRAND_QC": {
+          "status": "PENDING",
+          "notes": [
+            "Official brand book and publication rights not verified"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "COMMERCE_QC": {
+          "status": "BLOCKED",
+          "notes": [
+            "No verified live offer, permission or product-use proof"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "HUMAN_APPROVAL": {
+          "status": "PENDING",
+          "notes": [
+            "No human approval has been supplied"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        }
+      },
+      "review_fingerprint": "f7a51dde609cb88b549a4ad0115d83dbe96d60462405eec5f591987bdb403c4b",
+      "production": {
+        "status": "SCALE_SUSPENDED",
+        "reasons": [
+          "CREATIVE_QC",
+          "BRAND_QC",
+          "COMMERCE_QC",
+          "HUMAN_APPROVAL"
+        ]
+      },
+      "paid_calls": 0,
+      "additional_contracted_cost_brl": 0,
+      "audio": "CC0 recorded water Foley + original sparse score; not synchronous location audio; no voiceover",
+      "limitations": [
+        "Packshot 800×800, objeto útil 262×690; sem fotografia de estúdio nova ou ângulo 3/4.",
+        "Asset do usuário autorizado apenas para estudo interno; publicação depende de direitos.",
+        "Água e tecido são ilustrativos: não são produto, diluição ou prova de eficácia.",
+        "Sem ensaio laboratorial fornecido; não afirmar remoção de manchas, economia ou superioridade."
+      ]
+    },
+    {
+      "sample": "b",
+      "concept_id": "entre-as-maos",
+      "scope": "CATEGORY_STUDY",
+      "output": ".mos/creative-recovery/b-sample.mp4",
+      "video_sha256": "a049f319d0b79f86c6b49b490a89e548a5db263fecbd7bf3fdae10c693523c52",
+      "elapsed_s": 26.057,
+      "technical": {
+        "status": "PASS",
+        "checks": {
+          "duration_5_8": true,
+          "portrait_1080": true,
+          "h264_420": true,
+          "fps_and_frames": true,
+          "audio": true,
+          "no_black": true,
+          "loudness": true,
+          "peak": true
+        },
+        "measured": {
+          "duration_s": 7,
+          "frames": 210,
+          "LUFS": -16.7,
+          "dBTP": -1.4
+        }
+      },
+      "gates": {
+        "TECHNICAL_QC": {
+          "status": "PASS",
+          "notes": [
+            "Measured media checks only"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "CREATIVE_QC": {
+          "status": "PENDING",
+          "notes": [
+            "User rejected previous benchmark; explicit visual review required"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "BRAND_QC": {
+          "status": "PENDING",
+          "notes": [
+            "Official brand book and publication rights not verified"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "COMMERCE_QC": {
+          "status": "BLOCKED",
+          "notes": [
+            "No verified live offer, permission or product-use proof"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        },
+        "HUMAN_APPROVAL": {
+          "status": "PENDING",
+          "notes": [
+            "No human approval has been supplied"
+          ],
+          "reviewer": null,
+          "reviewed_at": null,
+          "fingerprint": null
+        }
+      },
+      "review_fingerprint": "484d3a3a4d062d13d7c8b1ad17aa026bd6c85796c71c8be3b42a43396ca2c6bf",
+      "production": {
+        "status": "SCALE_SUSPENDED",
+        "reasons": [
+          "CREATIVE_QC",
+          "BRAND_QC",
+          "COMMERCE_QC",
+          "HUMAN_APPROVAL"
+        ]
+      },
+      "paid_calls": 0,
+      "additional_contracted_cost_brl": 0,
+      "audio": "CC0 recorded water Foley + original sparse score; not synchronous location audio; no voiceover",
+      "limitations": [
+        "Não é UGC captado com a GRAND, nem depoimento real de consumidor.",
+        "Não existe filmagem própria de dosagem/uso ou resultado verificável.",
+        "Áudio licenciado adicionado em pós; não é captação síncrona deste take.",
+        "Sem voz humana fornecida; não usar TTS como testemunho."
+      ]
+    }
+  ],
+  "api_cost_brl": 0,
+  "publication": false,
+  "mass_production": "SUSPENDED_PENDING_EXPLICIT_CREATIVE_APPROVAL"
+}
