@@ -23,6 +23,9 @@ export const Product = z.object({product_id: Id, brand_id: Id, name: Text, categ
 }).strict().superRefine((p, ctx) => {
   if (p.evidence === 'MOCK' ? p.fixture_labels === null : p.fixture_labels !== null)
     ctx.addIssue({code: 'custom', message: 'FIXTURE_CLASSIFICATION'});
+  if (new Set(p.claims.map(c => c.claim_id)).size !== p.claims.length
+    || new Set(p.assets.map(a => a.asset_id)).size !== p.assets.length)
+    ctx.addIssue({code: 'custom', message: 'DUPLICATE_PRODUCT_CHILD_ID'});
 });
 const Account = {account_id: Id, market_id: Id, platform_id: Scope.platform_id,
   evidence: Evidence, eligibility_status: Eligibility, promotion_permission: Permission};
@@ -63,7 +66,11 @@ export const ShoppableVideo = z.object({creative_id: Id, campaign_id: Id, listin
 export const Publication = z.object({...Context, publication_id: Id, campaign_id: Id, creative_id: Id,
   status: z.enum(['BLOCKED', 'PREPARED', 'SIMULATED']), human_approved: z.boolean(),
   reasons: z.array(Text), input_fingerprint: z.string().regex(/^[a-f0-9]{64}$/),
-}).strict();
+}).strict().superRefine((p, ctx) => {
+  if ((p.status === 'PREPARED' && (!p.human_approved || p.reasons.length || p.evidence !== 'REAL_DATA'))
+    || (p.status === 'BLOCKED' && !p.reasons.length) || (p.status === 'SIMULATED' && p.evidence !== 'MOCK'))
+    ctx.addIssue({code: 'custom', message: 'CONTRADICTORY_PUBLICATION_STATE'});
+});
 const Order = {...Context, order_id: Id, campaign_id: Id, creative_id: Id, listing_id: Id,
   status: z.enum(['PENDING', 'CONFIRMED', 'CANCELLED']), gmv: Money, source_ref: Text};
 export const OrderAttribution = z.discriminatedUnion('commerce_type', [
@@ -79,6 +86,8 @@ export const PerformanceEvent = z.object({...Context, event_id: Id, campaign_id:
 }).strict().superRefine((e, ctx) => {
   if (e.views !== null && e.clicks !== null && e.clicks > e.views)
     ctx.addIssue({code: 'custom', message: 'CLICKS_EXCEED_VIEWS'});
+  if (e.clicks !== null && e.conversions !== null && e.conversions > e.clicks)
+    ctx.addIssue({code: 'custom', message: 'CONVERSIONS_EXCEED_CLICKS'});
 });
 
 export type ProductT = z.infer<typeof Product>;

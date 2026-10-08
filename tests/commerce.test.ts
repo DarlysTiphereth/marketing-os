@@ -226,3 +226,25 @@ test('commerce: fingerprints canonicalize object order without masking input cha
   assert.equal(fingerprint({a: 1, b: 2}), fingerprint({b: 2, a: 1}));
   assert.notEqual(fingerprint({a: 1}), fingerprint({a: 2}));
 });
+test('commerce: second review rejects duplicate claim/asset IDs before planning', () => {
+  const i = mock(); i.product.claims.push({...i.product.claims[0]!, text: 'Ambiguous source'});
+  assert.throws(() => Product.parse(i.product), /DUPLICATE_PRODUCT_CHILD_ID/);
+  const j = mock(); j.product.assets.push({...j.product.assets[0]!, sha256: 'b'.repeat(64)});
+  assert.throws(() => Product.parse(j.product), /DUPLICATE_PRODUCT_CHILD_ID/);
+});
+test('commerce: second review converts only a subset of known clicked visits', () => {
+  assert.throws(() => PerformanceEvent.parse({...event(), conversions: 11}), /CONVERSIONS_EXCEED_CLICKS/);
+  assert.throws(() => PerformanceEvent.parse({...event(), clicks: 0, conversions: 1}), /CONVERSIONS_EXCEED_CLICKS/);
+  assert.ok(PerformanceEvent.parse({...event(), clicks: null, conversions: null}));
+});
+test('commerce: second review publication records enforce approval and blocking state', () => {
+  const c = seller().campaign;
+  const {seller_id: _s, affiliate_id: _a, listing_id: _l, offer_id: _o, objective: _b, estimated_margin: _m, ...context} = c;
+  const record = {...context, publication_id: 'publication', creative_id: `${c.campaign_id}-discovery`,
+    status: 'PREPARED', human_approved: true, reasons: [], input_fingerprint: hash};
+  assert.ok(Publication.parse(record));
+  assert.throws(() => Publication.parse({...record, human_approved: false}), /CONTRADICTORY_PUBLICATION_STATE/);
+  assert.throws(() => Publication.parse({...record, reasons: ['CATEGORY_REVIEW']}), /CONTRADICTORY_PUBLICATION_STATE/);
+  assert.throws(() => Publication.parse({...record, status: 'BLOCKED'}), /CONTRADICTORY_PUBLICATION_STATE/);
+  assert.throws(() => Publication.parse({...record, status: 'SIMULATED'}), /CONTRADICTORY_PUBLICATION_STATE/);
+});

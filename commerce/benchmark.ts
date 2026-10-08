@@ -70,6 +70,29 @@ function layoutQc(render: Awaited<ReturnType<typeof renderPiece>>, format: Forma
   return checks;
 }
 const browser = await openChrome();
+async function jpegRaster(png: string, jpeg: string) {
+  // Encode a verified JPEG raster in Chrome and measure fidelity against the original PNG.
+  const page = await browser.newPage({viewport: {width: 1080, height: 1920}});
+  try {
+    // Canvas avoids a second viewport screenshot/compositor and verifies the PNG -> JPEG raster itself.
+    const result = await page.evaluate(async source => {
+      const image = new Image(); image.src = source; await image.decode();
+      const canvas = document.createElement('canvas'); canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
+      const ctx = canvas.getContext('2d')!; ctx.drawImage(image, 0, 0);
+      const reference = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      const encoded = canvas.toDataURL('image/jpeg', 1); const jpg = new Image(); jpg.src = encoded; await jpg.decode();
+      ctx.drawImage(jpg, 0, 0); const decoded = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      let error = 0; for (let p = 0; p < reference.length; p += 4) for (let channel = 0; channel < 3; channel++)
+        error += (reference[p + channel]! - decoded[p + channel]!) ** 2;
+      const mse = error / (canvas.width * canvas.height * 3);
+      return {encoded: encoded.split(',')[1]!, psnr: mse === 0 ? 100 : 10 * Math.log10(255 * 255 / mse)};
+    }, imageData(png));
+    if (result.psnr < 35) throw new Error('PNG_TO_JPEG_REFERENCE_FIDELITY_FAILED');
+    writeFileSync(jpeg, Buffer.from(result.encoded, 'base64'));
+    writeJson(jpeg.replace(/\.jpg$/, '-raster-qc.json'), {status: 'PASS', source_png_sha256: sha256File(png),
+      jpeg_sha256: sha256File(jpeg), psnr_db: result.psnr, threshold_db: 35, evidence: 'MEASURED_CHROME_CANVAS_RGB'});
+  } finally {await page.close();}
+}
 const reports: ReturnType<typeof performanceReport>[] = [];
 const summaries: unknown[] = [];
 try {
@@ -100,13 +123,16 @@ try {
       const sceneQc = layoutQc(frame, FORMATS.story!);
       if (sceneQc.some(x => x.status === 'FAIL')) throw new Error(`LAYOUT_QC: ${JSON.stringify(sceneQc)}`);
       writeJson(path.join(dir, `scene-${k}-qc.json`), sceneQc);
+      const jpeg = path.join(dir, `scene-${k}.jpg`);
+      await jpegRaster(frame.png, jpeg);
       const segment = path.join(dir, `segment-${k}.mp4`);
       const source = sources[(k + pilotIndex) % sources.length];
       console.log(`[commerce] ${c.campaign_id}: encode scene ${k + 1}/3 (CPU, 2 threads)`);
-      run(TOOLS.ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', '-loop', '1', '-framerate', '30', '-i', frame.png,
-        '-stream_loop', '-1', '-ss', String(k), '-i', source.local, '-filter_complex_threads', '1',
-        '-filter_complex', '[1:v]scale=450:380:force_original_aspect_ratio=increase,crop=450:380,setsar=1,fps=30[stock];[0:v][stock]overlay=565:620:shortest=1,format=yuv420p[v]',
-        '-map', '[v]', '-an', '-t', '6', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-threads', '2', segment]);
+      run(TOOLS.ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', '-loop', '1', '-framerate', '30', '-threads', '1', '-i', jpeg,
+        '-stream_loop', '-1', '-ss', String(k), '-threads', '1', '-i', source.local, '-filter_complex_threads', '1',
+        '-filter_complex', '[0:v]format=rgb24[base];[1:v]scale=450:380:force_original_aspect_ratio=increase,crop=450:380,setsar=1,fps=30,format=rgb24[stock];[base][stock]overlay=565:620:shortest=1:format=rgb,scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]',
+        '-map', '[v]', '-an', '-t', '6', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p',
+        '-color_range', 'tv', '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-threads', '2', segment]);
       segments.push(segment);
     }
     const timeline: Timeline = {variant_id: selected.creative_id, creative_id: selected.creative_id,
@@ -139,6 +165,18 @@ try {
     const videoQc = technicalQc(mp4, timeline, {minDur: 17.9, maxDur: 18.1});
     // Existing QC's caption/content rules describe Ad.tsx. Replace those assertions with actual measured HTML checks.
     videoQc.checks = videoQc.checks.filter(x => !['caption_safe_zone', 'content_safe_zone'].includes(x.id));
+    for (let k = 0; k < 3; k++) {
+      const decoded = path.join(dir, `decoded-scene-${k}.jpg`);
+      run(TOOLS.ffmpeg, ['-v', 'error', '-y', '-ss', String(k * 6), '-i', mp4, '-frames:v', '1',
+        '-vf', 'scale=out_color_matrix=bt601:out_range=pc', '-c:v', 'mjpeg', '-q:v', '1', '-colorspace', 'bt470bg', '-color_range', 'pc', decoded]);
+      for (const [region, crop] of [['header', '1080:550:0:0'], ['footer', '1080:200:0:1050']]) {
+        const comparison = run(TOOLS.ffmpeg, ['-hide_banner', '-i', path.join(dir, `scene-${k}.jpg`), '-i', decoded,
+          '-filter_complex', `[0:v]crop=${crop},scale=in_color_matrix=bt601:out_color_matrix=bt709:out_range=tv,format=yuv420p[ref];[1:v]crop=${crop},scale=in_color_matrix=bt601:out_color_matrix=bt709:out_range=tv,format=yuv420p[test];[ref][test]psnr`, '-frames:v', '1', '-f', 'null', '-']);
+        const psnr = Number(comparison.stderr.match(/average:([\d.]+)/)?.[1]);
+        videoQc.checks.push({id: `scene_${k}_${region}_fidelity`, status: Number.isFinite(psnr) && psnr >= 35 ? 'PASS' : 'FAIL',
+          measured: psnr, threshold: 'PSNR >= 35 dB, both references normalized to delivery BT.709 limited yuv420p; moving footage excluded', evidence: 'MEASURED'});
+      }
+    }
     videoQc.verdict = videoQc.checks.some(x => x.status === 'FAIL') ? 'FAIL' : 'PASS';
     writeJson(path.join(dir, 'qc.json'), {technical: videoQc, static: staticQc, visual_review: 'HUMAN_REVIEW_REQUIRED', efficacy_proof: 'NONE'});
     if (videoQc.verdict !== 'PASS') throw new Error(`VIDEO_QC: ${JSON.stringify(videoQc.checks.filter(x => x.status === 'FAIL'))}`);
