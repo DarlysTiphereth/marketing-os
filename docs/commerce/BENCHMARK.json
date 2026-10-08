@@ -1,0 +1,47 @@
+{
+  "schema_version": "commerce-benchmark.v1",
+  "elapsed_s": 31.606,
+  "pilots": [
+    {
+      "campaign_id": "grand-commerce-pilot",
+      "commerce_type": "SELLER",
+      "evidence": "REAL_DATA",
+      "directory": ".mos/commerce/grand-commerce-pilot-65a74afd5f8c",
+      "scripts": 3,
+      "video_sha256": "8d5bd02dbc5eb5a4cdf40d5ea2df7bca2153f3a9bdd6e523558492a68c6ba8e6",
+      "video_bytes": 2379998,
+      "static_sha256": "2070bd3e868060fb6735348c52935c864d7a11dd6003dbf9be52dad7c0353848",
+      "video_qc": "PASS",
+      "static_qc": "PASS",
+      "publication": "BLOCKED",
+      "shoppable_attachment": "NOT_SUPPORTED",
+      "paid_calls": 0,
+      "additional_cost_brl": 0,
+      "gpu_required": false,
+      "execution": "EXISTING_LOCAL_CPU_FALLBACK_NO_REMOTE_RENDER_DISPATCH",
+      "creative_validation": "NOT_VALIDATED_BY_SALES"
+    },
+    {
+      "campaign_id": "mock-affiliate-pilot",
+      "commerce_type": "AFFILIATE",
+      "evidence": "MOCK",
+      "directory": ".mos/commerce/mock-affiliate-pilot-a147d154e7a9",
+      "scripts": 3,
+      "video_sha256": "684db26e3a23998676f3e1f6ce9c08dd637c410aa2c1ee342b005c273c29b0bd",
+      "video_bytes": 2477896,
+      "static_sha256": "810cd37fa0467f8d55453d629418e183feb254199945fac8d70d81dec3186730",
+      "video_qc": "PASS",
+      "static_qc": "PASS",
+      "publication": "BLOCKED",
+      "shoppable_attachment": "NOT_SUPPORTED",
+      "paid_calls": 0,
+      "additional_cost_brl": 0,
+      "gpu_required": false,
+      "execution": "EXISTING_LOCAL_CPU_FALLBACK_NO_REMOTE_RENDER_DISPATCH",
+      "creative_validation": "NOT_VALIDATED_BY_SALES"
+    }
+  ],
+  "private_media_in_git": false,
+  "real_transactions": 0,
+  "real_publications": 0
+}
